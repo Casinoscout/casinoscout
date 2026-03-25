@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CasinoScout – Best Online Casinos Reviewed & Rated 2025</title>
+<meta name="description" content="CasinoScout independently tests and rates the best licensed online casinos. Find exclusive bonuses, verified payouts and honest expert reviews.">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#16A34A;--green-light:#DCFCE7;--green-mid:#86EFAC;--green-dark:#15803D;
+  --green-btn:#22C55E;--green-btn-hover:#16A34A;--amber:#D97706;
+  --bg:#F8F9FA;--white:#FFFFFF;--border:#E5E7EB;--border-dark:#D1D5DB;
+  --text:#111827;--text-2:#374151;--text-3:#6B7280;--text-4:#9CA3AF;
+  --shadow:0 1px 3px rgba(0,0,0,0.08),0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md:0 4px 6px -1px rgba(0,0,0,0.07),0 2px 4px rgba(0,0,0,0.04);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.6}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;box-shadow:var(--shadow)}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none}
+.logo-icon{width:32px;height:32px}
+.logo-text{font-size:1.2rem;font-weight:800;color:var(--text);letter-spacing:-0.02em}
+.logo-text span{color:var(--green)}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{color:var(--text-3);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.15s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{background:var(--green-btn);color:#fff;padding:0.45rem 1.1rem;border-radius:6px;font-size:0.82rem;font-weight:700;text-decoration:none;transition:background 0.15s}
+.nav-cta:hover{background:var(--green-btn-hover)}
+.hero{background:var(--white);border-bottom:1px solid var(--border);padding:3rem 1.5rem}
+.hero-inner{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.hero-label{display:inline-flex;align-items:center;gap:6px;background:var(--green-light);color:var(--green-dark);font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.3rem 0.8rem;border-radius:100px;margin-bottom:1rem}
+.live-dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:blink 1.8s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero h1{font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:800;line-height:1.15;letter-spacing:-0.03em;margin-bottom:1rem}
+.hero h1 em{font-style:normal;color:var(--green)}
+.hero-desc{color:var(--text-3);font-size:1rem;line-height:1.7;margin-bottom:1.5rem;max-width:420px}
+.hero-btns{display:flex;gap:0.75rem;flex-wrap:wrap}
+.btn-green{background:var(--green-btn);color:#fff;padding:0.7rem 1.6rem;border-radius:7px;font-weight:700;font-size:0.9rem;text-decoration:none;display:inline-block;transition:background 0.15s;border:none;cursor:pointer;font-family:inherit}
+.btn-green:hover{background:var(--green-btn-hover)}
+.btn-outline{background:transparent;color:var(--text-2);padding:0.7rem 1.6rem;border-radius:7px;font-weight:600;font-size:0.9rem;text-decoration:none;display:inline-block;border:1.5px solid var(--border-dark);transition:border-color 0.15s;font-family:inherit;cursor:pointer}
+.btn-outline:hover{border-color:var(--text-3)}
+.hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem}
+.stat-box{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:1rem 1.25rem}
+.stat-num{font-size:1.6rem;font-weight:800;color:var(--green);letter-spacing:-0.02em;line-height:1}
+.stat-label{font-size:0.72rem;color:var(--text-3);margin-top:2px;font-weight:500}
+.trust-bar{background:var(--white);border-bottom:2px solid var(--border);padding:0.75rem 1.5rem;display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:6px;font-size:0.78rem;font-weight:600;color:var(--text-2)}
+.trust-item svg{width:15px;height:15px;color:var(--green);flex-shrink:0}
+.filters-wrap{background:var(--white);border-bottom:1px solid var(--border);padding:0.9rem 1.5rem;display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap}
+.filter-label{font-size:0.72rem;font-weight:700;color:var(--text-4);text-transform:uppercase;letter-spacing:0.08em;margin-right:0.25rem}
+.filter-btn{background:var(--bg);border:1.5px solid var(--border);color:var(--text-3);padding:0.35rem 0.9rem;border-radius:100px;font-size:0.8rem;font-weight:600;font-family:inherit;cursor:pointer;transition:all 0.15s}
+.filter-btn:hover,.filter-btn.active{background:var(--green-light);border-color:var(--green-mid);color:var(--green-dark)}
+.main{max-width:1040px;margin:0 auto;padding:2rem 1.5rem;display:grid;grid-template-columns:1fr 290px;gap:2rem;align-items:start}
+.list-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem}
+.list-title{font-size:1.1rem;font-weight:800;color:var(--text)}
+.list-count{font-size:0.78rem;color:var(--text-4);font-weight:500}
+.casino-list{display:flex;flex-direction:column;gap:0.75rem}
+.casino-card{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:1.1rem 1.25rem;display:grid;grid-template-columns:70px 1fr auto;gap:1rem;align-items:center;box-shadow:var(--shadow);transition:box-shadow 0.2s,border-color 0.2s;position:relative}
+.casino-card:hover{box-shadow:var(--shadow-md);border-color:var(--green-mid)}
+.casino-card.top{border-color:var(--green-mid);border-width:2px}
+.rank-badge{position:absolute;top:-10px;left:16px;background:var(--green-btn);color:#fff;font-size:0.63rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.2rem 0.65rem;border-radius:100px}
+.casino-logo-box{width:70px;height:52px;background:var(--bg);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:800;color:var(--green-dark);text-align:center;line-height:1.2;flex-shrink:0}
+.c-name{font-size:1rem;font-weight:800;color:var(--text);margin-bottom:3px}
+.c-tags{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:5px}
+.tag{font-size:0.62rem;font-weight:700;padding:0.18rem 0.5rem;border-radius:4px;text-transform:uppercase;letter-spacing:0.05em}
+.tag-crypto{background:#D1FAE5;color:#065F46}
+.tag-live{background:#FEF3C7;color:#92400E}
+.tag-fast{background:#DBEAFE;color:#1E40AF}
+.tag-new{background:#FEE2E2;color:#991B1B}
+.c-bonus{font-size:0.83rem;color:var(--text-3);margin-bottom:4px}
+.c-bonus strong{color:var(--green-dark);font-weight:700}
+.c-meta{display:flex;gap:1rem;flex-wrap:wrap}
+.c-meta-item{font-size:0.7rem;color:var(--text-4);font-weight:500}
+.c-meta-item b{color:var(--text-3);font-weight:600}
+.c-action{display:flex;flex-direction:column;align-items:center;gap:5px;min-width:110px}
+.c-score{font-size:1.7rem;font-weight:800;color:var(--text);letter-spacing:-0.02em;line-height:1}
+.c-score-label{font-size:0.63rem;color:var(--text-4);font-weight:600;text-transform:uppercase;letter-spacing:0.06em}
+.c-stars{color:#F59E0B;font-size:0.75rem;line-height:1;margin-bottom:2px}
+.btn-claim{background:var(--green-btn);color:#fff;padding:0.5rem 1rem;border-radius:6px;font-size:0.78rem;font-weight:700;border:none;cursor:pointer;width:100%;font-family:inherit;transition:background 0.15s;text-align:center}
+.btn-claim:hover{background:var(--green-btn-hover)}
+.btn-review{background:transparent;color:var(--text-3);padding:0.4rem 1rem;border-radius:6px;font-size:0.72rem;font-weight:600;border:1.5px solid var(--border);cursor:pointer;width:100%;font-family:inherit;transition:all 0.15s}
+.btn-review:hover{border-color:var(--text-3);color:var(--text)}
+.c-tcs{font-size:0.62rem;color:var(--text-4);text-align:center}
+.casino-card.hidden{display:none}
+.sidebar{display:flex;flex-direction:column;gap:1rem}
+.sidebar-card{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:1.1rem 1.25rem;box-shadow:var(--shadow)}
+.sidebar-title{font-size:0.8rem;font-weight:800;color:var(--text);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.85rem;display:flex;align-items:center;gap:6px}
+.sidebar-title::before{content:'';display:block;width:3px;height:14px;background:var(--green-btn);border-radius:2px}
+.bonus-item{display:flex;justify-content:space-between;align-items:flex-start;padding:0.55rem 0;border-bottom:1px solid var(--border)}
+.bonus-item:last-child{border-bottom:none;padding-bottom:0}
+.bonus-casino{font-size:0.8rem;font-weight:700;color:var(--text)}
+.bonus-detail{font-size:0.7rem;color:var(--text-3);margin-top:1px}
+.bonus-val{font-size:0.85rem;font-weight:800;color:var(--green-dark);white-space:nowrap}
+.rating-item{display:flex;align-items:center;gap:8px;padding:0.45rem 0;border-bottom:1px solid var(--border)}
+.rating-item:last-child{border-bottom:none}
+.rating-bar-wrap{flex:1;background:var(--bg);border-radius:100px;height:5px;overflow:hidden}
+.rating-bar{height:100%;background:var(--green-btn);border-radius:100px}
+.rating-label{font-size:0.7rem;font-weight:600;color:var(--text-3);width:72px;flex-shrink:0}
+.rating-score{font-size:0.7rem;font-weight:700;color:var(--text);width:30px;text-align:right}
+.trust-badge-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.trust-badge{background:var(--bg);border:1px solid var(--border);border-radius:7px;padding:0.5rem;text-align:center}
+.trust-badge-icon{font-size:1.1rem;margin-bottom:2px}
+.trust-badge-label{font-size:0.62rem;font-weight:700;color:var(--text-3)}
+.bottom-section{max-width:1040px;margin:0 auto;padding:0 1.5rem 2.5rem}
+.section-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;padding-bottom:0.75rem;border-bottom:1px solid var(--border)}
+.section-hdr-title{font-size:1.1rem;font-weight:800;color:var(--text)}
+.section-hdr-title span{color:var(--green-dark)}
+.section-hdr-sub{font-size:0.72rem;color:var(--text-4);font-weight:600;text-transform:uppercase;letter-spacing:0.08em}
+.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem}
+.how-card{background:var(--white);border:1.5px solid var(--border);border-radius:10px;padding:1.1rem;box-shadow:var(--shadow)}
+.how-num{font-size:1.5rem;font-weight:800;color:var(--green-mid);letter-spacing:-0.03em;line-height:1;margin-bottom:0.5rem}
+.how-title{font-size:0.85rem;font-weight:700;color:var(--text);margin-bottom:0.3rem}
+.how-desc{font-size:0.78rem;color:var(--text-3);line-height:1.55}
+.newsletter-box{background:var(--green);border-radius:12px;padding:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.nl-text h2{font-size:1.4rem;font-weight:800;color:#fff;margin-bottom:0.3rem}
+.nl-text p{font-size:0.88rem;color:rgba(255,255,255,0.8)}
+.nl-form{display:flex;gap:0.6rem;flex-wrap:wrap}
+.nl-form input{background:rgba(255,255,255,0.18);border:1.5px solid rgba(255,255,255,0.35);border-radius:7px;padding:0.65rem 1rem;color:#fff;font-size:0.85rem;font-family:inherit;outline:none;min-width:220px}
+.nl-form input::placeholder{color:rgba(255,255,255,0.6)}
+.nl-form button{background:#fff;color:var(--green-dark);padding:0.65rem 1.4rem;border-radius:7px;font-weight:700;font-size:0.85rem;border:none;cursor:pointer;font-family:inherit;white-space:nowrap}
+footer{background:var(--white);border-top:1px solid var(--border);padding:2.5rem 1.5rem 1.5rem;margin-top:2rem}
+.footer-inner{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2rem}
+.footer-brand p{font-size:0.78rem;color:var(--text-3);line-height:1.65;margin-top:0.65rem}
+.footer-col h4{font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--text);margin-bottom:0.85rem}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:0.45rem}
+.footer-col a{color:var(--text-3);text-decoration:none;font-size:0.8rem;transition:color 0.15s}
+.footer-col a:hover{color:var(--text)}
+.footer-bottom{max-width:1040px;margin:0 auto;padding-top:1.25rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem}
+.footer-bottom p{font-size:0.7rem;color:var(--text-4)}
+.rg-badges{display:flex;gap:0.5rem}
+.rg-badge{font-size:0.62rem;border:1px solid var(--border-dark);border-radius:4px;padding:0.2rem 0.5rem;color:var(--text-3);font-weight:600;text-transform:uppercase;letter-spacing:0.06em}
+@media(max-width:768px){
+  .hero-inner,.main{grid-template-columns:1fr}
+  .sidebar,.nav-links{display:none}
+  .how-grid{grid-template-columns:1fr 1fr}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:1.5rem}
+  .casino-card{grid-template-columns:60px 1fr}
+  .c-action{grid-column:1/-1;flex-direction:row;flex-wrap:wrap}
+  .trust-bar{gap:1rem}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="#" class="logo">
+    <svg class="logo-icon" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#DCFCE7"/><circle cx="16" cy="16" r="4" fill="#16A34A"/><path d="M16 6L16 10" stroke="#16A34A" stroke-width="2.2" stroke-linecap="round"/><path d="M16 22L16 26" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/><path d="M6 16L10 16" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/><path d="M22 16L26 16" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/><polygon points="16,6 14.8,12.5 16,11.5 17.2,12.5" fill="#16A34A"/></svg>
+    <span class="logo-text">Casino<span>Scout</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#casinos">Top Casinos</a></li>
+    <li><a href="#bonuses">Bonuses</a></li>
+    <li><a href="#how-we-rate">How We Rate</a></li>
+    <li><a href="#">Guides</a></li>
+  </ul>
+  <a href="#casinos" class="nav-cta">See Top 10 →</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-label"><span class="live-dot"></span>Updated March 2025</div>
+      <h1>Find the <em>Best Online Casino</em> for You</h1>
+      <p class="hero-desc">We independently test, rate and compare licensed online casinos. Real deposits, real withdrawals — so you know exactly what to expect before you play.</p>
+      <div class="hero-btns">
+        <a href="#casinos" class="btn-green">View Top Casinos</a>
+        <a href="#how-we-rate" class="btn-outline">How We Rate</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-box"><div class="stat-num">148</div><div class="stat-label">Casinos reviewed</div></div>
+      <div class="stat-box"><div class="stat-num">€2.4M</div><div class="stat-label">Bonuses tracked</div></div>
+      <div class="stat-box"><div class="stat-num">38</div><div class="stat-label">Countries covered</div></div>
+      <div class="stat-box"><div class="stat-num">9.4<span style="font-size:1rem">/10</span></div><div class="stat-label">Avg user rating</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="trust-item"><svg viewBox="0 0 15 15" fill="none"><path d="M7.5 1L9.3 5.5H14L10.3 8.2L11.9 13L7.5 10.2L3.1 13L4.7 8.2L1 5.5H5.7L7.5 1Z" fill="currentColor"/></svg>Independent editorial</div>
+  <div class="trust-item"><svg viewBox="0 0 15 15" fill="none"><rect x="2" y="6.5" width="11" height="7.5" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5 6.5V4.5a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Licensed casinos only</div>
+  <div class="trust-item"><svg viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="6" stroke="currentColor" stroke-width="1.3"/><path d="M4.5 7.5l2 2 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Real money tested</div>
+  <div class="trust-item"><svg viewBox="0 0 15 15" fill="none"><path d="M7.5 1.5v12M1.5 7.5h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="7.5" cy="7.5" r="3" stroke="currentColor" stroke-width="1.3"/></svg>Affiliate disclosure</div>
+  <div class="trust-item"><svg viewBox="0 0 15 15" fill="none"><path d="M7.5 1.5C4.5 3 2 3.5 2 3.5s0 4 5.5 10c5.5-6 5.5-10 5.5-10S10.5 3 7.5 1.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>Responsible gaming</div>
+</div>
+
+<div class="filters-wrap" id="casinos">
+  <span class="filter-label">Filter by:</span>
+  <button class="filter-btn active" onclick="filterCasinos('all',this)">All Casinos</button>
+  <button class="filter-btn" onclick="filterCasinos('crypto',this)">Crypto</button>
+  <button class="filter-btn" onclick="filterCasinos('live',this)">Live Dealer</button>
+  <button class="filter-btn" onclick="filterCasinos('fast',this)">Fast Withdrawal</button>
+  <button class="filter-btn" onclick="filterCasinos('new',this)">New 2025</button>
+</div>
+
+<div class="main">
+  <div>
+    <div class="list-header">
+      <div class="list-title">Top Rated Casinos</div>
+      <div class="list-count" id="casino-count">Showing 6 casinos</div>
+    </div>
+    <div class="casino-list" id="casino-list">
+
+      <div class="casino-card top" data-tags="crypto live fast">
+        <div class="rank-badge">Scout's #1 Pick</div>
+        <div class="casino-logo-box">BC<br>Game</div>
+        <div>
+          <div class="c-name" style="margin-top:6px">BC.Game</div>
+          <div class="c-tags"><span class="tag tag-crypto">Crypto</span><span class="tag tag-live">Live</span><span class="tag tag-fast">Fast Pay</span></div>
+          <div class="c-bonus">Welcome bonus: <strong>Up to €20,000 + 270 Free Spins</strong></div>
+          <div class="c-meta">
+            <div class="c-meta-item"><b>Licence:</b> Curaçao</div>
+            <div class="c-meta-item"><b>Payout:</b> &lt;1hr crypto</div>
+            <div class="c-meta-item"><b>Games:</b> 10,000+</div>
+            <div class="c-meta-item"><b>Min deposit:</b> €10</div>
+          </div>
+        </div>
+        <div class="c-action">
+          <div class="c-score">9.7</div><div class="c-stars">★★★★★</div><div class="c-score-label">Expert score</div>
+          <button class="btn-claim" onclick="alert('Replace with BC.Game affiliate link')">Claim Bonus</button>
+          <button class="btn-review">Read Review</button>
+          <div class="c-tcs">T&Cs apply · 18+</div>
+        </div>
+      </div>
+
+      <div class="casino-card" data-tags="live fast">
+        <div class="casino-logo-box">Bet<br>365</div>
+        <div>
+          <div class="c-name">Bet365 Casino</div>
+          <div class="c-tags"><span class="tag tag-live">Live</span><span class="tag tag-fast">Fast Pay</span></div>
+          <div class="c-bonus">Welcome bonus: <strong>€100 Casino Bonus Credits</strong></div>
+          <div class="c-meta"><div class="c-meta-item"><b>Licence:</b> Malta MGA</div><div class="c-meta-item"><b>Payout:</b> 1–3 days</div><div class="c-meta-item"><b>Games:</b> 500+</div><div class="c-meta-item"><b>Min deposit:</b> €10</div></div>
+        </div>
+        <div class="c-action">
+          <div class="c-score">9.4</div><div class="c-stars">★★★★★</div><div class="c-score-label">Expert score</div>
+          <button class="btn-claim" onclick="alert('Affiliate link')">Claim Bonus</button>
+          <button class="btn-review">Read Review</button>
+          <div class="c-tcs">T&Cs apply · 18+</div>
+        </div>
+      </div>
+
+      <div class="casino-card" data-tags="crypto new">
+        <div class="casino-logo-box">Stake</div>
+        <div>
+          <div class="c-name">Stake.com</div>
+          <div class="c-tags"><span class="tag tag-crypto">Crypto</span><span class="tag tag-new">New</span></div>
+          <div class="c-bonus">Welcome bonus: <strong>€300 Reload + 1 BTC Weekly Raffle</strong></div>
+          <div class="c-meta"><div class="c-meta-item"><b>Licence:</b> Curaçao</div><div class="c-meta-item"><b>Payout:</b> Instant</div><div class="c-meta-item"><b>Games:</b> 3,000+</div><div class="c-meta-item"><b>Min deposit:</b> €20</div></div>
+        </div>
+        <div class="c-action">
+          <div class="c-score">9.2</div><div class="c-stars">★★★★★</div><div class="c-score-label">Expert score</div>
+          <button class="btn-claim" onclick="alert('Affiliate link')">Claim Bonus</button>
+          <button class="btn-review">Read Review</button>
+          <div class="c-tcs">T&Cs apply · 18+</div>
+        </div>
+      </div>
+
+      <div class="casino-card" data-tags="live fast">
+        <div class="casino-logo-box">Leo<br>Vegas</div>
+        <div>
+          <div class="c-name">LeoVegas</div>
+          <div class="c-tags"><span class="tag tag-live">Live</span><span class="tag tag-fast">Fast Pay</span></div>
+          <div class="c-bonus">Welcome bonus: <strong>€1,000 + 200 Free Spins</strong></div>
+          <div class="c-meta"><div class="c-meta-item"><b>Licence:</b> Malta MGA</div><div class="c-meta-item"><b>Payout:</b> Same day</div><div class="c-meta-item"><b>Games:</b> 2,000+</div><div class="c-meta-item"><b>Min deposit:</b> €10</div></div>
+        </div>
+        <div class="c-action">
+          <div class="c-score">9.1</div><div class="c-stars">★★★★★</div><div class="c-score-label">Expert score</div>
+          <button class="btn-claim" onclick="alert('Affiliate link')">Claim Bonus</button>
+          <button class="btn-review">Read Review</button>
+          <div class="c-tcs">T&Cs apply · 18+</div>
+        </div>
+      </div>
+
+      <div class="casino-card" data-tags="crypto new fast">
+        <div class="casino-logo-box">Roo<br>Bet</div>
+        <div>
+          <div class="c-name">Roobet Casino</div>
+          <div class="c-tags"><span class="tag tag-crypto">Crypto</span><span class="tag tag-new">New</span><span class="tag tag-fast">Fast Pay</span></div>
+          <div class="c-bonus">Welcome bonus: <strong>20% Cashback up to €500</strong></div>
+          <div class="c-meta"><div class="c-meta-item"><b>Licence:</b> Curaçao</div><div class="c-meta-item"><b>Payout:</b> &lt;30 min</div><div class="c-meta-item"><b>Games:</b> 4,000+</div><div class="c-meta-item"><b>Min deposit:</b> €5</div></div>
+        </div>
+        <div class="c-action">
+          <div class="c-score">8.9</div><div class="c-stars">★★★★½</div><div class="c-score-label">Expert score</div>
+          <button class="btn-claim" onclick="alert('Affiliate link')">Claim Bonus</button>
+          <button class="btn-review">Read Review</button>
+          <div class="c-tcs">T&Cs apply · 18+</div>
+        </div>
+      </div>
+
+      <div class="casino-card" data-tags="live">
+        <div class="casino-logo-box">22<br>Bet</div>
+        <div>
+          <div class="c-name">22Bet Casino</div>
+          <div class="c-tags"><span class="tag tag-live">Live</span></div>
+          <div class="c-bonus">Welcome bonus: <strong>100% match up to €300</strong></div>
+          <div class="c-meta"><div class="c-meta-item"><b>Licence:</b> Curaçao</div><div class="c-meta-item"><b>Payout:</b> 1–5 days</div><div class="c-meta-item"><b>Games:</b> 7,000+</div><div class="c-meta-item"><b>Min deposit:</b> €1</div></div>
+        </div>
+        <div class="c-action">
+          <div class="c-score">8.7</div><div class="c-stars">★★★★½</div><div class="c-score-label">Expert score</div>
+          <button class="btn-claim" onclick="alert('Affiliate link')">Claim Bonus</button>
+          <button class="btn-review">Read Review</button>
+          <div class="c-tcs">T&Cs apply · 18+</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-card" id="bonuses">
+      <div class="sidebar-title">Best bonuses now</div>
+      <div class="bonus-item"><div><div class="bonus-casino">BC.Game</div><div class="bonus-detail">+ 270 Free Spins</div></div><div class="bonus-val">€20,000</div></div>
+      <div class="bonus-item"><div><div class="bonus-casino">LeoVegas</div><div class="bonus-detail">+ 200 Free Spins</div></div><div class="bonus-val">€1,000</div></div>
+      <div class="bonus-item"><div><div class="bonus-casino">Roobet</div><div class="bonus-detail">Weekly cashback</div></div><div class="bonus-val">20%</div></div>
+      <div class="bonus-item"><div><div class="bonus-casino">Spin Casino</div><div class="bonus-detail">No deposit</div></div><div class="bonus-val">500 FS</div></div>
+    </div>
+    <div class="sidebar-card">
+      <div class="sidebar-title">How we score</div>
+      <div class="rating-item"><div class="rating-label">Bonuses</div><div class="rating-bar-wrap"><div class="rating-bar" style="width:90%"></div></div><div class="rating-score">9/10</div></div>
+      <div class="rating-item"><div class="rating-label">Safety</div><div class="rating-bar-wrap"><div class="rating-bar" style="width:100%"></div></div><div class="rating-score">10/10</div></div>
+      <div class="rating-item"><div class="rating-label">Payouts</div><div class="rating-bar-wrap"><div class="rating-bar" style="width:80%"></div></div><div class="rating-score">8/10</div></div>
+      <div class="rating-item"><div class="rating-label">Games</div><div class="rating-bar-wrap"><div class="rating-bar" style="width:85%"></div></div><div class="rating-score">8.5/10</div></div>
+      <div class="rating-item"><div class="rating-label">Support</div><div class="rating-bar-wrap"><div class="rating-bar" style="width:75%"></div></div><div class="rating-score">7.5/10</div></div>
+    </div>
+    <div class="sidebar-card">
+      <div class="sidebar-title">Trust &amp; safety</div>
+      <div class="trust-badge-grid">
+        <div class="trust-badge"><div class="trust-badge-icon">🔒</div><div class="trust-badge-label">SSL Secure</div></div>
+        <div class="trust-badge"><div class="trust-badge-icon">⚖️</div><div class="trust-badge-label">Licensed</div></div>
+        <div class="trust-badge"><div class="trust-badge-icon">✅</div><div class="trust-badge-label">RNG Tested</div></div>
+        <div class="trust-badge"><div class="trust-badge-icon">🛡️</div><div class="trust-badge-label">18+ Only</div></div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<div class="bottom-section" id="how-we-rate">
+  <div class="section-hdr">
+    <div class="section-hdr-title">The <span>Scout Method</span></div>
+    <div class="section-hdr-sub">How we review</div>
+  </div>
+  <div class="how-grid">
+    <div class="how-card"><div class="how-num">01</div><div class="how-title">Licence check</div><div class="how-desc">Every casino must hold a valid licence from MGA, UKGC, or Curaçao before we begin any review.</div></div>
+    <div class="how-card"><div class="how-num">02</div><div class="how-title">Real money test</div><div class="how-desc">We deposit and withdraw real money at every casino to verify payout speeds and uncover hidden fees.</div></div>
+    <div class="how-card"><div class="how-num">03</div><div class="how-title">Bonus analysis</div><div class="how-desc">We calculate the true value of every bonus using wagering requirements, game weights, and max bets.</div></div>
+    <div class="how-card"><div class="how-num">04</div><div class="how-title">Ongoing checks</div><div class="how-desc">Ratings updated quarterly. Unresolved player complaints trigger immediate re-review.</div></div>
+  </div>
+  <div class="newsletter-box">
+    <div class="nl-text"><h2>Get Weekly Bonus Alerts</h2><p>The best new bonuses and exclusive deals, straight to your inbox.</p></div>
+    <div class="nl-form"><input type="email" placeholder="your@email.com"><button type="button">Subscribe Free</button></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#" class="logo">
+        <svg class="logo-icon" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#DCFCE7"/><circle cx="16" cy="16" r="4" fill="#16A34A"/><path d="M16 6L16 10" stroke="#16A34A" stroke-width="2.2" stroke-linecap="round"/><path d="M16 22L16 26" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/><path d="M6 16L10 16" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/><path d="M22 16L26 16" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/><polygon points="16,6 14.8,12.5 16,11.5 17.2,12.5" fill="#16A34A"/></svg>
+        <span class="logo-text">Casino<span>Scout</span></span>
+      </a>
+      <p>CasinoScout provides independent casino reviews and comparisons. We earn commission from operators on this site. This does not affect our editorial independence.</p>
+    </div>
+    <div class="footer-col"><h4>Reviews</h4><ul><li><a href="#">New Casinos</a></li><li><a href="#">Crypto Casinos</a></li><li><a href="#">Live Casinos</a></li><li><a href="#">Mobile Casinos</a></li></ul></div>
+    <div class="footer-col"><h4>Bonuses</h4><ul><li><a href="#">No Deposit</a></li><li><a href="#">Free Spins</a></li><li><a href="#">Welcome Bonus</a></li><li><a href="#">Cashback</a></li></ul></div>
+    <div class="footer-col"><h4>Info</h4><ul><li><a href="#">About Us</a></li><li><a href="#">Scout Method</a></li><li><a href="#">Responsible Gaming</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 CasinoScout.co · All rights reserved · Gambling can be addictive. Play responsibly. 18+ only.</p>
+    <div class="rg-badges"><span class="rg-badge">18+</span><span class="rg-badge">GamCare</span><span class="rg-badge">BeGambleAware</span></div>
+  </div>
+</footer>
+
+<script>
+function filterCasinos(tag,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  let v=0;
+  document.querySelectorAll('.casino-card').forEach(card=>{
+    const tags=card.getAttribute('data-tags')||'';
+    const show=tag==='all'||tags.includes(tag);
+    card.classList.toggle('hidden',!show);
+    if(show)v++;
+  });
+  document.getElementById('casino-count').textContent='Showing '+v+' casino'+(v!==1?'s':'');
+}
+</script>
+</body>
+</html>
