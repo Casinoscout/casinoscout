@@ -428,7 +428,7 @@ tr:last-child td{border-bottom:none}
   <div class="page-hero-inner">
     <div class="page-badge">🎁 Bonus sans dépôt Canada 2026</div>
     <h1 class="page-h1">Bonus Sans Dépôt Casino <em>Canada 2026</em></h1>
-    <p class="page-intro">La plupart des « bonus sans dépôt » au Canada ne sont pas ce qu'ils prétendent. Voici ce qui est vraiment disponible — conditions vérifiées, valeur réelle calculée honnêtement.</p>
+    <p class="page-intro">La majorité des bonus sans dépôt cachent des conditions qui rendent les gains impossibles à retirer. On a vérifié ce qui existe vraiment en mars 2026 — et calculé si ça vaut la peine.</p>
     <p class="byline">Par <strong>Alex M.</strong> · Vérifié le 27 mars 2026</p>
   </div>
 </div>
@@ -554,56 +554,55 @@ drawerClose.addEventListener('click', closeMenu);
 mobileMenu.addEventListener('click', e=>{ if(e.target===mobileMenu) closeMenu(); });
 document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeMenu(); });
 document.querySelectorAll('.faq-item .faq-q').forEach(q=>{q.addEventListener('click',()=>{q.parentElement.classList.toggle('open');const i=q.querySelector('.faq-icon');if(i)i.textContent=q.parentElement.classList.contains('open')?'−':'+';});});</script>
-<script>
+<script>(window.requestIdleCallback||function(f,o){setTimeout(f,o&&o.timeout||50)})(function(){
 (function(){
-  var LANG_META={
-    'en-CA':{flag:'🇨🇦',label:'English (Canada)',short:'EN'},
-    'fr-CA':{flag:'🇫🇷',label:'Français (Canada)',short:'FR'},
-    'en-US':{flag:'🇺🇸',label:'English (US)',short:'EN'},
-    'en-AU':{flag:'🇦🇺',label:'English (Australia)',short:'EN'},
-    'de-DE':{flag:'🇩🇪',label:'Deutsch',short:'DE'},
-    'es-MX':{flag:'🇲🇽',label:'Español',short:'ES'},
-    'pt-BR':{flag:'🇧🇷',label:'Português',short:'PT'},
-    'nl-NL':{flag:'🇳🇱',label:'Nederlands',short:'NL'}
-  };
-  var currentLang=document.documentElement.getAttribute('lang')||'en-CA';
-  var alts=[];
+  var PREF='cs_lang';
+  var REAL_FR=['https://casinoscout.co/fr/','https://casinoscout.co/fr/meilleurs-casinos-en-ligne-canada/','https://casinoscout.co/fr/bonus-sans-depot-canada/'];
+  var META={'en-CA':{flag:'🇨🇦',label:'English (Canada)',short:'EN'},'fr-CA':{flag:'🇫🇷',label:'Français (Canada)',short:'FR'}};
+  var curLang=document.documentElement.getAttribute('lang')||'en-CA';
+  var stored=null;try{stored=localStorage.getItem(PREF);}catch(e){}
+  var alts={};
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(function(l){
-    var h=l.getAttribute('hreflang');
-    if(h&&h!=='x-default')alts.push({lang:h,url:l.href});
+    var h=l.getAttribute('hreflang');if(h&&h!=='x-default')alts[h]=l.href;
   });
-  var sw=document.getElementById('lang-sw');
-  var btn=document.getElementById('lang-btn');
-  var dd=document.getElementById('lang-dd');
-  if(!sw||!btn||!dd||alts.length<=1)return;
-  var cur=LANG_META[currentLang]||{flag:'🌐',label:currentLang,short:currentLang.toUpperCase()};
+  // Auto-redirect if stored pref has a real page
+  if(stored&&stored!==curLang&&alts[stored]&&REAL_FR.indexOf(alts[stored])>-1){
+    window.location.replace(alts[stored]);return;
+  }
+  // Show "not in French" banner
+  if(stored==='fr-CA'&&curLang!=='fr-CA'){
+    var b=document.createElement('div');
+    b.className='lang-banner show';
+    b.innerHTML='🇫🇷 Cette page n’est pas encore disponible en français. <a href="https://casinoscout.co/fr/">Accueil français →</a><button class="lang-banner-close" aria-label="Fermer">×</button>';
+    b.querySelector('.lang-banner-close').onclick=function(){b.classList.remove('show');};
+    var nav=document.querySelector('.site-nav');
+    if(nav&&nav.parentNode)nav.parentNode.insertBefore(b,nav.nextSibling);
+  }
+  // Build switcher dropdown
+  var sw=document.getElementById('lang-sw'),btn=document.getElementById('lang-btn'),dd=document.getElementById('lang-dd');
+  if(!sw||!btn||!dd)return;
+  var cur=META[curLang]||{flag:'🌐',short:curLang};
   btn.querySelector('.lang-flag').textContent=cur.flag;
   btn.querySelector('.lang-code').textContent=cur.short;
-  btn.setAttribute('aria-label','Language: '+cur.label+'. Click to switch.');
-  alts.forEach(function(a){
-    if(a.lang===currentLang)return;
-    var m=LANG_META[a.lang]||{flag:'🌐',label:a.lang,short:a.lang};
+  Object.keys(META).forEach(function(lang){
+    if(lang===curLang||!alts[lang])return;
+    var m=META[lang],url=alts[lang];
+    var real=lang!=='fr-CA'||(REAL_FR.indexOf(url)>-1);
     var el=document.createElement('a');
-    el.href=a.url;
-    el.className='lang-option';
-    el.setAttribute('hreflang',a.lang);
-    el.setAttribute('role','option');
-    el.innerHTML='<span class="lo-flag">'+m.flag+'</span><span class="lo-label">'+m.label+'</span>';
+    el.href=url;el.className='lang-option';el.setAttribute('hreflang',lang);
+    el.innerHTML='<span class="lo-flag">'+m.flag+'</span><span class="lo-label">'+m.label+'</span>'+((!real&&lang==='fr-CA')?'<span class="lo-badge">Partiel</span>':'');
+    el.addEventListener('click',function(){try{localStorage.setItem(PREF,lang);}catch(e){}});
     dd.appendChild(el);
   });
+  if(!dd.children.length){sw.style.display='none';return;}
   btn.addEventListener('click',function(e){
     e.stopPropagation();
-    var open=dd.classList.toggle('open');
-    btn.setAttribute('aria-expanded',open?'true':'false');
+    var o=dd.classList.toggle('open');
+    btn.setAttribute('aria-expanded',o?'true':'false');
   });
-  document.addEventListener('click',function(){
-    dd.classList.remove('open');
-    btn.setAttribute('aria-expanded','false');
-  });
-  document.addEventListener('keydown',function(e){
-    if(e.key==='Escape'){dd.classList.remove('open');btn.setAttribute('aria-expanded','false');}
-  });
+  document.addEventListener('click',function(){dd.classList.remove('open');btn.setAttribute('aria-expanded','false');});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){dd.classList.remove('open');btn.setAttribute('aria-expanded','false');}});
 })();
-</script>
+});</script>
 </body>
 </html>
