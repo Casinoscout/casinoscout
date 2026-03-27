@@ -1,0 +1,39 @@
+# CasinoScout Cloudflare Pages _redirects
+# This file ensures all pages are served correctly.
+# Do NOT add /* /index.html 200 — that would break all sub-pages.
+
+# English reviews
+/en/reviews/bitstarz-canada/      /en/reviews/bitstarz-canada/index.html      200
+/en/reviews/jackpotcity-canada/   /en/reviews/jackpotcity-canada/index.html   200
+/en/reviews/spin-casino-canada/   /en/reviews/spin-casino-canada/index.html   200
+/en/reviews/jackbit-canada/       /en/reviews/jackbit-canada/index.html       200
+/en/reviews/bcgame-canada/        /en/reviews/bcgame-canada/index.html        200
+/en/reviews/7bit-canada/          /en/reviews/7bit-canada/index.html          200
+/en/reviews/leovegas-canada/      /en/reviews/leovegas-canada/index.html      200
+/en/reviews/betway-canada/        /en/reviews/betway-canada/index.html        200
+/en/reviews/playojo-canada/       /en/reviews/playojo-canada/index.html       200
+/en/reviews/bet365-canada/        /en/reviews/bet365-canada/index.html        200
+/en/reviews/casumo-canada/        /en/reviews/casumo-canada/index.html        200
+/en/reviews/888casino-canada/     /en/reviews/888casino-canada/index.html     200
+
+# English category pages
+/en/best-online-casinos-canada/   /en/best-online-casinos-canada/index.html   200
+/en/online-casinos-ontario/       /en/online-casinos-ontario/index.html       200
+/en/interac-casinos-canada/       /en/interac-casinos-canada/index.html       200
+/en/no-deposit-bonus-canada/      /en/no-deposit-bonus-canada/index.html      200
+/en/fast-payout-casinos-canada/   /en/fast-payout-casinos-canada/index.html   200
+/en/free-spins-canada/            /en/free-spins-canada/index.html            200
+/en/live-casino-canada/           /en/live-casino-canada/index.html           200
+
+# Tools
+/tools/wagering-calculator/       /tools/wagering-calculator/index.html       200
+
+# Utility pages
+/about/                           /about/index.html                           200
+/affiliate-disclosure/            /affiliate-disclosure/index.html            200
+/responsible-gambling/            /responsible-gambling/index.html            200
+
+# French pages
+/fr/                                                    /fr/index.html                                          200
+/fr/meilleurs-casinos-en-ligne-canada/                  /fr/meilleurs-casinos-en-ligne-canada/index.html        200
+/fr/bonus-sans-depot-canada/                            /fr/bonus-sans-depot-canada/index.html                  200
