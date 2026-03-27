@@ -255,6 +255,9 @@ footer{background:var(--w);border-top:1px solid var(--b);padding:1.5rem;margin-t
 .lang-option .lo-current{font-size:.65rem;color:var(--t4);font-weight:400}
 @media(max-width:480px){.lang-code{display:none}}
 
+
+.drawer-section-label{font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--t4);padding:.75rem 1rem .25rem;margin-top:.25rem}
+
 </style>
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://casinoscout.co/en/best-online-casinos-canada/">
@@ -280,7 +283,13 @@ footer{background:var(--w);border-top:1px solid var(--b);padding:1.5rem;margin-t
     <svg class="logo-icon" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#DCFCE7"/><circle cx="16" cy="16" r="4" fill="#16A34A"/><path d="M16 6L16 10" stroke="#16A34A" stroke-width="2.2" stroke-linecap="round"/></svg>
     <span class="logo-text">Casino<span>Scout</span></span>
   </a>
-  <ul class="nav-links"><li><a href="/">Top Casinos</a></li><li><a href="/responsible-gambling/">Responsible Gaming</a></li><li><a href="/about/">About</a></li></ul>
+  <ul class="nav-links" role="list">
+    <li><a href="/">Top Casinos</a></li>
+    <li><a href="/en/best-online-casinos-canada/">Canada Guide</a></li>
+    <li><a href="/en/online-casinos-ontario/">Ontario iGO</a></li>
+    <li><a href="/tools/wagering-calculator/">Calculator</a></li>
+    <li><a href="/responsible-gambling/">Responsible Gaming</a></li>
+  </ul>
   <div class="nav-right">
   <div class="lang-sw" id="lang-sw">
     <button class="lang-btn" id="lang-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
@@ -297,8 +306,8 @@ footer{background:var(--w);border-top:1px solid var(--b);padding:1.5rem;margin-t
     </button>
   </div>
 </nav>
-<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-  <div class="mobile-drawer">
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu" aria-hidden="true">
+  <div class="mobile-drawer" id="mobile-drawer">
     <div class="drawer-header">
       <span class="drawer-title">Menu</span>
       <button class="drawer-close" id="drawer-close" aria-label="Close menu">✕</button>
@@ -306,18 +315,37 @@ footer{background:var(--w);border-top:1px solid var(--b);padding:1.5rem;margin-t
     <nav class="drawer-nav">
       <a href="/" onclick="closeMenu()"><span class="nav-icon">🏆</span>Top Casinos</a>
       <a href="/en/best-online-casinos-canada/" onclick="closeMenu()"><span class="nav-icon">🇨🇦</span>Canada Guide</a>
-      <a href="/en/reviews/bitstarz-canada/" onclick="closeMenu()"><span class="nav-icon">⚡</span>BitStarz Review</a>
-      <a href="/en/reviews/jackpotcity-canada/" onclick="closeMenu()"><span class="nav-icon">✅</span>Jackpot City (Ontario)</a>
-      <a href="/en/reviews/spin-casino-canada/" onclick="closeMenu()"><span class="nav-icon">✅</span>Spin Casino (Ontario)</a>
-      <a href="/en/reviews/jackbit-canada/" onclick="closeMenu()"><span class="nav-icon">🎰</span>Jackbit Review</a>
-      <a href="/en/reviews/bcgame-canada/" onclick="closeMenu()"><span class="nav-icon">🎰</span>BC.Game Review</a>
-      <a href="/en/reviews/7bit-canada/" onclick="closeMenu()"><span class="nav-icon">🎰</span>7Bit Review</a>
+      <a href="/en/online-casinos-ontario/" onclick="closeMenu()"><span class="nav-icon">✅</span>Ontario iGO Casinos</a>
+      <a href="/en/interac-casinos-canada/" onclick="closeMenu()"><span class="nav-icon">💳</span>Interac Casinos</a>
+      <a href="/en/no-deposit-bonus-canada/" onclick="closeMenu()"><span class="nav-icon">🎁</span>No Deposit Bonus</a>
+      <a href="/en/fast-payout-casinos-canada/" onclick="closeMenu()"><span class="nav-icon">⚡</span>Fast Payout Casinos</a>
+      <a href="/en/free-spins-canada/" onclick="closeMenu()"><span class="nav-icon">🎰</span>Free Spins Canada</a>
+      <a href="/en/live-casino-canada/" onclick="closeMenu()"><span class="nav-icon">🎲</span>Live Casino Canada</a>
+      <a href="/tools/wagering-calculator/" onclick="closeMenu()"><span class="nav-icon">🔢</span>Wagering Calculator</a>
+      <div class="drawer-section-label">Casino Reviews</div>
+      <a href="/en/reviews/bitstarz-canada/" onclick="closeMenu()"><span class="nav-icon">⚡</span>BitStarz — 9.7/10</a>
+      <a href="/en/reviews/jackpotcity-canada/" onclick="closeMenu()"><span class="nav-icon">✅</span>Jackpot City — 9.4/10</a>
+      <a href="/en/reviews/playojo-canada/" onclick="closeMenu()"><span class="nav-icon">✅</span>PlayOJO — 9.2/10</a>
+      <a href="/en/reviews/leovegas-canada/" onclick="closeMenu()"><span class="nav-icon">✅</span>LeoVegas — 9.1/10</a>
+      <a href="/en/reviews/jackbit-canada/" onclick="closeMenu()"><span class="nav-icon">🎰</span>Jackbit — 9.2/10</a>
+      <a href="/en/reviews/bcgame-canada/" onclick="closeMenu()"><span class="nav-icon">🎰</span>BC.Game — 9.1/10</a>
+      <a href="/en/reviews/spin-casino-canada/" onclick="closeMenu()"><span class="nav-icon">✅</span>Spin Casino — 8.9/10</a>
+      <a href="/en/reviews/bet365-canada/" onclick="closeMenu()"><span class="nav-icon">✅</span>bet365 — 8.8/10</a>
+      <a href="/en/reviews/casumo-canada/" onclick="closeMenu()"><span class="nav-icon">✅</span>Casumo — 8.8/10</a>
+      <a href="/en/reviews/888casino-canada/" onclick="closeMenu()"><span class="nav-icon">✅</span>888 Casino — 8.5/10</a>
+      <a href="/en/reviews/betway-canada/" onclick="closeMenu()"><span class="nav-icon">✅</span>Betway — 7.8/10</a>
+      <a href="/en/reviews/7bit-canada/" onclick="closeMenu()"><span class="nav-icon">🎰</span>7Bit — 8.7/10</a>
       <a href="/responsible-gambling/" onclick="closeMenu()"><span class="nav-icon">🛡️</span>Responsible Gambling</a>
       <a href="/about/" onclick="closeMenu()"><span class="nav-icon">ℹ️</span>About CasinoScout</a>
       <a href="/affiliate-disclosure/" onclick="closeMenu()"><span class="nav-icon">📋</span>Affiliate Disclosure</a>
     </nav>
-    <div class="drawer-cta"><a href="/" onclick="closeMenu()">View Top 6 Casinos →</a></div>
-    <div class="drawer-footer">19+ only · <a href="/responsible-gambling/">Responsible Gambling</a> · ConnexOntario 1-866-531-2600</div>
+    <div class="drawer-cta">
+      <a href="#casinos" onclick="closeMenu()">View Top Picks →</a>
+    </div>
+    <div class="drawer-footer">
+      Must be 19+ to gamble (18+ in AB, MB, QC) · Gambling can be addictive ·
+      <a href="https://www.connexontario.ca">ConnexOntario 1-866-531-2600</a>
+    </div>
   </div>
 </div>
 
