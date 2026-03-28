@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Review","name":"Jackbit Casino Canada Review 2026","url":"https://casinoscout.co/en/reviews/jackbit-canada/","datePublished":"2026-03-27","dateModified":"2026-03-27","author":{"@type":"Person","name":"Alex M.","jobTitle":"Lead Casino Reviewer","worksFor":{"@type":"Organization","name":"CasinoScout"}},"publisher":{"@type":"Organization","name":"CasinoScout","url":"https://casinoscout.co"},"itemReviewed":{"@type":"Casino","name":"Jackbit Casino"},"reviewRating":{"@type":"Rating","ratingValue":"9.2","bestRating":"10","worstRating":"1"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Review","name":"Jackbit Casino Canada Review 2026","url":"https://casinoscout.co/en/reviews/jackbit-canada/","datePublished":"2026-03-27","dateModified":"2026-03-27","author":{"@type":"Person","name":"Alex M.","jobTitle":"Lead Casino Reviewer","worksFor":{"@type":"Organization","name":"CasinoScout"}},"publisher":{"@type":"Organization","name":"CasinoScout","url":"https://casinoscout.co"},"itemReviewed":{"@type":"LocalBusiness","name":"Jackbit Casino","address":{"@type":"PostalAddress","addressCountry":"CW"}},"reviewRating":{"@type":"Rating","ratingValue":"9.2","bestRating":"10","worstRating":"1"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"CasinoScout","item":"https://casinoscout.co/"},{"@type":"ListItem","position":2,"name":"Canada Casinos","item":"https://casinoscout.co/en/best-online-casinos-canada/"},{"@type":"ListItem","position":3,"name":"Jackbit Review","item":"https://casinoscout.co/en/reviews/jackbit-canada/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are Jackbit free spins really wager-free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Jackbit's 100 welcome free spins have a 0x wagering requirement — winnings are credited as real cash immediately. The only limits are a C$100 maximum cashout from the free spins and a 1x deposit turnover before your first withdrawal."}},{"@type":"Question","name":"How fast are Jackbit withdrawals in Canada?","acceptedAnswer":{"@type":"Answer","text":"In our test, a Bitcoin withdrawal of 0.0018 BTC was confirmed on-chain in 38 minutes. USDT on Tron network was faster at 12 minutes. Jackbit processes withdrawals 24/7 with no business-hour restrictions."}},{"@type":"Question","name":"Is Jackbit available in Ontario?","acceptedAnswer":{"@type":"Answer","text":"No. Jackbit does not hold an iGaming Ontario licence and is not recommended for Ontario players. We recommend Jackpot City or Spin Casino for Ontario."}},{"@type":"Question","name":"Does Jackbit have a no deposit bonus?","acceptedAnswer":{"@type":"Answer","text":"Jackbit's 100 free spins require a qualifying deposit to trigger — they are not a true no-deposit bonus. However, because the spins have 0x wagering, any winnings are immediately withdrawable (subject to the 1x deposit turnover requirement)."}},{"@type":"Question","name":"What cryptocurrencies does Jackbit accept?","acceptedAnswer":{"@type":"Answer","text":"Jackbit accepts over 20 cryptocurrencies including Bitcoin, Ethereum, Litecoin, USDT (multiple networks), Dogecoin, Ripple, Tron and others. Crypto is the primary payment method — Interac is available for deposits only, not withdrawals."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Jackbit Casino Canada Review 2026 — 100 Wager-Free Spins Tested","url":"https://casinoscout.co/en/reviews/jackbit-canada/","dateModified":"2026-03-27","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".verdict-text","p"]}}</script>
@@ -557,28 +557,33 @@ footer{background:var(--w);border-top:1px solid var(--b);padding:1.5rem;margin-t
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(function(l){
     var h=l.getAttribute('hreflang');if(h&&h!=='x-default')alts[h]=l.href;
   });
-  // Auto-redirect if stored pref has a real page
+  // Fallback: always ensure en-CA option exists
+  if(!alts['en-CA']){
+    var xd=document.querySelector('link[rel="alternate"][hreflang="x-default"]');
+    alts['en-CA']=xd?xd.href:'https://casinoscout.co/';
+  }
   if(stored&&stored!==curLang&&alts[stored]&&REAL_FR.indexOf(alts[stored])>-1){
     window.location.replace(alts[stored]);return;
   }
-  // Show "not in French" banner
   if(stored==='fr-CA'&&curLang!=='fr-CA'){
     var b=document.createElement('div');
     b.className='lang-banner show';
-    b.innerHTML='🇫🇷 Cette page n’est pas encore disponible en français. <a href="https://casinoscout.co/fr/">Accueil français →</a><button class="lang-banner-close" aria-label="Fermer">×</button>';
+    b.innerHTML='🇫🇷 Cette page n’est pas encore disponible en français. <a href="https://casinoscout.co/fr/">Accueil français →</a><button class="lang-banner-close" aria-label="Fermer">×</button>';
     b.querySelector('.lang-banner-close').onclick=function(){b.classList.remove('show');};
     var nav=document.querySelector('.site-nav');
     if(nav&&nav.parentNode)nav.parentNode.insertBefore(b,nav.nextSibling);
   }
-  // Build switcher dropdown
   var sw=document.getElementById('lang-sw'),btn=document.getElementById('lang-btn'),dd=document.getElementById('lang-dd');
   if(!sw||!btn||!dd)return;
   var cur=META[curLang]||{flag:'🌐',short:curLang};
   btn.querySelector('.lang-flag').textContent=cur.flag;
   btn.querySelector('.lang-code').textContent=cur.short;
+  var curURL=window.location.href.replace(/\/$/,'');
   Object.keys(META).forEach(function(lang){
-    if(lang===curLang||!alts[lang])return;
+    if(lang===curLang)return;
     var m=META[lang],url=alts[lang];
+    if(!url)return;
+    if(url.replace(/\/$/,'')===curURL)return;
     var real=lang!=='fr-CA'||(REAL_FR.indexOf(url)>-1);
     var el=document.createElement('a');
     el.href=url;el.className='lang-option';el.setAttribute('hreflang',lang);
