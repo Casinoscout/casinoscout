@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Review","name":"7Bit Casino Canada Review 2026","url":"https://casinoscout.co/en/reviews/7bit-canada/","datePublished":"2026-03-27","dateModified":"2026-03-27","author":{"@type":"Person","name":"Alex M.","jobTitle":"Lead Casino Reviewer","worksFor":{"@type":"Organization","name":"CasinoScout"}},"publisher":{"@type":"Organization","name":"CasinoScout","url":"https://casinoscout.co"},"itemReviewed":{"@type":"Casino","name":"7Bit Casino"},"reviewRating":{"@type":"Rating","ratingValue":"8.7","bestRating":"10","worstRating":"1"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Review","name":"7Bit Casino Canada Review 2026","url":"https://casinoscout.co/en/reviews/7bit-canada/","datePublished":"2026-03-27","dateModified":"2026-03-27","author":{"@type":"Person","name":"Alex M.","jobTitle":"Lead Casino Reviewer","worksFor":{"@type":"Organization","name":"CasinoScout"}},"publisher":{"@type":"Organization","name":"CasinoScout","url":"https://casinoscout.co"},"itemReviewed":{"@type":"LocalBusiness","name":"7Bit Casino","address":{"@type":"PostalAddress","addressCountry":"CW"}},"reviewRating":{"@type":"Rating","ratingValue":"8.7","bestRating":"10","worstRating":"1"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does 7Bit Casino give free spins with no deposit?","acceptedAnswer":{"@type":"Answer","text":"Yes. 7Bit Casino gives 75 free spins just for creating an account — no deposit required. We tested this during account creation and the spins were credited within 2 minutes of registration. The spins have a 45x wagering requirement and winnings are capped at C$100."}},{"@type":"Question","name":"How fast are 7Bit Casino withdrawals?","acceptedAnswer":{"@type":"Answer","text":"In our test, Bitcoin was confirmed on-chain in 11 minutes from the withdrawal request. 7Bit operates 24/7 automated withdrawal processing with no business-hour restrictions."}},{"@type":"Question","name":"Is 7Bit Casino available in Ontario?","acceptedAnswer":{"@type":"Answer","text":"No. 7Bit does not hold an iGaming Ontario licence. Ontario players should use Jackpot City or Spin Casino, both of which are AGCO-regulated."}},{"@type":"Question","name":"What is the 7Bit Casino VIP programme like?","acceptedAnswer":{"@type":"Answer","text":"7Bit has a 12-tier VIP programme — the most comprehensive in our top 6 ranking. Players earn comp points on every wager and progress through tiers automatically. Benefits escalate significantly from level 7 upward, including a dedicated account manager, weekly cashback of up to 20%, level-up bonuses and exclusive promotions."}},{"@type":"Question","name":"Does 7Bit have an app?","acceptedAnswer":{"@type":"Answer","text":"Yes. 7Bit Casino has a dedicated iOS and Android app. We downloaded both during our review. The iOS app is smooth and well-organised with full access to slots, live tables and the promotions section."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"7Bit Casino Canada Review 2026 — 75 No-Deposit Spins, Tested","url":"https://casinoscout.co/en/reviews/7bit-canada/","dateModified":"2026-03-27","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".verdict-text","p"]}}</script>
 <style>/* CasinoScout Review Pages - Shared CSS */
@@ -552,28 +552,33 @@ footer{background:var(--w);border-top:1px solid var(--b);padding:1.5rem;margin-t
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(function(l){
     var h=l.getAttribute('hreflang');if(h&&h!=='x-default')alts[h]=l.href;
   });
-  // Auto-redirect if stored pref has a real page
+  // Fallback: always ensure en-CA option exists
+  if(!alts['en-CA']){
+    var xd=document.querySelector('link[rel="alternate"][hreflang="x-default"]');
+    alts['en-CA']=xd?xd.href:'https://casinoscout.co/';
+  }
   if(stored&&stored!==curLang&&alts[stored]&&REAL_FR.indexOf(alts[stored])>-1){
     window.location.replace(alts[stored]);return;
   }
-  // Show "not in French" banner
   if(stored==='fr-CA'&&curLang!=='fr-CA'){
     var b=document.createElement('div');
     b.className='lang-banner show';
-    b.innerHTML='🇫🇷 Cette page n’est pas encore disponible en français. <a href="https://casinoscout.co/fr/">Accueil français →</a><button class="lang-banner-close" aria-label="Fermer">×</button>';
+    b.innerHTML='🇫🇷 Cette page n’est pas encore disponible en français. <a href="https://casinoscout.co/fr/">Accueil français →</a><button class="lang-banner-close" aria-label="Fermer">×</button>';
     b.querySelector('.lang-banner-close').onclick=function(){b.classList.remove('show');};
     var nav=document.querySelector('.site-nav');
     if(nav&&nav.parentNode)nav.parentNode.insertBefore(b,nav.nextSibling);
   }
-  // Build switcher dropdown
   var sw=document.getElementById('lang-sw'),btn=document.getElementById('lang-btn'),dd=document.getElementById('lang-dd');
   if(!sw||!btn||!dd)return;
   var cur=META[curLang]||{flag:'🌐',short:curLang};
   btn.querySelector('.lang-flag').textContent=cur.flag;
   btn.querySelector('.lang-code').textContent=cur.short;
+  var curURL=window.location.href.replace(/\/$/,'');
   Object.keys(META).forEach(function(lang){
-    if(lang===curLang||!alts[lang])return;
+    if(lang===curLang)return;
     var m=META[lang],url=alts[lang];
+    if(!url)return;
+    if(url.replace(/\/$/,'')===curURL)return;
     var real=lang!=='fr-CA'||(REAL_FR.indexOf(url)>-1);
     var el=document.createElement('a');
     el.href=url;el.className='lang-option';el.setAttribute('hreflang',lang);
