@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Review","name":"BC.Game Canada Review 2026","url":"https://casinoscout.co/en/reviews/bcgame-canada/","datePublished":"2026-03-27","dateModified":"2026-03-27","author":{"@type":"Person","name":"Alex M.","jobTitle":"Lead Casino Reviewer","worksFor":{"@type":"Organization","name":"CasinoScout"}},"publisher":{"@type":"Organization","name":"CasinoScout","url":"https://casinoscout.co"},"itemReviewed":{"@type":"Casino","name":"BC.Game"},"reviewRating":{"@type":"Rating","ratingValue":"9.1","bestRating":"10","worstRating":"1"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Review","name":"BC.Game Canada Review 2026","url":"https://casinoscout.co/en/reviews/bcgame-canada/","datePublished":"2026-03-27","dateModified":"2026-03-27","author":{"@type":"Person","name":"Alex M.","jobTitle":"Lead Casino Reviewer","worksFor":{"@type":"Organization","name":"CasinoScout"}},"publisher":{"@type":"Organization","name":"CasinoScout","url":"https://casinoscout.co"},"itemReviewed":{"@type":"LocalBusiness","name":"BC.Game","address":{"@type":"PostalAddress","addressCountry":"CW"}},"reviewRating":{"@type":"Rating","ratingValue":"9.1","bestRating":"10","worstRating":"1"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the BC.Game welcome bonus for Canada?","acceptedAnswer":{"@type":"Answer","text":"Up to C$27,000 plus 270 free spins across four deposits. This is the largest headline bonus of any casino in our Canada top 6. The minimum deposit is the equivalent of C$14 in cryptocurrency. Wagering requirements vary by deposit tier."}},{"@type":"Question","name":"Is BC.Game available in Canada?","acceptedAnswer":{"@type":"Answer","text":"Yes, BC.Game accepts Canadian players in all provinces except Ontario. It does not hold an iGaming Ontario licence."}},{"@type":"Question","name":"How fast are BC.Game withdrawals?","acceptedAnswer":{"@type":"Answer","text":"BC.Game processes cryptocurrency withdrawals almost instantly — 24 hours a day, 7 days a week. In our test, Litecoin was confirmed on-chain in 4 minutes. Ethereum arrived in 8 minutes."}},{"@type":"Question","name":"What are BC.Game Originals?","acceptedAnswer":{"@type":"Answer","text":"BC.Game Originals are exclusive games built by BC.Game using provably fair blockchain technology. You can independently verify the fairness of each game result using the server seed provided after the round. Games include Crash, Mines, Plinko, Dice and Limbo."}},{"@type":"Question","name":"Is BC.Game legit?","acceptedAnswer":{"@type":"Answer","text":"Yes. BC.Game has operated since 2017 under a Curaçao gaming licence, processed billions in player transactions, and maintains a strong community reputation. The BC.Game Originals are provably fair, which means fairness can be independently verified — a higher standard than most casino games."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"BC.Game Canada Review 2026 — 10,000 Games, 4-Min Payouts","url":"https://casinoscout.co/en/reviews/bcgame-canada/","dateModified":"2026-03-27","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".verdict-text","p"]}}</script>
 <style>/* CasinoScout Review Pages - Shared CSS */
@@ -553,28 +553,33 @@ footer{background:var(--w);border-top:1px solid var(--b);padding:1.5rem;margin-t
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(function(l){
     var h=l.getAttribute('hreflang');if(h&&h!=='x-default')alts[h]=l.href;
   });
-  // Auto-redirect if stored pref has a real page
+  // Fallback: always ensure en-CA option exists
+  if(!alts['en-CA']){
+    var xd=document.querySelector('link[rel="alternate"][hreflang="x-default"]');
+    alts['en-CA']=xd?xd.href:'https://casinoscout.co/';
+  }
   if(stored&&stored!==curLang&&alts[stored]&&REAL_FR.indexOf(alts[stored])>-1){
     window.location.replace(alts[stored]);return;
   }
-  // Show "not in French" banner
   if(stored==='fr-CA'&&curLang!=='fr-CA'){
     var b=document.createElement('div');
     b.className='lang-banner show';
-    b.innerHTML='🇫🇷 Cette page n’est pas encore disponible en français. <a href="https://casinoscout.co/fr/">Accueil français →</a><button class="lang-banner-close" aria-label="Fermer">×</button>';
+    b.innerHTML='🇫🇷 Cette page n’est pas encore disponible en français. <a href="https://casinoscout.co/fr/">Accueil français →</a><button class="lang-banner-close" aria-label="Fermer">×</button>';
     b.querySelector('.lang-banner-close').onclick=function(){b.classList.remove('show');};
     var nav=document.querySelector('.site-nav');
     if(nav&&nav.parentNode)nav.parentNode.insertBefore(b,nav.nextSibling);
   }
-  // Build switcher dropdown
   var sw=document.getElementById('lang-sw'),btn=document.getElementById('lang-btn'),dd=document.getElementById('lang-dd');
   if(!sw||!btn||!dd)return;
   var cur=META[curLang]||{flag:'🌐',short:curLang};
   btn.querySelector('.lang-flag').textContent=cur.flag;
   btn.querySelector('.lang-code').textContent=cur.short;
+  var curURL=window.location.href.replace(/\/$/,'');
   Object.keys(META).forEach(function(lang){
-    if(lang===curLang||!alts[lang])return;
+    if(lang===curLang)return;
     var m=META[lang],url=alts[lang];
+    if(!url)return;
+    if(url.replace(/\/$/,'')===curURL)return;
     var real=lang!=='fr-CA'||(REAL_FR.indexOf(url)>-1);
     var el=document.createElement('a');
     el.href=url;el.className='lang-option';el.setAttribute('hreflang',lang);
