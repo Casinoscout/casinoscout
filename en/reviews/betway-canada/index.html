@@ -614,33 +614,29 @@ document.querySelectorAll('.faq-item .faq-q').forEach(q => {
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(function(l){
     var h=l.getAttribute('hreflang');if(h&&h!=='x-default')alts[h]=l.href;
   });
-  // Fallback: always ensure en-CA option exists
-  if(!alts['en-CA']){
-    var xd=document.querySelector('link[rel="alternate"][hreflang="x-default"]');
-    alts['en-CA']=xd?xd.href:'https://casinoscout.co/';
-  }
+  if(!alts['en-CA']){var xd=document.querySelector('link[rel="alternate"][hreflang="x-default"]');alts['en-CA']=xd?xd.href:'https://casinoscout.co/';}
+  // Auto-redirect if stored pref has a real page
   if(stored&&stored!==curLang&&alts[stored]&&REAL_FR.indexOf(alts[stored])>-1){
     window.location.replace(alts[stored]);return;
   }
+  // Show "not in French" banner
   if(stored==='fr-CA'&&curLang!=='fr-CA'){
     var b=document.createElement('div');
     b.className='lang-banner show';
-    b.innerHTML='🇫🇷 Cette page n’est pas encore disponible en français. <a href="https://casinoscout.co/fr/">Accueil français →</a><button class="lang-banner-close" aria-label="Fermer">×</button>';
+    b.innerHTML='🇫🇷 Cette page n’est pas encore disponible en français. <a href="https://casinoscout.co/fr/">Accueil français →</a><button class="lang-banner-close" aria-label="Fermer">×</button>';
     b.querySelector('.lang-banner-close').onclick=function(){b.classList.remove('show');};
     var nav=document.querySelector('.site-nav');
     if(nav&&nav.parentNode)nav.parentNode.insertBefore(b,nav.nextSibling);
   }
+  // Build switcher dropdown
   var sw=document.getElementById('lang-sw'),btn=document.getElementById('lang-btn'),dd=document.getElementById('lang-dd');
   if(!sw||!btn||!dd)return;
   var cur=META[curLang]||{flag:'🌐',short:curLang};
   btn.querySelector('.lang-flag').textContent=cur.flag;
   btn.querySelector('.lang-code').textContent=cur.short;
-  var curURL=window.location.href.replace(/\/$/,'');
   Object.keys(META).forEach(function(lang){
-    if(lang===curLang)return;
+    if(lang===curLang||!alts[lang])return;
     var m=META[lang],url=alts[lang];
-    if(!url)return;
-    if(url.replace(/\/$/,'')===curURL)return;
     var real=lang!=='fr-CA'||(REAL_FR.indexOf(url)>-1);
     var el=document.createElement('a');
     el.href=url;el.className='lang-option';el.setAttribute('hreflang',lang);
@@ -656,6 +652,7 @@ document.querySelectorAll('.faq-item .faq-q').forEach(q => {
   });
   document.addEventListener('click',function(){dd.classList.remove('open');btn.setAttribute('aria-expanded','false');});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){dd.classList.remove('open');btn.setAttribute('aria-expanded','false');}});
+window.openMenu=openMenu;window.closeMenu=closeMenu;
 })();
 });</script>
 </body>
