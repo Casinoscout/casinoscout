@@ -34,20 +34,6 @@
 <!-- FAQPage — 10 questions targeting key search terms -->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a wagering requirement?","acceptedAnswer":{"@type":"Answer","text":"A wagering requirement (also called a playthrough requirement) is the number of times you must bet your bonus before withdrawing winnings. A C$100 bonus with 35x wagering requires C$3,500 in total bets placed before withdrawal is allowed."}},{"@type":"Question","name":"What is a good wagering requirement for a Canadian casino?","acceptedAnswer":{"@type":"Answer","text":"The Canadian average is 30–40x. Under 30x is player-friendly. Above 50x is high and generally not worth claiming. Jackpot City and Spin Casino offer 35x on bonus only — below average. Jackbit offers 0x wagering on free spins — the only genuinely wager-free offer in our Canada top 6."}},{"@type":"Question","name":"What is a win cap on a casino bonus?","acceptedAnswer":{"@type":"Answer","text":"A win cap (maximum cashout) limits how much you can withdraw from bonus winnings. A C$200 win cap means even if you win C$500 while clearing a bonus, you can only withdraw C$200. Always check for a win cap before claiming — it can make a large bonus nearly worthless."}},{"@type":"Question","name":"How do free spins wagering requirements work?","acceptedAnswer":{"@type":"Answer","text":"Free spins apply wagering to your winnings, not a cash amount. If 100 free spins produce C$20 in winnings and the requirement is 40x, you must wager C$800 before withdrawing. The value per spin (usually C$0.10–C$0.20) determines how much bonus you actually receive to play through."}},{"@type":"Question","name":"What is the best no wagering casino in Canada?","acceptedAnswer":{"@type":"Answer","text":"Jackbit offers 100 free spins with 0x wagering — winnings up to C$100 are immediately withdrawable with no playthrough requirement. This is the only verified 0x wagering welcome offer in our Canada top 6 as of March 2026."}},{"@type":"Question","name":"What does game contribution mean for casino bonuses?","acceptedAnswer":{"@type":"Answer","text":"Game contribution is the percentage of each bet that counts toward your wagering requirement. Slots contribute 100% — every C$1 bet counts fully. Blackjack and roulette typically contribute only 5–10%, meaning you need C$10 in bets for every C$1 of requirement met. Playing low-contribution games on a bonus makes it dramatically harder and more expensive to clear."}},{"@type":"Question","name":"How long does it take to clear a wagering requirement?","acceptedAnswer":{"@type":"Answer","text":"At C$2 per spin on slots (600 spins per hour, C$1,200 throughput per hour), a C$14,000 wagering requirement takes roughly 12 hours of play. Use the Progress Tracker tab on this calculator to get an estimate based on your specific stake and session length."}},{"@type":"Question","name":"Is a casino bonus worth claiming?","acceptedAnswer":{"@type":"Answer","text":"Most casino bonuses have negative expected value — the house edge applied across the required wagering exceeds the bonus amount. A C$400 bonus at 35x needs C$14,000 in bets. At 96% RTP slots (4% house edge), expected losses to clear = C$560, making net value approximately −C$160. Bonuses are worth claiming if you plan to play those hours anyway — not as a standalone profit strategy."}},{"@type":"Question","name":"What happens if I exceed the max bet while on a bonus?","acceptedAnswer":{"@type":"Answer","text":"Exceeding the maximum bet per spin while a bonus is active (C$5 at BitStarz, C$10 at 7Bit, C$8 at Jackpot City and Spin Casino) immediately forfeits the bonus and all associated winnings with no warning. The casino detects it automatically through their system."}},{"@type":"Question","name":"Can I withdraw my deposit before completing wagering?","acceptedAnswer":{"@type":"Answer","text":"Usually yes, but you forfeit the bonus balance and all winnings generated from it. At most casinos your original deposit remains withdrawable at any time. Some casinos lock your deposit while a bonus is active — always check before depositing if you might want to exit the bonus early."}}]}</script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN71708XXE"></script>
-<script>
-window.dataLayer=window.dataLayer||[];
-function gtag(){dataLayer.push(arguments);}
-gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',wait_for_update:500});
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN71708XXE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-ZN71708XXE', {anonymize_ip: true});
-</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -82,8 +68,8 @@ nav.site-nav{background:var(--w);border-bottom:1px solid var(--b);padding:0 1.5r
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);width:20px}
 .hamburger.open span:nth-child(2){opacity:0;width:0}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);width:20px}
-.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;z-index:190;background:rgba(0,0,0,.4);opacity:0;transition:opacity .25s}
-.mobile-menu.open{opacity:1}
+.mobile-menu{position:fixed;top:60px;left:0;right:0;bottom:0;z-index:190;background:rgba(0,0,0,.4);opacity:0;pointer-events:none}
+.mobile-menu.open{display:block;opacity:1;pointer-events:auto}
 .mobile-drawer{position:absolute;top:0;right:0;width:min(320px,88vw);height:100%;background:var(--w);box-shadow:-4px 0 20px rgba(0,0,0,.12);transform:translateX(100%);transition:transform .28s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;overflow-y:auto}
 .mobile-menu.open .mobile-drawer{transform:translateX(0)}
 .drawer-header{padding:1.25rem 1.5rem;border-bottom:1px solid var(--b);display:flex;align-items:center;justify-content:space-between}
@@ -307,7 +293,7 @@ footer{background:var(--w);border-top:1px solid var(--b);padding:1.25rem 1rem;ma
 .lang-btn[aria-expanded="true"] .lang-caret{transform:rotate(180deg)}
 .lang-dd{display:none;position:absolute;top:calc(100% + 8px);right:0;background:var(--w);border:1.5px solid var(--b);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.12);min-width:180px;z-index:9999;overflow:hidden}
 .lang-dd.open{display:block}
-.lang-option{display:flex;align-items:center;gap:10px;padding:11px 14px;font-size:.82rem;font-weight:600;color:var(--t2);text-decoration:none;transition:background .1s;border-bottom:1px solid var(--b)}
+.lang-option{display:flex;align-items:center;gap:10px;padding:14px 18px;font-size:.82rem;font-weight:600;color:var(--t2);text-decoration:none;transition:background .1s;border-bottom:1px solid var(--b)}
 .lang-option:last-child{border-bottom:none}
 .lang-option:hover{background:var(--gl);color:var(--gd)}
 .lo-flag{font-size:17px;line-height:1;flex-shrink:0}
@@ -322,24 +308,78 @@ footer{background:var(--w);border-top:1px solid var(--b);padding:1.25rem 1rem;ma
 
 .drawer-section-label{font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--t4);padding:.75rem 1rem .25rem;margin-top:.25rem}
 
-
-.cookie-banner{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--t,#111827);color:#fff;z-index:10000;padding:1rem 1.5rem;box-shadow:0 -4px 20px rgba(0,0,0,.2)}
-.cookie-banner.show{display:block}
-.cookie-inner{max-width:1040px;margin:0 auto;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
-.cookie-text{flex:1;font-size:.82rem;line-height:1.5;min-width:200px}
-.cookie-text a{color:#86EFAC;text-decoration:underline}
-.cookie-btns{display:flex;gap:.5rem;flex-shrink:0}
-.cookie-accept{background:#22C55E;color:#fff;border:none;padding:.5rem 1.25rem;border-radius:6px;cursor:pointer;font-weight:700;font-size:.82rem}
-.cookie-reject{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);padding:.5rem 1.25rem;border-radius:6px;cursor:pointer;font-weight:600;font-size:.82rem}
+.cookie-banner{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--t,#111827);color:#fff;z-index:10000;padding:1rem 1.5rem;box-shadow:0 -4px 20px rgba(0,0,0,.2)}.cookie-banner.show{display:block}.cookie-inner{max-width:1040px;margin:0 auto;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}.cookie-text{flex:1;font-size:.82rem;line-height:1.5;min-width:200px}.cookie-text a{color:#86EFAC;text-decoration:underline}.cookie-btns{display:flex;gap:.5rem;flex-shrink:0}.cookie-accept{background:#22C55E;color:#fff;border:none;padding:.5rem 1.25rem;border-radius:6px;cursor:pointer;font-weight:700;font-size:.82rem;font-family:var(--ff,sans-serif)}.cookie-reject{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);padding:.5rem 1.25rem;border-radius:6px;cursor:pointer;font-weight:600;font-size:.82rem;font-family:var(--ff,sans-serif)}
 </style>
+
+
+
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',wait_for_update:500});
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN71708XXE"></script>
+<script>
+gtag('js',new Date());
+gtag('config','G-ZN71708XXE',{anonymize_ip:true});
+</script>
 </head>
 <body>
+<script>
+function filterCasinos(tag,btn){
+  document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  var v=0;
+  document.querySelectorAll('.casino-card').forEach(function(card){
+    var tags=card.getAttribute('data-tags')||'';
+    var show=(tag==='all')||(tags.indexOf(tag)!==-1);
+    card.classList.toggle('hidden',!show);
+    if(show)v++;
+  });
+  var cnt=document.getElementById('casino-count');
+  if(cnt)cnt.textContent='Showing '+v+' casino'+(v!==1?'s':'');
+}
+function toggleFaq(el){
+  var a=el.nextElementSibling;
+  if(!a)return;
+  var isOpen=(a.style.display==='block');
+  document.querySelectorAll('.faq-a').forEach(function(x){x.style.display='none';});
+  document.querySelectorAll('.faq-q .faq-icon').forEach(function(x){x.textContent='+';});
+  document.querySelectorAll('.faq-q').forEach(function(x){x.setAttribute('aria-expanded','false');});
+  if(!isOpen){
+    a.style.display='block';
+    var icon=el.querySelector('.faq-icon');
+    if(icon)icon.textContent='−';
+    el.setAttribute('aria-expanded','true');
+  }
+}
+function openMenu(){
+  var h=document.getElementById('hamburger'),m=document.getElementById('mobile-menu');
+  if(!h||!m)return;
+  h.classList.add('open');m.classList.add('open');
+  m.setAttribute('aria-hidden','false');h.setAttribute('aria-expanded','true');
+  document.body.style.overflow='hidden';
+}
+function closeMenu(){
+  var h=document.getElementById('hamburger'),m=document.getElementById('mobile-menu');
+  if(!m)return;
+  if(h){h.classList.remove('open');h.setAttribute('aria-expanded','false');}
+  m.classList.remove('open');m.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
+}
+function setCookieConsent(c){
+  try{localStorage.setItem('cs_cookie_consent',c);}catch(e){}
+  if(typeof gtag==='function')gtag('consent','update',{analytics_storage:c});
+  var b=document.getElementById('cookie-banner');if(b)b.classList.remove('show');
+}
+</script>
+
 <div class="cookie-banner" id="cookie-banner">
   <div class="cookie-inner">
-    <p class="cookie-text">We use cookies to analyse site traffic. By clicking &ldquo;Accept&rdquo;, you consent to analytics cookies. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
+    <p class="cookie-text">We use cookies to analyse site traffic. By clicking "Accept", you consent to analytics cookies. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
     <div class="cookie-btns">
-      <button class="cookie-reject" onclick="setCookieConsent('denied')">Reject</button>
-      <button class="cookie-accept" onclick="setCookieConsent('granted')">Accept</button>
+      <button class="cookie-reject">Reject</button>
+      <button class="cookie-accept">Accept</button>
     </div>
   </div>
 </div>
@@ -774,433 +814,69 @@ footer{background:var(--w);border-top:1px solid var(--b);padding:1.25rem 1rem;ma
   </div>
 </div>
 
-<footer><div class="ft">© 2026 CasinoScout.co · <a href="/">Home</a> · <a href="/about/">About</a> · <a href="/affiliate-disclosure/">Disclosure</a> · <a href="/responsible-gambling/">Responsible Gambling</a> · 19+ only · <a href="https://www.connexontario.ca">ConnexOntario 1-866-531-2600</a></div></footer>
+<footer><div class="ft">© 2026 CasinoScout.co · <a href="/">Home</a> · <a href="/about/">About</a> · <a href="/affiliate-disclosure/">Disclosure</a> · <a href="/privacy-policy/">Privacy Policy</a> · <a href="/terms-of-use/">Terms of Use</a> · <a href="/responsible-gambling/">Responsible Gambling</a> · 19+ only · <a href="https://www.connexontario.ca">ConnexOntario 1-866-531-2600</a></div></footer>
+
+
+
+
 
 <script>
-var P={
-  bitstarz:{dep:400,bon:400,wag:40,on:'bonus',game:'100',rtp:96,mb:5,exp:7,cap:0,name:'BitStarz'},
-  jpc:     {dep:100,bon:400,wag:35,on:'bonus',game:'100',rtp:96,mb:8,exp:7,cap:0,name:'Jackpot City'},
-  spin:    {dep:100,bon:400,wag:35,on:'bonus',game:'100',rtp:96,mb:8,exp:7,cap:0,name:'Spin Casino'},
-  jackbit: {dep:50, bon:0,  wag:0, on:'bonus',game:'100',rtp:96,mb:0,exp:0,cap:100,name:'Jackbit'},
-  bcgame:  {dep:100,bon:100,wag:45,on:'bonus',game:'100',rtp:96,mb:0,exp:14,cap:0,name:'BC.Game'},
-  '7bit':  {dep:100,bon:100,wag:35,on:'bonus',game:'100',rtp:96,mb:10,exp:14,cap:0,name:'7Bit Casino'}
-};
-var cur=null,mode='cash';
-
-function el(id){return document.getElementById(id);}
-function num(id){var v=parseFloat(el(id).value);return isNaN(v)||v<0?0:v;}
-function c$(n){
-  var a=Math.abs(n);
-  if(a>=1000)return'C$'+Math.round(a).toLocaleString('en-CA');
-  return'C$'+a.toFixed(2);
-}
-function s$(n){return(n>0?'+':n<0?'-':'')+c$(Math.abs(n));}
-function show(id){el(id).classList.add('show');}
-function hide(id){el(id).classList.remove('show');}
-
-function setMode(m){
-  mode=m;
-  el('m-cash').classList.toggle('on',m==='cash');
-  el('m-spins').classList.toggle('on',m==='spins');
-  el('cash-inputs').style.display=m==='cash'?'':'none';
-  el('spins-inputs').style.display=m==='spins'?'':'none';
-  el('results').style.display='none';
-  go();
-}
-
-function loadP(id){
-  var p=P[id];if(!p)return;
-  setMode('cash');
-  el('f-dep').value=p.dep;el('f-bon').value=p.bon;
-  el('f-wag').value=p.wag;el('f-on').value=p.on;
-  el('f-game').value=p.game;el('f-rtp').value=p.rtp;el('f-cap').value=p.cap;
-  document.querySelectorAll('.pr').forEach(function(b){b.classList.remove('on');});
-  el('pr-'+id).classList.add('on');cur=id;go();
-}
-
-/* FREE SPINS PRESETS — verified March 2026 */
-var SP={
-  /* Jackbit: 100 FS on Book of Dead, 0x wagering, C$100 win cap, min deposit C$50 */
-  'jackbit':     {count:100,val:0.10,wag:0, rtp:96.21,cap:100},
-  /* BitStarz no-deposit: 20 FS on registration, 40x on winnings, C$150 win cap */
-  'bitz-nodep':  {count:20, val:0.20,wag:40,rtp:96,   cap:150},
-  /* BitStarz 1st deposit: 180 FS (20 now + 20/day x8), 40x on winnings, no stated cap */
-  'bitz-dep':    {count:180,val:0.20,wag:40,rtp:96,   cap:0},
-  /* 7Bit 1st deposit: 100 FS on Elvis Frog, 35x on winnings, C$200 win cap */
-  '7bit-dep':    {count:100,val:0.20,wag:35,rtp:96,   cap:200},
-  /* 7Bit no-deposit: 75 FS with code 75BIT, 45x on winnings, C$50 win cap */
-  '7bit-nodep':  {count:75, val:0.02,wag:45,rtp:96,   cap:50}
-};
-
-function loadSP(id){
-  var p=SP[id];if(!p)return;
-  setMode('spins');
-  el('s-count').value=p.count;el('s-val').value=p.val;
-  el('s-wag').value=p.wag;el('s-rtp').value=p.rtp;el('s-cap').value=p.cap;
-  document.querySelectorAll('.pr').forEach(function(b){b.classList.remove('on');});
-  var btn=el('sp-'+id); if(btn)btn.classList.add('on');
-  go();
-}
-
-function resetP(){document.querySelectorAll('.pr').forEach(function(b){b.classList.remove('on');});cur=null;}
-
-function scoreCalc(wag,on,contrib,exp,ev,bon,hasWinCap){
-  if(wag===0)return{n:9.5,label:'Excellent — 0x wagering',desc:'Winnings withdraw immediately. As good as it gets.',col:'#15803d',reasons:[]};
-  var s=8,reasons=[];
-  var wagPenalty=Math.max(0,(wag-25))*0.065;
-  if(wagPenalty>0){s-=wagPenalty;reasons.push((wag>40?'↓↓':'↓')+' '+wag+'x wagering '+(wag>40?'(above average)':'(average)'));}
-  if(on==='both'){s-=1.3;reasons.push('↓ Wagering applies to deposit + bonus (stricter than average)');}
-  if(contrib<100){s-=(100-contrib)*0.028;reasons.push('↓ '+contrib+'% game contribution (not slots = harder to clear)');}
-  if(exp>0&&exp<=7){s-=0.7;reasons.push('↓ Short expiry ('+exp+' days)');}
-  else if(exp===0){reasons.push('✓ No expiry');}
-  if(ev>0){s+=1.5;reasons.push('↑ Positive expected value (rare)');}
-  if(hasWinCap){s-=0.8;reasons.push('↓ Win cap limits maximum withdrawal');}
-  if(bon>0&&ev<-(bon*0.5)){s-=1;reasons.push('↓ Clearing cost exceeds 50% of bonus value');}
-  s=Math.max(1,Math.min(10,parseFloat(s.toFixed(1))));
-  var label,col;
-  if(s>=8){label='Excellent deal';col='#15803d';}
-  else if(s>=6.5){label='Good deal';col='#16a34a';}
-  else if(s>=5){label='Average — typical Canadian bonus';col='#d97706';}
-  else if(s>=3.5){label='Below average';col='#ea580c';}
-  else{label='Poor deal';col='#dc2626';}
-  col=col||'#dc2626';
-  var desc;
-  if(s>=8)desc='Worth claiming for regular slot players.';
-  else if(s>=6.5)desc='Worth it if you plan to play these hours regardless.';
-  else if(s>=5)desc='Costs roughly '+c$(Math.abs(ev))+' to clear. Decide if the time is worth it.';
-  else if(contrib<50)desc='Low game contribution kills the value here.';
-  else if(hasWinCap)desc='Win cap limits your upside more than the headline bonus suggests.';
-  else desc='Clearing cost exceeds most of the bonus value.';
-  return{n:s,label:label,desc:desc,col:col,reasons:reasons};
-}
-
-function go(){
-  var bon,total,loss,ev,raw,wag,contrib,rtp,hn,cph;
-  var hrs=Math.max(0.5,num('f-hrs')),stake=Math.max(0.1,num('f-stake'));
-  var p=cur?P[cur]:null;
-
-  if(mode==='spins'){
-    var cnt=Math.max(1,num('s-count')),sval=Math.max(0.01,num('s-val'));
-    wag=num('s-wag');rtp=Math.min(100,Math.max(80,num('s-rtp')));
-    var winCap=num('s-cap');
-    bon=cnt*sval*rtp/100; /* expected winnings from spins */
-    raw=bon*wag;total=raw;contrib=100;
-    loss=total*((100-rtp)/100);
-    ev=bon-loss;
-    if(winCap>0&&ev>winCap-loss)ev=winCap-loss;
-    var hasWinCap=winCap>0;
-    var spinBon=c$(bon);
-    hn=wag===0?0:total/(stake*600);cph=hn>0?loss/hn:0;
-    el('results').style.display='block';
-    renderResults(bon,total,raw,contrib,wag,'spins',loss,ev,hn,cph,rtp,spinBon,winCap,hasWinCap,p,hrs,stake);
-  }else{
-    var dep=num('f-dep'),cashBon=num('f-bon');
-    wag=num('f-wag');var on=el('f-on').value;
-    contrib=parseFloat(el('f-game').value)||100;
-    rtp=Math.min(100,Math.max(80,num('f-rtp')));
-    var winCap=num('f-cap'),hasWinCap=winCap>0;
-    if(dep===0&&cashBon===0){el('results').style.display='none';return;}
-    var base=on==='both'?dep+cashBon:cashBon;
-    raw=base*wag;total=contrib>0&&contrib<100?raw/(contrib/100):raw;
-    loss=total*((100-rtp)/100);
-    bon=cashBon;ev=bon-loss;
-    if(hasWinCap&&ev>winCap)ev=winCap; /* cap upside */
-    hn=wag===0?0:total/(stake*(contrib>=100?600:60));cph=hn>0?loss/hn:0;
-    el('results').style.display='block';
-    renderResults(bon,total,raw,contrib,wag,on,loss,ev,hn,cph,rtp,c$(bon),winCap,hasWinCap,p,hrs,stake);
-  }
-}
-
-function renderResults(bon,total,raw,contrib,wag,on,loss,ev,hn,cph,rtp,bonDisp,winCap,hasWinCap,p,hrs,stake){
-  /* YES / NO */
-  var yn=el('yn'),ync;
-  if(wag===0){
-    yn.className='yn yes';el('yn-icon').textContent='✅';
-    el('yn-head').textContent='Yes — claim this bonus.';
-    el('yn-reason').textContent='Zero wagering. Winnings are immediately withdrawable with no strings attached.';
-    ync='yes';
-  }else if(ev>20&&!hasWinCap){
-    yn.className='yn yes';el('yn-icon').textContent='✅';
-    el('yn-head').textContent='Yes — this bonus is worth claiming.';
-    el('yn-reason').textContent='Positive expected value of '+s$(ev)+'. On average you profit from this bonus.';
-    ync='yes';
-  }else if(contrib<30&&wag>0){
-    yn.className='yn no';el('yn-icon').textContent='❌';
-    el('yn-head').textContent='No — table games kill this bonus.';
-    el('yn-reason').textContent='At '+contrib+'% contribution you need '+c$(total)+' in actual bets. Clearing cost: '+c$(loss)+'. Skip unless slots are allowed.';
-    ync='no';
-  }else if(wag>55&&contrib>=100){
-    yn.className='yn no';el('yn-icon').textContent='❌';
-    el('yn-head').textContent='No — wagering is too high.';
-    el('yn-reason').textContent='At '+wag+'x, clearing this bonus is expected to cost you '+c$(loss)+' — more than the bonus is worth. Choose a casino with lower requirements.';
-    ync='no';
-  }else if(hasWinCap&&winCap<loss){
-    yn.className='yn no';el('yn-icon').textContent='❌';
-    el('yn-head').textContent='No — the win cap makes this worthless.';
-    el('yn-reason').textContent='The win cap ('+c$(winCap)+') is lower than your expected clearing cost ('+c$(loss)+'). You\'ll spend more than you can ever win back.';
-    ync='no';
-  }else if(ev<-bon*0.6){
-    yn.className='yn no';el('yn-icon').textContent='❌';
-    el('yn-head').textContent='No — cost to clear exceeds the bonus value.';
-    el('yn-reason').textContent='Expected clearing cost of '+c$(loss)+' is over 60% of the '+c$(bon)+' bonus. Mathematically not worth it. Skip this.';
-    ync='no';
-  }else if(ev<0&&Math.abs(ev)<bon*0.4){
-    yn.className='yn maybe';el('yn-icon').textContent='⚠️';
-    el('yn-head').textContent='Maybe — if you\'d play anyway.';
-    el('yn-reason').textContent='Clearing costs ~'+c$(Math.abs(ev))+'. If you\'d play '+hn.toFixed(0)+'+ hours at this casino regardless, the bonus adds value. If not, skip it.';
-    ync='maybe';
-  }else{
-    yn.className='yn maybe';el('yn-icon').textContent='⚠️';
-    el('yn-head').textContent='Maybe — check the personal clearance verdict below.';
-    el('yn-reason').textContent='Average terms. Clearing costs '+c$(loss)+' in expected losses against a '+c$(bon)+' bonus. Worth it if you can clear it in time.';
-    ync='maybe';
-  }
-
-  /* SCORE */
-  var sc=scoreCalc(wag,on,contrib,p?p.exp:14,ev,bon,hasWinCap);
-  el('snum').textContent=sc.n.toFixed(1);el('snum').style.color=sc.col;
-  el('slabel').textContent=sc.label;el('slabel').style.color=sc.col;
-  el('sdesc').textContent=sc.desc;
-  var sb=el('sbreakdown');
-  if(sc.reasons&&sc.reasons.length>0){sb.style.display='block';sb.textContent='Score factors: '+sc.reasons.join(' · ');}
-  else{sb.style.display='none';}
-
-  /* BOXES */
-  function box(i,txt,cls){el('b'+i).className='box '+(cls||'');el('r'+i).textContent=txt;}
-  box(0,wag===0?'C$0':c$(total),total<10000?'g':total<30000?'':'a');
-  box(1,wag===0?'0h':hn<1?Math.round(hn*60)+'min':hn.toFixed(1)+'h',hn<10?'g':hn<25?'':'a');
-  box(2,s$(ev),ev>0?'g':ev>-50?'a':'r');
-  box(3,wag===0?'Free':c$(cph)+'/h',cph<20?'g':cph<50?'a':'r');
-
-  /* DIFF BAR */
-  var diff=wag===0?0:Math.min(100,(wag/60)*100*(100/Math.max(1,contrib)));
-  el('dbar').style.width=diff+'%';
-  el('dbar').style.background=diff<30?'#22c55e':diff<60?'#d97706':'#dc2626';
-  el('dlbl').textContent=wag===0?'None ✓':diff<25?'Easy':diff<50?'Moderate':diff<75?'Hard':'Very Hard';
-
-  /* WIN CAP WARNING */
-  if(hasWinCap){
-    show('w-cap');
-    el('w-cap-t').innerHTML='<strong>Win cap: '+c$(winCap)+' max cashout.</strong> Even if you win more than '+c$(winCap)+' while clearing this bonus, the casino will only pay out '+c$(winCap)+'. That\'s your actual ceiling — not the headline bonus amount.';
-  }else{hide('w-cap');}
-
-  /* MAX BET WARNING */
-  if(wag>0){
-    show('w-mb');
-    el('w-mb-t').innerHTML=p&&p.mb>0?
-      '<strong>Max bet at '+p.name+': C$'+p.mb+'/spin.</strong> Any bet above this while the bonus is active forfeits everything immediately — no warning given.':
-      '<strong>Max bet rule:</strong> Most Canadian casinos cap bets at C$5–C$8/spin while a bonus is active. Exceeding this voids the bonus with no warning. Check your casino\'s specific terms.';
-  }else{hide('w-mb');}
-
-  /* EXPIRY */
-  if(wag>0&&p&&p.exp>0&&hn>0){
-    show('w-exp');
-    var dn=Math.ceil(hn/(hrs/7));
-    el('w-exp-t').innerHTML=dn>p.exp?
-      '<strong>⚠️ You won\'t clear this at your play rate.</strong> At '+hrs+'h/week this takes ~'+dn+' days — '+p.name+' expires in '+p.exp+'. You\'d need to play '+(hn/p.exp*7).toFixed(1)+'h/week. Either increase your sessions or skip the bonus.':
-      '<strong>Expiry looks fine.</strong> At '+hrs+'h/week you\'ll clear in ~'+dn+' day'+(dn!==1?'s':'')+' — within the '+p.exp+'-day window.';
-  }else{hide('w-exp');}
-
-  /* STAKE TIP */
-  if(wag>0&&mode==='cash'){
-    var sb=p&&p.mb>0?p.mb:5;
-    var st=num('f-stake');
-    if(st<sb){
-      show('w-tip');hide('w-high');
-      el('w-tip-t').innerHTML='<strong>Play faster:</strong> You\'re betting C$'+st+'/spin but the max allowed is C$'+sb+'. Increasing to C$'+sb+' clears '+(sb/st).toFixed(1)+'× faster, reducing time from '+hn.toFixed(1)+'h to ~'+(hn/(sb/st)).toFixed(1)+'h.';
-    }else if(st>sb&&p&&p.mb>0){
-      hide('w-tip');show('w-high');
-      el('w-high-t').innerHTML='<strong>Stake too high — bonus will be forfeited.</strong> C$'+st+'/spin exceeds the C$'+sb+' max bet. Reduce to C$'+sb+' immediately or you\'ll lose the bonus.';
-    }else{hide('w-tip');hide('w-high');}
-  }else{hide('w-tip');hide('w-high');}
-
-  /* BREAKDOWN */
-  el('o0').textContent=bonDisp;
-  el('o1').textContent=on==='spins'?'Spin winnings × wagering':c$(on==='both'?bon+(num('f-dep')||0):bon)+(on==='both'?' (dep+bonus)':' (bonus only)');
-  el('o2').textContent=c$(raw);
-  el('o3').textContent=contrib+'%'+(contrib<100?' → divides req by '+(contrib/100).toFixed(2):'  (slots = no adjustment)');
-  el('o4').textContent=c$(total);
-  el('o5').textContent=((100-(mode==='spins'?num('s-rtp'):num('f-rtp')))).toFixed(2)+'%';
-  el('o6').textContent='−'+c$(loss);
-  el('o7').textContent='+'+bonDisp;
-  if(hasWinCap){
-    el('cap-row').style.display='flex';
-    el('o8').textContent='Max '+c$(winCap)+' (cap applied)';
-  }else{el('cap-row').style.display='none';}
-  el('o9').textContent=s$(ev);
-  el('o10').textContent=wag===0?'0h':hn.toFixed(1)+'h';
-  el('o11').textContent=wag===0?'Free':c$(cph)+'/hr';
-
-  /* PERSONAL */
-  var pv=el('pv');
-  if(wag===0){pv.className='pv';return;}
-  var exp=p?p.exp:30,da=exp>0?exp:30,ha=(hrs/7)*da;
-  if(hn<=ha*0.7){pv.className='pv can';pv.innerHTML='✅ <strong>You\'ll clear this comfortably.</strong> You need '+hn.toFixed(1)+'h and have '+ha.toFixed(0)+'h available before expiry. You\'ll finish ~'+Math.round((ha-hn)/hrs*7)+' days early.';}
-  else if(hn<=ha){pv.className='pv maybe';pv.innerHTML='⚠️ <strong>Tight but possible.</strong> You need '+hn.toFixed(1)+'h with '+ha.toFixed(0)+'h available. No missed sessions — be realistic.';}
-  else{pv.className='pv cant';pv.innerHTML='❌ <strong>You won\'t clear at your play rate.</strong> You need '+hn.toFixed(1)+'h but only have '+ha.toFixed(0)+'h at '+hrs+'h/week. You\'d need '+(hn/da*7).toFixed(1)+'h/week. Skip this bonus.';}
-}
-
-/* COMPARE */
-function cmpCore(dep,bon,wag,on,cap){
-  var base=on==='both'?dep+bon:bon,tot=base*wag;
-  var loss=tot*0.04,ev=bon-loss;
-  if(cap>0&&ev>cap)ev=cap;
-  return{tot:tot,ev:ev,loss:loss,hrs:wag===0?0:tot/1200,wag:wag,cap:cap};
-}
-function cmpGo(){
-  var a=cmpCore(num('a-dep'),num('a-bon'),num('a-wag'),el('a-on').value,num('a-cap'));
-  var b=cmpCore(num('b-dep'),num('b-bon'),num('b-wag'),el('b-on').value,num('b-cap'));
-  function rend(id,d,oe){
-    var e=el(id);e.style.display='block';
-    e.innerHTML='<div class="cmet"><span class="cl">Total to wager</span><span class="cv">'+c$(d.tot)+'</span></div>'+
-      '<div class="cmet"><span class="cl">Expected value</span><span class="cv '+(d.ev>oe?'best':'')+'">'+s$(d.ev)+'</span></div>'+
-      '<div class="cmet"><span class="cl">Cost to clear</span><span class="cv">'+c$(d.loss)+'</span></div>'+
-      '<div class="cmet"><span class="cl">Est. hours (C$2/spin)</span><span class="cv">'+(d.wag===0?'0h':d.hrs.toFixed(1)+'h')+'</span></div>'+
-      (d.cap>0?'<div class="cmet"><span class="cl">Win cap</span><span class="cv" style="color:var(--red)">'+c$(d.cap)+'</span></div>':'');
-  }
-  rend('cm-a',a,b.ev);rend('cm-b',b,a.ev);
-  var tie=Math.abs(a.ev-b.ev)<0.5;
-  el('ca').className='ccol'+(!tie&&a.ev>b.ev?' win':'');
-  el('cb').className='ccol'+(!tie&&b.ev>a.ev?' win':'');
-  el('tha').innerHTML='Bonus A'+(!tie&&a.ev>b.ev?' <span class="cbdg">✓ Better deal</span>':'');
-  el('thb').innerHTML='Bonus B'+(!tie&&b.ev>a.ev?' <span class="cbdg">✓ Better deal</span>':'');
-  var cw=el('cwin');cw.style.display='block';
-  if(tie)cw.innerHTML='🤝 <strong>Essentially equal.</strong> Both have similar expected value. Choose the one with the better expiry window or your preferred casino.';
-  else if(a.ev>b.ev)cw.innerHTML='🏆 <strong>Bonus A is the better deal</strong> — by '+c$(Math.abs(a.ev-b.ev))+' in expected value. Bonus A needs '+c$(a.tot)+' in wagering vs '+c$(b.tot)+' for Bonus B.';
-  else cw.innerHTML='🏆 <strong>Bonus B is the better deal</strong> — by '+c$(Math.abs(b.ev-a.ev))+' in expected value. Bonus B needs '+c$(b.tot)+' in wagering vs '+c$(a.tot)+' for Bonus A.';
-}
-
-/* TRACKER */
-function trkGo(){
-  var tot=num('t-tot'),done=Math.min(num('t-done'),tot),days=Math.max(1,num('t-days')),stk=Math.max(0.1,num('t-stk'));
-  if(tot===0){el('trk-out').style.display='none';return;}
-  el('trk-out').style.display='block';
-  var rem=tot-done,pct=Math.round(done/tot*100);
-  el('t-r0').textContent=c$(done);el('t-r1').textContent=c$(rem);el('t-r2').textContent=pct+'%';
-  var bar=el('t-bar');
-  bar.style.width=Math.min(100,pct)+'%';
-  bar.style.background=pct>=80?'#22c55e':pct>=50?'#d97706':'#1d4ed8';
-  el('t-barlbl').textContent=pct+'%';
-  var hrs=rem/(stk*600),hpd=hrs/days;
-  el('t-o0').textContent=c$(rem);
-  el('t-o1').textContent=hrs.toFixed(1)+' hrs';
-  el('t-o2').textContent=hpd.toFixed(2)+' hrs/day ('+Math.round(hpd*60)+' min/day)';
-  var tyn=el('t-yn'),vi,hd,reason,vv,vc;
-  if(done>=tot){tyn.className='yn yes';vi='🎉';hd='Complete!';reason='Wagering cleared. You can withdraw your winnings now.';vv='✓ Done';vc='var(--gd)';}
-  else if(hpd<=1){tyn.className='yn yes';vi='✅';hd='On track — easy.';reason=hrs.toFixed(1)+'h left. Only '+Math.round(hpd*60)+' min/day needed. Very comfortable.';vv='✓ On track';vc='var(--gd)';}
-  else if(hpd<=3){tyn.className='yn yes';vi='✅';hd='On track.';reason=hpd.toFixed(1)+'h/day for '+days+' days. Manageable with regular sessions.';vv='✓ On track';vc='var(--gd)';}
-  else if(hpd<=6){tyn.className='yn maybe';vi='⚠️';hd='Tight — possible but demanding.';reason=hpd.toFixed(1)+'h/day for '+days+' days. Be honest with yourself about whether this is realistic.';vv='⚠ Tight';vc='var(--am)';}
-  else{tyn.className='yn no';vi='❌';hd='This will expire.';reason=hrs.toFixed(1)+'h needed in '+days+' days = '+hpd.toFixed(1)+'h/day. Not achievable for most players.';vv='✗ Will expire';vc='var(--red)';}
-  el('t-yi').textContent=vi;el('t-yh').textContent=hd;el('t-yr').textContent=reason;
-  el('t-o3').textContent=vv;el('t-o3').style.color=vc;
-}
-
-/* TABS */
-function showTab(name,btn){
-  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('on');});
-  document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('on');});
-  btn.classList.add('on');el('tab-'+name).classList.add('on');
-  if(name==='cmp')cmpGo();if(name==='track')trkGo();
-}
-
-/* COPY + SHARE */
-function doCopy(){
-  var dep=num('f-dep'),bon=num('f-bon'),wag=num('f-wag');
-  var base=el('f-on').value==='both'?dep+bon:bon,raw=base*wag;
-  var contrib=parseFloat(el('f-game').value)||100;
-  var tot=contrib<100?raw/(contrib/100):raw;
-  var ev=bon-tot*((100-num('f-rtp'))/100);
-  var txt='CasinoScout Wagering Calculator\nDeposit: C$'+dep+' | Bonus: C$'+bon+' | Wagering: '+wag+'x\nTotal to wager: '+c$(tot)+' | Expected value: '+s$(ev)+'\ncasinoscout.co/tools/wagering-calculator/';
-  navigator.clipboard.writeText(txt).then(function(){
-    el('bcopy').textContent='✓ Copied!';el('bcopy').classList.add('cp');
-    setTimeout(function(){el('bcopy').textContent='📋 Copy';el('bcopy').classList.remove('cp');},2000);
-  }).catch(function(){alert(txt);});
-}
-function doShare(){
-  var u=location.href.split('#')[0]+'#d='+num('f-dep')+'&b='+num('f-bon')+'&w='+num('f-wag')+'&on='+el('f-on').value+'&g='+el('f-game').value+'&r='+num('f-rtp')+'&c='+num('f-cap');
-  navigator.clipboard.writeText(u).then(function(){
-    el('bshare').textContent='✓ Copied!';el('bshare').classList.add('cp');
-    setTimeout(function(){el('bshare').textContent='🔗 Share';el('bshare').classList.remove('cp');},2500);
-  }).catch(function(){prompt('Share:',u);});
-}
-
-/* RESTORE FROM HASH */
 (function(){
-  if(!location.hash)return;
-  try{
-    var p={};location.hash.slice(1).split('&').forEach(function(s){var kv=s.split('=');if(kv.length===2)p[kv[0]]=kv[1];});
-    if(p.d)el('f-dep').value=p.d;if(p.b)el('f-bon').value=p.b;
-    if(p.w)el('f-wag').value=p.w;if(p.on)el('f-on').value=p.on;
-    if(p.g)el('f-game').value=p.g;if(p.r)el('f-rtp').value=p.r;
-    if(p.c)el('f-cap').value=p.c;
-  }catch(e){}
-})();
-
-go();cmpGo();trkGo();
-
-// ── HAMBURGER ──
-var hbg=document.getElementById('hamburger');
-var mmenu=document.getElementById('mobile-menu');
-var dclose=document.getElementById('drawer-close');
-function openMenu(){hbg.classList.add('open');mmenu.classList.add('open');mmenu.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
-function closeMenu(){hbg.classList.remove('open');mmenu.classList.remove('open');mmenu.setAttribute('aria-hidden','true');document.body.style.overflow='';}
-if(hbg){hbg.addEventListener('click',function(){mmenu.classList.contains('open')?closeMenu():openMenu();});}
-if(dclose){dclose.addEventListener('click',closeMenu);}
-if(mmenu){mmenu.addEventListener('click',function(e){if(e.target===mmenu)closeMenu();});}
-document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu();});
-
-</script>
-<script>(window.requestIdleCallback||function(f,o){setTimeout(f,o&&o.timeout||50)})(function(){
-(function(){
-  var PREF='cs_lang';
-  var REAL_FR=['https://casinoscout.co/fr/','https://casinoscout.co/fr/meilleurs-casinos-en-ligne-canada/','https://casinoscout.co/fr/bonus-sans-depot-canada/'];
-  var META={'en-CA':{flag:'🇨🇦',label:'English (Canada)',short:'EN'},'fr-CA':{flag:'🇫🇷',label:'Français (Canada)',short:'FR'}};
+  var PREF='cs_lang',stored=null;
+  try{stored=localStorage.getItem(PREF);}catch(e){}
+  var REAL_FR=['https://casinoscout.co/fr/','https://casinoscout.co/fr/meilleurs-casinos-en-ligne-canada/','https://casinoscout.co/fr/bonus-sans-depot-canada/','https://casinoscout.co/fr/avis/bitstarz-canada/','https://casinoscout.co/fr/avis/jackpot-city-canada/','https://casinoscout.co/fr/avis/leovegas-canada/','https://casinoscout.co/fr/avis/jackbit-canada/','https://casinoscout.co/fr/avis/bcgame-canada/','https://casinoscout.co/fr/avis/spin-casino-canada/','https://casinoscout.co/fr/avis/playojo-canada/','https://casinoscout.co/fr/avis/7bit-canada/','https://casinoscout.co/fr/avis/betway-canada/','https://casinoscout.co/fr/avis/bet365-canada/','https://casinoscout.co/fr/avis/casumo-canada/','https://casinoscout.co/fr/avis/888casino-canada/','https://casinoscout.co/fr/casinos-en-ligne-ontario/','https://casinoscout.co/fr/casinos-interac-canada/','https://casinoscout.co/fr/casinos-paiement-rapide-canada/','https://casinoscout.co/fr/tours-gratuits-canada/','https://casinoscout.co/fr/casino-en-direct-canada/','https://casinoscout.co/fr/a-propos/','https://casinoscout.co/fr/divulgation-affiliation/','https://casinoscout.co/fr/jeu-responsable/','https://casinoscout.co/fr/politique-de-confidentialite/','https://casinoscout.co/fr/conditions-utilisation/'];
   var curLang=document.documentElement.getAttribute('lang')||'en-CA';
-  var stored=null;try{stored=localStorage.getItem(PREF);}catch(e){}
   var alts={};
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(function(l){
     var h=l.getAttribute('hreflang');if(h&&h!=='x-default')alts[h]=l.href;
   });
   if(!alts['en-CA']){var xd=document.querySelector('link[rel="alternate"][hreflang="x-default"]');alts['en-CA']=xd?xd.href:'https://casinoscout.co/';}
-  // Auto-redirect if stored pref has a real page
-  if(stored&&stored!==curLang&&alts[stored]&&REAL_FR.indexOf(alts[stored])>-1){
-    window.location.replace(alts[stored]);return;
-  }
-  // Show "not in French" banner
+  if(stored&&stored!==curLang&&alts[stored]&&REAL_FR.indexOf(alts[stored])>-1){window.location.replace(alts[stored]);return;}
   if(stored==='fr-CA'&&curLang!=='fr-CA'){
     var b=document.createElement('div');
     b.className='lang-banner show';
-    b.innerHTML='🇫🇷 Cette page n’est pas encore disponible en français. <a href="https://casinoscout.co/fr/">Accueil français →</a><button class="lang-banner-close" aria-label="Fermer">×</button>';
-    b.querySelector('.lang-banner-close').onclick=function(){b.classList.remove('show');};
+    var txt=document.createTextNode('Cette page n\u2019est pas encore disponible en fran\u00e7ais.\u2003');
+    var lnk=document.createElement('a');lnk.href='https://casinoscout.co/fr/';lnk.textContent='Accueil fran\u00e7ais \u2192';
+    var cl=document.createElement('button');cl.className='lang-banner-close';cl.textContent='\u00d7';cl.onclick=function(){b.classList.remove('show');};
+    b.appendChild(txt);b.appendChild(lnk);b.appendChild(cl);
     var nav=document.querySelector('.site-nav');
     if(nav&&nav.parentNode)nav.parentNode.insertBefore(b,nav.nextSibling);
   }
-  // Build switcher dropdown
-  var sw=document.getElementById('lang-sw'),btn=document.getElementById('lang-btn'),dd=document.getElementById('lang-dd');
-  if(!sw||!btn||!dd)return;
-  var cur=META[curLang]||{flag:'🌐',short:curLang};
-  btn.querySelector('.lang-flag').textContent=cur.flag;
-  btn.querySelector('.lang-code').textContent=cur.short;
-  Object.keys(META).forEach(function(lang){
-    if(lang===curLang||!alts[lang])return;
-    var m=META[lang],url=alts[lang];
-    var real=lang!=='fr-CA'||(REAL_FR.indexOf(url)>-1);
-    var el=document.createElement('a');
-    el.href=url;el.className='lang-option';el.setAttribute('hreflang',lang);
-    el.innerHTML='<span class="lo-flag">'+m.flag+'</span><span class="lo-label">'+m.label+'</span>'+((!real&&lang==='fr-CA')?'<span class="lo-badge">Partiel</span>':'');
-    el.addEventListener('click',function(){try{localStorage.setItem(PREF,lang);}catch(e){}});
-    dd.appendChild(el);
-  });
-  if(!dd.children.length){sw.style.display='none';return;}
-  btn.addEventListener('click',function(e){
-    e.stopPropagation();
-    var o=dd.classList.toggle('open');
-    btn.setAttribute('aria-expanded',o?'true':'false');
-  });
-  document.addEventListener('click',function(){dd.classList.remove('open');btn.setAttribute('aria-expanded','false');});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'){dd.classList.remove('open');btn.setAttribute('aria-expanded','false');}});
-window.openMenu=openMenu;window.closeMenu=closeMenu;
+  var sw=document.getElementById('lang-sw'),lbtn=document.getElementById('lang-btn'),dd=document.getElementById('lang-dd');
+  if(sw&&lbtn&&dd){
+    var META={'en-CA':{flag:'\ud83c\udde8\ud83c\udde6',label:'English (Canada)',short:'EN'},'fr-CA':{flag:'\ud83c\uddeb\ud83c\uddf7',label:'Fran\u00e7ais (Canada)',short:'FR'}};
+    var cur=META[curLang]||{flag:'\ud83c\udf10',short:curLang};
+    var lf=lbtn.querySelector('.lang-flag'),lc=lbtn.querySelector('.lang-code');
+    if(lf)lf.textContent=cur.flag;if(lc)lc.textContent=cur.short;
+    Object.keys(META).forEach(function(lang){
+      if(lang===curLang||!alts[lang])return;
+      var m=META[lang];
+      var el=document.createElement('a');el.href=alts[lang];el.className='lang-option';el.setAttribute('hreflang',lang);
+      var sf=document.createElement('span');sf.className='lo-flag';sf.textContent=m.flag;
+      var sl=document.createElement('span');sl.className='lo-label';sl.textContent=m.label;
+      el.appendChild(sf);el.appendChild(sl);
+      el.addEventListener('mousedown',function(e){
+        e.preventDefault();
+        try{localStorage.setItem(PREF,lang);}catch(e2){}
+        window.location.href=alts[lang];
+      });
+      dd.appendChild(el);
+    });
+    if(!dd.children.length){sw.style.display='none';}
+    else{
+      lbtn.addEventListener('click',function(e){e.stopPropagation();var o=dd.classList.toggle('open');lbtn.setAttribute('aria-expanded',o?'true':'false');});
+      document.addEventListener('click',function(e){if(!e.target.closest('#lang-sw')){dd.classList.remove('open');lbtn.setAttribute('aria-expanded','false');}});
+    }
+  }
+  var cs=null;try{cs=localStorage.getItem('cs_cookie_consent');}catch(e){}
+  if(cs==='granted'){if(typeof gtag==='function')gtag('consent','update',{analytics_storage:'granted'});}
+  else if(!cs){var cb=document.getElementById('cookie-banner');if(cb)cb.classList.add('show');}
+  document.querySelectorAll('.rr-fill[data-w]').forEach(function(el){el.style.width=el.getAttribute('data-w')+'%';});
+  var hbtn=document.getElementById('hamburger');
+  if(hbtn){hbtn.addEventListener('click',function(){var mm=document.getElementById('mobile-menu');if(mm&&mm.classList.contains('open'))closeMenu();else openMenu();});}
+  var dc=document.getElementById('drawer-close');
+  if(dc)dc.addEventListener('click',closeMenu);
 })();
-});</script>
+</script>
 </body>
 </html>
