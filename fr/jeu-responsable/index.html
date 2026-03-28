@@ -18,18 +18,6 @@
 <meta name="twitter:title" content="Jeu Responsable Canada — Aide et Ressources">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<script>
-window.dataLayer=window.dataLayer||[];
-function gtag(){dataLayer.push(arguments);}
-gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',wait_for_update:500});
-</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN71708XXE"></script>
-<script>
-  window.dataLayer=window.dataLayer||[];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js',new Date());
-  gtag('config','G-ZN71708XXE',{anonymize_ip:true});
-</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Comment exclure mon compte d'un casino en ligne?","acceptedAnswer":{"@type":"Answer","text":"Dans les paramètres du compte, cherche \"Jeu responsable\" ou \"Sécurité\". Les casinos Ontario iGO offrent l'autoexclusion via l'AGCO qui couvre simultanément tous les casinos licenciés Ontario. Pour d'autres casinos, chaque site a son propre processus."}},{"@type":"Question","name":"Tel-Jeu est-il gratuit?","acceptedAnswer":{"@type":"Answer","text":"Oui. Tel-Jeu (1-800-461-0140) est complètement gratuit et confidentiel. Disponible 24h/24, 7j/7. C'est la principale ligne d'aide pour les joueurs au Québec et leurs proches."}},{"@type":"Question","name":"Comment fixer une limite de dépôt dans un casino?","acceptedAnswer":{"@type":"Answer","text":"Va dans les paramètres de ton compte, puis \"Jeu responsable\". La plupart des casinos appliquent les limites de réduction immédiatement. Pour augmenter une limite, un délai d'attente est généralement imposé (24h minimum)."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"CasinoScout","item":"https://casinoscout.co/fr/"},{"@type":"ListItem","position":2,"name":"Jeu Responsable Canada — Aide et Ressources","item":"https://casinoscout.co/fr/jeu-responsable/"}]}</script>
 <style>
@@ -60,8 +48,8 @@ nav.site-nav{background:var(--w);border-bottom:1px solid var(--b);position:stick
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);width:20px}
 .hamburger.open span:nth-child(2){opacity:0;width:0}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);width:20px}
-.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;z-index:190;background:rgba(0,0,0,0.4);opacity:0;transition:opacity 0.25s}
-.mobile-menu.open{opacity:1}
+.mobile-menu{position:fixed;top:60px;left:0;right:0;bottom:0;z-index:190;background:rgba(0,0,0,0.4);opacity:0;pointer-events:none}
+.mobile-menu.open{display:block;opacity:1;pointer-events:auto}
 .mobile-drawer{position:absolute;top:0;right:0;width:min(320px,88vw);height:100%;background:var(--w);box-shadow:-4px 0 20px rgba(0,0,0,0.12);transform:translateX(100%);transition:transform 0.28s cubic-bezier(0.4,0,0.2,1);display:flex;flex-direction:column;overflow-y:auto}
 .mobile-menu.open .mobile-drawer{transform:translateX(0)}
 .drawer-header{padding:1.25rem 1.5rem;border-bottom:1px solid var(--b);display:flex;align-items:center;justify-content:space-between}
@@ -81,7 +69,7 @@ nav.site-nav{background:var(--w);border-bottom:1px solid var(--b);position:stick
 .lang-btn[aria-expanded="true"] .lang-caret{transform:rotate(180deg)}
 .lang-dd{display:none;position:absolute;top:calc(100% + 8px);right:0;background:var(--w);border:1.5px solid var(--b);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.12);min-width:180px;z-index:9999;overflow:hidden}
 .lang-dd.open{display:block}
-.lang-option{display:flex;align-items:center;gap:10px;padding:11px 14px;font-size:.82rem;font-weight:600;color:var(--t2);text-decoration:none;transition:background .1s;border-bottom:1px solid var(--b)}
+.lang-option{display:flex;align-items:center;gap:10px;padding:14px 18px;font-size:.82rem;font-weight:600;color:var(--t2);text-decoration:none;transition:background .1s;border-bottom:1px solid var(--b)}
 .lang-option:last-child{border-bottom:none}
 .lang-option:hover{background:var(--gl);color:var(--gd)}
 .lo-flag{font-size:17px;line-height:1;flex-shrink:0}
@@ -127,7 +115,7 @@ nav.site-nav{background:var(--w);border-bottom:1px solid var(--b);position:stick
 .pro-list li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700}
 .con-list li::before{content:"✗";position:absolute;left:0;color:#DC2626;font-weight:700}
 .faq-item{border-bottom:1px solid var(--b);padding:0.1rem 0}
-.faq-q{padding:.85rem 1rem;font-weight:700;font-size:.86rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--t)}
+.faq-q{padding:.85rem 1rem;font-weight:700;font-size:.86rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--t)min-height:48px;}
 .faq-q:hover{background:var(--bg)}
 .faq-icon{flex-shrink:0;margin-left:.75rem;font-size:1rem;color:var(--t3)}
 .faq-a{display:none;padding:.25rem 1rem 1rem;font-size:.84rem;color:var(--t2);line-height:1.75}
@@ -192,14 +180,76 @@ footer{background:var(--t);color:rgba(255,255,255,.7);font-size:.82rem;margin-to
 }
 @media(max-width:480px){.ft-inner{grid-template-columns:1fr}}
 </style>
+
+
+
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',wait_for_update:500});
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN71708XXE"></script>
+<script>
+gtag('js',new Date());
+gtag('config','G-ZN71708XXE',{anonymize_ip:true});
+</script>
 </head>
 <body>
+<script>
+function filterCasinos(tag,btn){
+  document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  var v=0;
+  document.querySelectorAll('.casino-card').forEach(function(card){
+    var tags=card.getAttribute('data-tags')||'';
+    var show=(tag==='all')||(tags.indexOf(tag)!==-1);
+    card.classList.toggle('hidden',!show);
+    if(show)v++;
+  });
+  var cnt=document.getElementById('casino-count');
+  if(cnt)cnt.textContent='Showing '+v+' casino'+(v!==1?'s':'');
+}
+function toggleFaq(el){
+  var a=el.nextElementSibling;
+  if(!a)return;
+  var isOpen=(a.style.display==='block');
+  document.querySelectorAll('.faq-a').forEach(function(x){x.style.display='none';});
+  document.querySelectorAll('.faq-q .faq-icon').forEach(function(x){x.textContent='+';});
+  document.querySelectorAll('.faq-q').forEach(function(x){x.setAttribute('aria-expanded','false');});
+  if(!isOpen){
+    a.style.display='block';
+    var icon=el.querySelector('.faq-icon');
+    if(icon)icon.textContent='−';
+    el.setAttribute('aria-expanded','true');
+  }
+}
+function openMenu(){
+  var h=document.getElementById('hamburger'),m=document.getElementById('mobile-menu');
+  if(!h||!m)return;
+  h.classList.add('open');m.classList.add('open');
+  m.setAttribute('aria-hidden','false');h.setAttribute('aria-expanded','true');
+  document.body.style.overflow='hidden';
+}
+function closeMenu(){
+  var h=document.getElementById('hamburger'),m=document.getElementById('mobile-menu');
+  if(!m)return;
+  if(h){h.classList.remove('open');h.setAttribute('aria-expanded','false');}
+  m.classList.remove('open');m.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
+}
+function setCookieConsent(c){
+  try{localStorage.setItem('cs_cookie_consent',c);}catch(e){}
+  if(typeof gtag==='function')gtag('consent','update',{analytics_storage:c});
+  var b=document.getElementById('cookie-banner');if(b)b.classList.remove('show');
+}
+</script>
+
 <div class="cookie-banner" id="cookie-banner">
   <div class="cookie-inner">
     <p class="cookie-text">On utilise des cookies pour analyser le trafic. En cliquant "Accepter", tu consens aux cookies analytiques. <a href="/fr/politique-de-confidentialite/">Politique de confidentialité</a>.</p>
     <div class="cookie-btns">
-      <button class="cookie-reject" onclick="setCookieConsent('denied')">Refuser</button>
-      <button class="cookie-accept" onclick="setCookieConsent('granted')">Accepter</button>
+      <button class="cookie-reject" >Refuser</button>
+      <button class="cookie-accept" >Accepter</button>
     </div>
   </div>
 </div>
@@ -318,9 +368,9 @@ footer{background:var(--t);color:rgba(255,255,255,.7);font-size:.82rem;margin-to
   • Prends des pauses régulières<br>
   • Garde le jeu séparé des autres activités de loisir
   <h2 class="section-h">Questions fréquentes</h2>
-  <div class="faq-block"><div class="faq-item"><div class="faq-q" role="button" aria-expanded="false">Comment exclure mon compte d'un casino en ligne? <span class="faq-icon">+</span></div><div class="faq-a">Dans les paramètres du compte, cherche "Jeu responsable" ou "Sécurité". Les casinos Ontario iGO offrent l'autoexclusion via l'AGCO qui couvre simultanément tous les casinos licenciés Ontario. Pour d'autres casinos, chaque site a son propre processus.</div></div>
-<div class="faq-item"><div class="faq-q" role="button" aria-expanded="false">Tel-Jeu est-il gratuit? <span class="faq-icon">+</span></div><div class="faq-a">Oui. Tel-Jeu (1-800-461-0140) est complètement gratuit et confidentiel. Disponible 24h/24, 7j/7. C'est la principale ligne d'aide pour les joueurs au Québec et leurs proches.</div></div>
-<div class="faq-item"><div class="faq-q" role="button" aria-expanded="false">Comment fixer une limite de dépôt dans un casino? <span class="faq-icon">+</span></div><div class="faq-a">Va dans les paramètres de ton compte, puis "Jeu responsable". La plupart des casinos appliquent les limites de réduction immédiatement. Pour augmenter une limite, un délai d'attente est généralement imposé (24h minimum).</div></div></div>
+  <div class="faq-block"><div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)" role="button" aria-expanded="false">Comment exclure mon compte d'un casino en ligne? <span class="faq-icon">+</span></div><div class="faq-a">Dans les paramètres du compte, cherche "Jeu responsable" ou "Sécurité". Les casinos Ontario iGO offrent l'autoexclusion via l'AGCO qui couvre simultanément tous les casinos licenciés Ontario. Pour d'autres casinos, chaque site a son propre processus.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)" role="button" aria-expanded="false">Tel-Jeu est-il gratuit? <span class="faq-icon">+</span></div><div class="faq-a">Oui. Tel-Jeu (1-800-461-0140) est complètement gratuit et confidentiel. Disponible 24h/24, 7j/7. C'est la principale ligne d'aide pour les joueurs au Québec et leurs proches.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)" role="button" aria-expanded="false">Comment fixer une limite de dépôt dans un casino? <span class="faq-icon">+</span></div><div class="faq-a">Va dans les paramètres de ton compte, puis "Jeu responsable". La plupart des casinos appliquent les limites de réduction immédiatement. Pour augmenter une limite, un délai d'attente est généralement imposé (24h minimum).</div></div></div>
   <div style="margin-top:2rem;padding:1rem;background:var(--w);border-radius:10px;font-size:.82rem;color:var(--t4)">
     Conditions générales s'appliquent · 18 ans+ au Québec · 19 ans+ ailleurs · Le jeu peut créer une dépendance · <a href="/fr/jeu-responsable/">Tel-Jeu 1-800-461-0140</a>
   </div>
@@ -361,67 +411,65 @@ footer{background:var(--t);color:rgba(255,255,255,.7);font-size:.82rem;margin-to
     <div class="rg-badges"><span class="rg-badge">18+ QC</span><span class="rg-badge">19+ CA</span><span class="rg-badge">Jeu responsable</span></div>
   </div>
 </footer>
+
+
 <script>
 (function(){
-  var h=document.getElementById('hamburger'),m=document.getElementById('mobile-menu'),d=document.getElementById('drawer-close');
-  if(!h||!m)return;
-  function o_(){h.classList.add('open');m.classList.add('open');m.setAttribute('aria-hidden','false');h.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
-  function c_(){h.classList.remove('open');m.classList.remove('open');m.setAttribute('aria-hidden','true');h.setAttribute('aria-expanded','false');document.body.style.overflow='';}
-  window.openMenu=o_;window.closeMenu=c_;
-  h.addEventListener('click',function(){m.classList.contains('open')?c_():o_();});
-  if(d)d.addEventListener('click',c_);
-  m.addEventListener('click',function(e){if(e.target===m)c_();});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')c_();});
-})();
-</script>
-<script>(window.requestIdleCallback||function(f,o){setTimeout(f,o&&o.timeout||50)})(function(){
-(function(){
-  var PREF='cs_lang';
-  var META={'en-CA':{flag:'🇨🇦',label:'English (Canada)',short:'EN'},'fr-CA':{flag:'🇫🇷',label:'Français (Canada)',short:'FR'}};
-  var curLang='fr-CA';
+  var PREF='cs_lang',stored=null;
+  try{stored=localStorage.getItem(PREF);}catch(e){}
+  var REAL_FR=['https://casinoscout.co/fr/','https://casinoscout.co/fr/meilleurs-casinos-en-ligne-canada/','https://casinoscout.co/fr/bonus-sans-depot-canada/','https://casinoscout.co/fr/avis/bitstarz-canada/','https://casinoscout.co/fr/avis/jackpot-city-canada/','https://casinoscout.co/fr/avis/leovegas-canada/','https://casinoscout.co/fr/avis/jackbit-canada/','https://casinoscout.co/fr/avis/bcgame-canada/','https://casinoscout.co/fr/avis/spin-casino-canada/','https://casinoscout.co/fr/avis/playojo-canada/','https://casinoscout.co/fr/avis/7bit-canada/','https://casinoscout.co/fr/avis/betway-canada/','https://casinoscout.co/fr/avis/bet365-canada/','https://casinoscout.co/fr/avis/casumo-canada/','https://casinoscout.co/fr/avis/888casino-canada/','https://casinoscout.co/fr/casinos-en-ligne-ontario/','https://casinoscout.co/fr/casinos-interac-canada/','https://casinoscout.co/fr/casinos-paiement-rapide-canada/','https://casinoscout.co/fr/tours-gratuits-canada/','https://casinoscout.co/fr/casino-en-direct-canada/','https://casinoscout.co/fr/a-propos/','https://casinoscout.co/fr/divulgation-affiliation/','https://casinoscout.co/fr/jeu-responsable/','https://casinoscout.co/fr/politique-de-confidentialite/','https://casinoscout.co/fr/conditions-utilisation/'];
+  var curLang=document.documentElement.getAttribute('lang')||'en-CA';
   var alts={};
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(function(l){
     var h=l.getAttribute('hreflang');if(h&&h!=='x-default')alts[h]=l.href;
   });
   if(!alts['en-CA']){var xd=document.querySelector('link[rel="alternate"][hreflang="x-default"]');alts['en-CA']=xd?xd.href:'https://casinoscout.co/';}
-  var sw=document.getElementById('lang-sw'),btn=document.getElementById('lang-btn'),dd=document.getElementById('lang-dd');
-  if(!sw||!btn||!dd)return;
-  btn.querySelector('.lang-flag').textContent='🇫🇷';
-  btn.querySelector('.lang-code').textContent='FR';
-  if(alts['en-CA']){
-    var el=document.createElement('a');
-    el.href=alts['en-CA'];el.className='lang-option';el.setAttribute('hreflang','en-CA');
-    el.innerHTML='<span class="lo-flag">🇨🇦</span><span class="lo-label">English (Canada)</span>';
-    el.addEventListener('click',function(){try{localStorage.setItem(PREF,'en-CA');}catch(e){}});
-    dd.appendChild(el);
+  if(stored&&stored!==curLang&&alts[stored]&&REAL_FR.indexOf(alts[stored])>-1){window.location.replace(alts[stored]);return;}
+  if(stored==='fr-CA'&&curLang!=='fr-CA'){
+    var b=document.createElement('div');
+    b.className='lang-banner show';
+    var txt=document.createTextNode('Cette page n\u2019est pas encore disponible en fran\u00e7ais.\u2003');
+    var lnk=document.createElement('a');lnk.href='https://casinoscout.co/fr/';lnk.textContent='Accueil fran\u00e7ais \u2192';
+    var cl=document.createElement('button');cl.className='lang-banner-close';cl.textContent='\u00d7';cl.onclick=function(){b.classList.remove('show');};
+    b.appendChild(txt);b.appendChild(lnk);b.appendChild(cl);
+    var nav=document.querySelector('.site-nav');
+    if(nav&&nav.parentNode)nav.parentNode.insertBefore(b,nav.nextSibling);
   }
-  if(!dd.children.length){sw.style.display='none';return;}
-  btn.addEventListener('click',function(e){e.stopPropagation();var o=dd.classList.toggle('open');btn.setAttribute('aria-expanded',o?'true':'false');});
-  document.addEventListener('click',function(){dd.classList.remove('open');btn.setAttribute('aria-expanded','false');});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'){dd.classList.remove('open');btn.setAttribute('aria-expanded','false');}});
-  document.querySelectorAll('.faq-q').forEach(function(q){
-    q.addEventListener('click',function(){
-      var a=q.nextElementSibling;
-      var open=a.style.display==='block';
-      document.querySelectorAll('.faq-a').forEach(function(x){x.style.display='none';});
-      if(!open){a.style.display='block';}
+  var sw=document.getElementById('lang-sw'),lbtn=document.getElementById('lang-btn'),dd=document.getElementById('lang-dd');
+  if(sw&&lbtn&&dd){
+    var META={'en-CA':{flag:'\ud83c\udde8\ud83c\udde6',label:'English (Canada)',short:'EN'},'fr-CA':{flag:'\ud83c\uddeb\ud83c\uddf7',label:'Fran\u00e7ais (Canada)',short:'FR'}};
+    var cur=META[curLang]||{flag:'\ud83c\udf10',short:curLang};
+    var lf=lbtn.querySelector('.lang-flag'),lc=lbtn.querySelector('.lang-code');
+    if(lf)lf.textContent=cur.flag;if(lc)lc.textContent=cur.short;
+    Object.keys(META).forEach(function(lang){
+      if(lang===curLang||!alts[lang])return;
+      var m=META[lang];
+      var el=document.createElement('a');el.href=alts[lang];el.className='lang-option';el.setAttribute('hreflang',lang);
+      var sf=document.createElement('span');sf.className='lo-flag';sf.textContent=m.flag;
+      var sl=document.createElement('span');sl.className='lo-label';sl.textContent=m.label;
+      el.appendChild(sf);el.appendChild(sl);
+      el.addEventListener('mousedown',function(e){
+        e.preventDefault();
+        try{localStorage.setItem(PREF,lang);}catch(e2){}
+        window.location.href=alts[lang];
+      });
+      dd.appendChild(el);
     });
-  });
+    if(!dd.children.length){sw.style.display='none';}
+    else{
+      lbtn.addEventListener('click',function(e){e.stopPropagation();var o=dd.classList.toggle('open');lbtn.setAttribute('aria-expanded',o?'true':'false');});
+      document.addEventListener('click',function(e){if(!e.target.closest('#lang-sw')){dd.classList.remove('open');lbtn.setAttribute('aria-expanded','false');}});
+    }
+  }
+  var cs=null;try{cs=localStorage.getItem('cs_cookie_consent');}catch(e){}
+  if(cs==='granted'){if(typeof gtag==='function')gtag('consent','update',{analytics_storage:'granted'});}
+  else if(!cs){var cb=document.getElementById('cookie-banner');if(cb)cb.classList.add('show');}
+  document.querySelectorAll('.rr-fill[data-w]').forEach(function(el){el.style.width=el.getAttribute('data-w')+'%';});
+  var hbtn=document.getElementById('hamburger');
+  if(hbtn){hbtn.addEventListener('click',function(){var mm=document.getElementById('mobile-menu');if(mm&&mm.classList.contains('open'))closeMenu();else openMenu();});}
+  var dc=document.getElementById('drawer-close');
+  if(dc)dc.addEventListener('click',closeMenu);
 })();
-});</script>
-<script>
-(function(){
-  var K='cs_cookie_consent',s=null;
-  try{s=localStorage.getItem(K);}catch(e){}
-  if(s==='granted'){gtag('consent','update',{analytics_storage:'granted'});return;}
-  if(!s){var b=document.getElementById('cookie-banner');if(b)b.classList.add('show');}
-})();
-function setCookieConsent(c){
-  try{localStorage.setItem('cs_cookie_consent',c);}catch(e){}
-  gtag('consent','update',{analytics_storage:c});
-  var b=document.getElementById('cookie-banner');if(b)b.classList.remove('show');
-}
-window.setCookieConsent=setCookieConsent;
 </script>
 </body>
 </html>
