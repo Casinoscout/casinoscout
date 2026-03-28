@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Review","name":"Spin Casino Canada Review 2026","url":"https://casinoscout.co/en/reviews/spin-casino-canada/","datePublished":"2026-03-27","dateModified":"2026-03-27","author":{"@type":"Person","name":"Alex M.","jobTitle":"Lead Casino Reviewer","worksFor":{"@type":"Organization","name":"CasinoScout"}},"publisher":{"@type":"Organization","name":"CasinoScout","url":"https://casinoscout.co"},"itemReviewed":{"@type":"Casino","name":"Spin Casino"},"reviewRating":{"@type":"Rating","ratingValue":"8.9","bestRating":"10","worstRating":"1"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Review","name":"Spin Casino Canada Review 2026","url":"https://casinoscout.co/en/reviews/spin-casino-canada/","datePublished":"2026-03-27","dateModified":"2026-03-27","author":{"@type":"Person","name":"Alex M.","jobTitle":"Lead Casino Reviewer","worksFor":{"@type":"Organization","name":"CasinoScout"}},"publisher":{"@type":"Organization","name":"CasinoScout","url":"https://casinoscout.co"},"itemReviewed":{"@type":"LocalBusiness","name":"Spin Casino","address":{"@type":"PostalAddress","addressCountry":"MT"}},"reviewRating":{"@type":"Rating","ratingValue":"8.9","bestRating":"10","worstRating":"1"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Spin Casino available in Ontario?","acceptedAnswer":{"@type":"Answer","text":"Yes. Spin Casino is licensed by iGaming Ontario (AGCO) and is one of the ~49 regulated operators in the province. It is our second recommendation for Ontario players after Jackpot City."}},{"@type":"Question","name":"What is the minimum deposit at Spin Casino?","acceptedAnswer":{"@type":"Answer","text":"C$1 — the lowest minimum deposit of any casino in our top 6. To claim the welcome bonus you need to deposit at least C$10, but the account can be funded with as little as C$1."}},{"@type":"Question","name":"Does Spin Casino accept Interac?","acceptedAnswer":{"@type":"Answer","text":"Yes. Spin Casino accepts Interac e-Transfer for deposits and withdrawals. In our test, a deposit was credited in under 90 seconds and an Interac withdrawal arrived in our bank account in 31 hours."}},{"@type":"Question","name":"How long do Spin Casino withdrawals take?","acceptedAnswer":{"@type":"Answer","text":"31 hours in our Interac withdrawal test. Spin Casino states 24–48 hours for most methods, which is consistent with our experience."}},{"@type":"Question","name":"Is Spin Casino eCOGRA certified?","acceptedAnswer":{"@type":"Answer","text":"Yes. Spin Casino games are certified by eCOGRA for fairness and randomness. The average RTP across the slot library is 96–97%, independently audited. eCOGRA certification means game outcomes are regularly tested and verified by a third party."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Spin Casino Canada Review 2026 — Ontario ✓, C$1 Minimum Tested","url":"https://casinoscout.co/en/reviews/spin-casino-canada/","dateModified":"2026-03-27","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".verdict-text","p"]}}</script>
 <style>/* CasinoScout Review Pages - Shared CSS */
@@ -552,28 +552,33 @@ footer{background:var(--w);border-top:1px solid var(--b);padding:1.5rem;margin-t
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(function(l){
     var h=l.getAttribute('hreflang');if(h&&h!=='x-default')alts[h]=l.href;
   });
-  // Auto-redirect if stored pref has a real page
+  // Fallback: always ensure en-CA option exists
+  if(!alts['en-CA']){
+    var xd=document.querySelector('link[rel="alternate"][hreflang="x-default"]');
+    alts['en-CA']=xd?xd.href:'https://casinoscout.co/';
+  }
   if(stored&&stored!==curLang&&alts[stored]&&REAL_FR.indexOf(alts[stored])>-1){
     window.location.replace(alts[stored]);return;
   }
-  // Show "not in French" banner
   if(stored==='fr-CA'&&curLang!=='fr-CA'){
     var b=document.createElement('div');
     b.className='lang-banner show';
-    b.innerHTML='🇫🇷 Cette page n’est pas encore disponible en français. <a href="https://casinoscout.co/fr/">Accueil français →</a><button class="lang-banner-close" aria-label="Fermer">×</button>';
+    b.innerHTML='🇫🇷 Cette page n’est pas encore disponible en français. <a href="https://casinoscout.co/fr/">Accueil français →</a><button class="lang-banner-close" aria-label="Fermer">×</button>';
     b.querySelector('.lang-banner-close').onclick=function(){b.classList.remove('show');};
     var nav=document.querySelector('.site-nav');
     if(nav&&nav.parentNode)nav.parentNode.insertBefore(b,nav.nextSibling);
   }
-  // Build switcher dropdown
   var sw=document.getElementById('lang-sw'),btn=document.getElementById('lang-btn'),dd=document.getElementById('lang-dd');
   if(!sw||!btn||!dd)return;
   var cur=META[curLang]||{flag:'🌐',short:curLang};
   btn.querySelector('.lang-flag').textContent=cur.flag;
   btn.querySelector('.lang-code').textContent=cur.short;
+  var curURL=window.location.href.replace(/\/$/,'');
   Object.keys(META).forEach(function(lang){
-    if(lang===curLang||!alts[lang])return;
+    if(lang===curLang)return;
     var m=META[lang],url=alts[lang];
+    if(!url)return;
+    if(url.replace(/\/$/,'')===curURL)return;
     var real=lang!=='fr-CA'||(REAL_FR.indexOf(url)>-1);
     var el=document.createElement('a');
     el.href=url;el.className='lang-option';el.setAttribute('hreflang',lang);
