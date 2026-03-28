@@ -8,7 +8,6 @@
 <link rel="canonical" href="https://casinoscout.co/tools/wagering-calculator/">
 <link rel="alternate" hreflang="en-CA" href="https://casinoscout.co/tools/wagering-calculator/">
 <link rel="alternate" hreflang="x-default" href="https://casinoscout.co/tools/wagering-calculator/">
-<link rel="alternate" hreflang="fr-CA" href="https://casinoscout.co/fr/outils/calculateur-de-mises/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://casinoscout.co/tools/wagering-calculator/">
@@ -325,6 +324,369 @@ gtag('config','G-ZN71708XXE',{anonymize_ip:true});
 </script>
 </head>
 <body>
+<script>
+var P={
+  bitstarz:{dep:400,bon:400,wag:40,on:'bonus',game:'100',rtp:96,mb:5,exp:7,cap:0,name:'BitStarz'},
+  jpc:     {dep:100,bon:400,wag:35,on:'bonus',game:'100',rtp:96,mb:8,exp:7,cap:0,name:'Jackpot City'},
+  spin:    {dep:100,bon:400,wag:35,on:'bonus',game:'100',rtp:96,mb:8,exp:7,cap:0,name:'Spin Casino'},
+  jackbit: {dep:50, bon:0,  wag:0, on:'bonus',game:'100',rtp:96,mb:0,exp:0,cap:100,name:'Jackbit'},
+  bcgame:  {dep:100,bon:100,wag:45,on:'bonus',game:'100',rtp:96,mb:0,exp:14,cap:0,name:'BC.Game'},
+  '7bit':  {dep:100,bon:100,wag:35,on:'bonus',game:'100',rtp:96,mb:10,exp:14,cap:0,name:'7Bit Casino'}
+};
+var cur=null,mode='cash';
+
+function el(id){return document.getElementById(id);}
+function num(id){var v=parseFloat(el(id).value);return isNaN(v)||v<0?0:v;}
+function c$(n){
+  var a=Math.abs(n);
+  if(a>=1000)return'C$'+Math.round(a).toLocaleString('en-CA');
+  return'C$'+a.toFixed(2);
+}
+function s$(n){return(n>0?'+':n<0?'-':'')+c$(Math.abs(n));}
+function show(id){el(id).classList.add('show');}
+function hide(id){el(id).classList.remove('show');}
+
+function setMode(m){
+  mode=m;
+  el('m-cash').classList.toggle('on',m==='cash');
+  el('m-spins').classList.toggle('on',m==='spins');
+  el('cash-inputs').style.display=m==='cash'?'':'none';
+  el('spins-inputs').style.display=m==='spins'?'':'none';
+  el('results').style.display='none';
+  go();
+}
+
+function loadP(id){
+  var p=P[id];if(!p)return;
+  setMode('cash');
+  el('f-dep').value=p.dep;el('f-bon').value=p.bon;
+  el('f-wag').value=p.wag;el('f-on').value=p.on;
+  el('f-game').value=p.game;el('f-rtp').value=p.rtp;el('f-cap').value=p.cap;
+  document.querySelectorAll('.pr').forEach(function(b){b.classList.remove('on');});
+  el('pr-'+id).classList.add('on');cur=id;go();
+}
+
+/* FREE SPINS PRESETS — verified March 2026 */
+var SP={
+  /* Jackbit: 100 FS on Book of Dead, 0x wagering, C$100 win cap, min deposit C$50 */
+  'jackbit':     {count:100,val:0.10,wag:0, rtp:96.21,cap:100},
+  /* BitStarz no-deposit: 20 FS on registration, 40x on winnings, C$150 win cap */
+  'bitz-nodep':  {count:20, val:0.20,wag:40,rtp:96,   cap:150},
+  /* BitStarz 1st deposit: 180 FS (20 now + 20/day x8), 40x on winnings, no stated cap */
+  'bitz-dep':    {count:180,val:0.20,wag:40,rtp:96,   cap:0},
+  /* 7Bit 1st deposit: 100 FS on Elvis Frog, 35x on winnings, C$200 win cap */
+  '7bit-dep':    {count:100,val:0.20,wag:35,rtp:96,   cap:200},
+  /* 7Bit no-deposit: 75 FS with code 75BIT, 45x on winnings, C$50 win cap */
+  '7bit-nodep':  {count:75, val:0.02,wag:45,rtp:96,   cap:50}
+};
+
+function loadSP(id){
+  var p=SP[id];if(!p)return;
+  setMode('spins');
+  el('s-count').value=p.count;el('s-val').value=p.val;
+  el('s-wag').value=p.wag;el('s-rtp').value=p.rtp;el('s-cap').value=p.cap;
+  document.querySelectorAll('.pr').forEach(function(b){b.classList.remove('on');});
+  var btn=el('sp-'+id); if(btn)btn.classList.add('on');
+  go();
+}
+
+function resetP(){document.querySelectorAll('.pr').forEach(function(b){b.classList.remove('on');});cur=null;}
+
+function scoreCalc(wag,on,contrib,exp,ev,bon,hasWinCap){
+  if(wag===0)return{n:9.5,label:'Excellent — 0x wagering',desc:'Winnings withdraw immediately. As good as it gets.',col:'#15803d',reasons:[]};
+  var s=8,reasons=[];
+  var wagPenalty=Math.max(0,(wag-25))*0.065;
+  if(wagPenalty>0){s-=wagPenalty;reasons.push((wag>40?'↓↓':'↓')+' '+wag+'x wagering '+(wag>40?'(above average)':'(average)'));}
+  if(on==='both'){s-=1.3;reasons.push('↓ Wagering applies to deposit + bonus (stricter than average)');}
+  if(contrib<100){s-=(100-contrib)*0.028;reasons.push('↓ '+contrib+'% game contribution (not slots = harder to clear)');}
+  if(exp>0&&exp<=7){s-=0.7;reasons.push('↓ Short expiry ('+exp+' days)');}
+  else if(exp===0){reasons.push('✓ No expiry');}
+  if(ev>0){s+=1.5;reasons.push('↑ Positive expected value (rare)');}
+  if(hasWinCap){s-=0.8;reasons.push('↓ Win cap limits maximum withdrawal');}
+  if(bon>0&&ev<-(bon*0.5)){s-=1;reasons.push('↓ Clearing cost exceeds 50% of bonus value');}
+  s=Math.max(1,Math.min(10,parseFloat(s.toFixed(1))));
+  var label,col;
+  if(s>=8){label='Excellent deal';col='#15803d';}
+  else if(s>=6.5){label='Good deal';col='#16a34a';}
+  else if(s>=5){label='Average — typical Canadian bonus';col='#d97706';}
+  else if(s>=3.5){label='Below average';col='#ea580c';}
+  else{label='Poor deal';col='#dc2626';}
+  col=col||'#dc2626';
+  var desc;
+  if(s>=8)desc='Worth claiming for regular slot players.';
+  else if(s>=6.5)desc='Worth it if you plan to play these hours regardless.';
+  else if(s>=5)desc='Costs roughly '+c$(Math.abs(ev))+' to clear. Decide if the time is worth it.';
+  else if(contrib<50)desc='Low game contribution kills the value here.';
+  else if(hasWinCap)desc='Win cap limits your upside more than the headline bonus suggests.';
+  else desc='Clearing cost exceeds most of the bonus value.';
+  return{n:s,label:label,desc:desc,col:col,reasons:reasons};
+}
+
+function go(){
+  var bon,total,loss,ev,raw,wag,contrib,rtp,hn,cph;
+  var hrs=Math.max(0.5,num('f-hrs')),stake=Math.max(0.1,num('f-stake'));
+  var p=cur?P[cur]:null;
+
+  if(mode==='spins'){
+    var cnt=Math.max(1,num('s-count')),sval=Math.max(0.01,num('s-val'));
+    wag=num('s-wag');rtp=Math.min(100,Math.max(80,num('s-rtp')));
+    var winCap=num('s-cap');
+    bon=cnt*sval*rtp/100; /* expected winnings from spins */
+    raw=bon*wag;total=raw;contrib=100;
+    loss=total*((100-rtp)/100);
+    ev=bon-loss;
+    if(winCap>0&&ev>winCap-loss)ev=winCap-loss;
+    var hasWinCap=winCap>0;
+    var spinBon=c$(bon);
+    hn=wag===0?0:total/(stake*600);cph=hn>0?loss/hn:0;
+    el('results').style.display='block';
+    renderResults(bon,total,raw,contrib,wag,'spins',loss,ev,hn,cph,rtp,spinBon,winCap,hasWinCap,p,hrs,stake);
+  }else{
+    var dep=num('f-dep'),cashBon=num('f-bon');
+    wag=num('f-wag');var on=el('f-on').value;
+    contrib=parseFloat(el('f-game').value)||100;
+    rtp=Math.min(100,Math.max(80,num('f-rtp')));
+    var winCap=num('f-cap'),hasWinCap=winCap>0;
+    if(dep===0&&cashBon===0){el('results').style.display='none';return;}
+    var base=on==='both'?dep+cashBon:cashBon;
+    raw=base*wag;total=contrib>0&&contrib<100?raw/(contrib/100):raw;
+    loss=total*((100-rtp)/100);
+    bon=cashBon;ev=bon-loss;
+    if(hasWinCap&&ev>winCap)ev=winCap; /* cap upside */
+    hn=wag===0?0:total/(stake*(contrib>=100?600:60));cph=hn>0?loss/hn:0;
+    el('results').style.display='block';
+    renderResults(bon,total,raw,contrib,wag,on,loss,ev,hn,cph,rtp,c$(bon),winCap,hasWinCap,p,hrs,stake);
+  }
+}
+
+function renderResults(bon,total,raw,contrib,wag,on,loss,ev,hn,cph,rtp,bonDisp,winCap,hasWinCap,p,hrs,stake){
+  /* YES / NO */
+  var yn=el('yn'),ync;
+  if(wag===0){
+    yn.className='yn yes';el('yn-icon').textContent='✅';
+    el('yn-head').textContent='Yes — claim this bonus.';
+    el('yn-reason').textContent='Zero wagering. Winnings are immediately withdrawable with no strings attached.';
+    ync='yes';
+  }else if(ev>20&&!hasWinCap){
+    yn.className='yn yes';el('yn-icon').textContent='✅';
+    el('yn-head').textContent='Yes — this bonus is worth claiming.';
+    el('yn-reason').textContent='Positive expected value of '+s$(ev)+'. On average you profit from this bonus.';
+    ync='yes';
+  }else if(contrib<30&&wag>0){
+    yn.className='yn no';el('yn-icon').textContent='❌';
+    el('yn-head').textContent='No — table games kill this bonus.';
+    el('yn-reason').textContent='At '+contrib+'% contribution you need '+c$(total)+' in actual bets. Clearing cost: '+c$(loss)+'. Skip unless slots are allowed.';
+    ync='no';
+  }else if(wag>55&&contrib>=100){
+    yn.className='yn no';el('yn-icon').textContent='❌';
+    el('yn-head').textContent='No — wagering is too high.';
+    el('yn-reason').textContent='At '+wag+'x, clearing this bonus is expected to cost you '+c$(loss)+' — more than the bonus is worth. Choose a casino with lower requirements.';
+    ync='no';
+  }else if(hasWinCap&&winCap<loss){
+    yn.className='yn no';el('yn-icon').textContent='❌';
+    el('yn-head').textContent='No — the win cap makes this worthless.';
+    el('yn-reason').textContent='The win cap ('+c$(winCap)+') is lower than your expected clearing cost ('+c$(loss)+'). You\'ll spend more than you can ever win back.';
+    ync='no';
+  }else if(ev<-bon*0.6){
+    yn.className='yn no';el('yn-icon').textContent='❌';
+    el('yn-head').textContent='No — cost to clear exceeds the bonus value.';
+    el('yn-reason').textContent='Expected clearing cost of '+c$(loss)+' is over 60% of the '+c$(bon)+' bonus. Mathematically not worth it. Skip this.';
+    ync='no';
+  }else if(ev<0&&Math.abs(ev)<bon*0.4){
+    yn.className='yn maybe';el('yn-icon').textContent='⚠️';
+    el('yn-head').textContent='Maybe — if you\'d play anyway.';
+    el('yn-reason').textContent='Clearing costs ~'+c$(Math.abs(ev))+'. If you\'d play '+hn.toFixed(0)+'+ hours at this casino regardless, the bonus adds value. If not, skip it.';
+    ync='maybe';
+  }else{
+    yn.className='yn maybe';el('yn-icon').textContent='⚠️';
+    el('yn-head').textContent='Maybe — check the personal clearance verdict below.';
+    el('yn-reason').textContent='Average terms. Clearing costs '+c$(loss)+' in expected losses against a '+c$(bon)+' bonus. Worth it if you can clear it in time.';
+    ync='maybe';
+  }
+
+  /* SCORE */
+  var sc=scoreCalc(wag,on,contrib,p?p.exp:14,ev,bon,hasWinCap);
+  el('snum').textContent=sc.n.toFixed(1);el('snum').style.color=sc.col;
+  el('slabel').textContent=sc.label;el('slabel').style.color=sc.col;
+  el('sdesc').textContent=sc.desc;
+  var sb=el('sbreakdown');
+  if(sc.reasons&&sc.reasons.length>0){sb.style.display='block';sb.textContent='Score factors: '+sc.reasons.join(' · ');}
+  else{sb.style.display='none';}
+
+  /* BOXES */
+  function box(i,txt,cls){el('b'+i).className='box '+(cls||'');el('r'+i).textContent=txt;}
+  box(0,wag===0?'C$0':c$(total),total<10000?'g':total<30000?'':'a');
+  box(1,wag===0?'0h':hn<1?Math.round(hn*60)+'min':hn.toFixed(1)+'h',hn<10?'g':hn<25?'':'a');
+  box(2,s$(ev),ev>0?'g':ev>-50?'a':'r');
+  box(3,wag===0?'Free':c$(cph)+'/h',cph<20?'g':cph<50?'a':'r');
+
+  /* DIFF BAR */
+  var diff=wag===0?0:Math.min(100,(wag/60)*100*(100/Math.max(1,contrib)));
+  el('dbar').style.width=diff+'%';
+  el('dbar').style.background=diff<30?'#22c55e':diff<60?'#d97706':'#dc2626';
+  el('dlbl').textContent=wag===0?'None ✓':diff<25?'Easy':diff<50?'Moderate':diff<75?'Hard':'Very Hard';
+
+  /* WIN CAP WARNING */
+  if(hasWinCap){
+    show('w-cap');
+    el('w-cap-t').innerHTML='<strong>Win cap: '+c$(winCap)+' max cashout.</strong> Even if you win more than '+c$(winCap)+' while clearing this bonus, the casino will only pay out '+c$(winCap)+'. That\'s your actual ceiling — not the headline bonus amount.';
+  }else{hide('w-cap');}
+
+  /* MAX BET WARNING */
+  if(wag>0){
+    show('w-mb');
+    el('w-mb-t').innerHTML=p&&p.mb>0?
+      '<strong>Max bet at '+p.name+': C$'+p.mb+'/spin.</strong> Any bet above this while the bonus is active forfeits everything immediately — no warning given.':
+      '<strong>Max bet rule:</strong> Most Canadian casinos cap bets at C$5–C$8/spin while a bonus is active. Exceeding this voids the bonus with no warning. Check your casino\'s specific terms.';
+  }else{hide('w-mb');}
+
+  /* EXPIRY */
+  if(wag>0&&p&&p.exp>0&&hn>0){
+    show('w-exp');
+    var dn=Math.ceil(hn/(hrs/7));
+    el('w-exp-t').innerHTML=dn>p.exp?
+      '<strong>⚠️ You won\'t clear this at your play rate.</strong> At '+hrs+'h/week this takes ~'+dn+' days — '+p.name+' expires in '+p.exp+'. You\'d need to play '+(hn/p.exp*7).toFixed(1)+'h/week. Either increase your sessions or skip the bonus.':
+      '<strong>Expiry looks fine.</strong> At '+hrs+'h/week you\'ll clear in ~'+dn+' day'+(dn!==1?'s':'')+' — within the '+p.exp+'-day window.';
+  }else{hide('w-exp');}
+
+  /* STAKE TIP */
+  if(wag>0&&mode==='cash'){
+    var sb=p&&p.mb>0?p.mb:5;
+    var st=num('f-stake');
+    if(st<sb){
+      show('w-tip');hide('w-high');
+      el('w-tip-t').innerHTML='<strong>Play faster:</strong> You\'re betting C$'+st+'/spin but the max allowed is C$'+sb+'. Increasing to C$'+sb+' clears '+(sb/st).toFixed(1)+'× faster, reducing time from '+hn.toFixed(1)+'h to ~'+(hn/(sb/st)).toFixed(1)+'h.';
+    }else if(st>sb&&p&&p.mb>0){
+      hide('w-tip');show('w-high');
+      el('w-high-t').innerHTML='<strong>Stake too high — bonus will be forfeited.</strong> C$'+st+'/spin exceeds the C$'+sb+' max bet. Reduce to C$'+sb+' immediately or you\'ll lose the bonus.';
+    }else{hide('w-tip');hide('w-high');}
+  }else{hide('w-tip');hide('w-high');}
+
+  /* BREAKDOWN */
+  el('o0').textContent=bonDisp;
+  el('o1').textContent=on==='spins'?'Spin winnings × wagering':c$(on==='both'?bon+(num('f-dep')||0):bon)+(on==='both'?' (dep+bonus)':' (bonus only)');
+  el('o2').textContent=c$(raw);
+  el('o3').textContent=contrib+'%'+(contrib<100?' → divides req by '+(contrib/100).toFixed(2):'  (slots = no adjustment)');
+  el('o4').textContent=c$(total);
+  el('o5').textContent=((100-(mode==='spins'?num('s-rtp'):num('f-rtp')))).toFixed(2)+'%';
+  el('o6').textContent='−'+c$(loss);
+  el('o7').textContent='+'+bonDisp;
+  if(hasWinCap){
+    el('cap-row').style.display='flex';
+    el('o8').textContent='Max '+c$(winCap)+' (cap applied)';
+  }else{el('cap-row').style.display='none';}
+  el('o9').textContent=s$(ev);
+  el('o10').textContent=wag===0?'0h':hn.toFixed(1)+'h';
+  el('o11').textContent=wag===0?'Free':c$(cph)+'/hr';
+
+  /* PERSONAL */
+  var pv=el('pv');
+  if(wag===0){pv.className='pv';return;}
+  var exp=p?p.exp:30,da=exp>0?exp:30,ha=(hrs/7)*da;
+  if(hn<=ha*0.7){pv.className='pv can';pv.innerHTML='✅ <strong>You\'ll clear this comfortably.</strong> You need '+hn.toFixed(1)+'h and have '+ha.toFixed(0)+'h available before expiry. You\'ll finish ~'+Math.round((ha-hn)/hrs*7)+' days early.';}
+  else if(hn<=ha){pv.className='pv maybe';pv.innerHTML='⚠️ <strong>Tight but possible.</strong> You need '+hn.toFixed(1)+'h with '+ha.toFixed(0)+'h available. No missed sessions — be realistic.';}
+  else{pv.className='pv cant';pv.innerHTML='❌ <strong>You won\'t clear at your play rate.</strong> You need '+hn.toFixed(1)+'h but only have '+ha.toFixed(0)+'h at '+hrs+'h/week. You\'d need '+(hn/da*7).toFixed(1)+'h/week. Skip this bonus.';}
+}
+
+/* COMPARE */
+function cmpCore(dep,bon,wag,on,cap){
+  var base=on==='both'?dep+bon:bon,tot=base*wag;
+  var loss=tot*0.04,ev=bon-loss;
+  if(cap>0&&ev>cap)ev=cap;
+  return{tot:tot,ev:ev,loss:loss,hrs:wag===0?0:tot/1200,wag:wag,cap:cap};
+}
+function cmpGo(){
+  var a=cmpCore(num('a-dep'),num('a-bon'),num('a-wag'),el('a-on').value,num('a-cap'));
+  var b=cmpCore(num('b-dep'),num('b-bon'),num('b-wag'),el('b-on').value,num('b-cap'));
+  function rend(id,d,oe){
+    var e=el(id);e.style.display='block';
+    e.innerHTML='<div class="cmet"><span class="cl">Total to wager</span><span class="cv">'+c$(d.tot)+'</span></div>'+
+      '<div class="cmet"><span class="cl">Expected value</span><span class="cv '+(d.ev>oe?'best':'')+'">'+s$(d.ev)+'</span></div>'+
+      '<div class="cmet"><span class="cl">Cost to clear</span><span class="cv">'+c$(d.loss)+'</span></div>'+
+      '<div class="cmet"><span class="cl">Est. hours (C$2/spin)</span><span class="cv">'+(d.wag===0?'0h':d.hrs.toFixed(1)+'h')+'</span></div>'+
+      (d.cap>0?'<div class="cmet"><span class="cl">Win cap</span><span class="cv" style="color:var(--red)">'+c$(d.cap)+'</span></div>':'');
+  }
+  rend('cm-a',a,b.ev);rend('cm-b',b,a.ev);
+  var tie=Math.abs(a.ev-b.ev)<0.5;
+  el('ca').className='ccol'+(!tie&&a.ev>b.ev?' win':'');
+  el('cb').className='ccol'+(!tie&&b.ev>a.ev?' win':'');
+  el('tha').innerHTML='Bonus A'+(!tie&&a.ev>b.ev?' <span class="cbdg">✓ Better deal</span>':'');
+  el('thb').innerHTML='Bonus B'+(!tie&&b.ev>a.ev?' <span class="cbdg">✓ Better deal</span>':'');
+  var cw=el('cwin');cw.style.display='block';
+  if(tie)cw.innerHTML='🤝 <strong>Essentially equal.</strong> Both have similar expected value. Choose the one with the better expiry window or your preferred casino.';
+  else if(a.ev>b.ev)cw.innerHTML='🏆 <strong>Bonus A is the better deal</strong> — by '+c$(Math.abs(a.ev-b.ev))+' in expected value. Bonus A needs '+c$(a.tot)+' in wagering vs '+c$(b.tot)+' for Bonus B.';
+  else cw.innerHTML='🏆 <strong>Bonus B is the better deal</strong> — by '+c$(Math.abs(b.ev-a.ev))+' in expected value. Bonus B needs '+c$(b.tot)+' in wagering vs '+c$(a.tot)+' for Bonus A.';
+}
+
+/* TRACKER */
+function trkGo(){
+  var tot=num('t-tot'),done=Math.min(num('t-done'),tot),days=Math.max(1,num('t-days')),stk=Math.max(0.1,num('t-stk'));
+  if(tot===0){el('trk-out').style.display='none';return;}
+  el('trk-out').style.display='block';
+  var rem=tot-done,pct=Math.round(done/tot*100);
+  el('t-r0').textContent=c$(done);el('t-r1').textContent=c$(rem);el('t-r2').textContent=pct+'%';
+  var bar=el('t-bar');
+  bar.style.width=Math.min(100,pct)+'%';
+  bar.style.background=pct>=80?'#22c55e':pct>=50?'#d97706':'#1d4ed8';
+  el('t-barlbl').textContent=pct+'%';
+  var hrs=rem/(stk*600),hpd=hrs/days;
+  el('t-o0').textContent=c$(rem);
+  el('t-o1').textContent=hrs.toFixed(1)+' hrs';
+  el('t-o2').textContent=hpd.toFixed(2)+' hrs/day ('+Math.round(hpd*60)+' min/day)';
+  var tyn=el('t-yn'),vi,hd,reason,vv,vc;
+  if(done>=tot){tyn.className='yn yes';vi='🎉';hd='Complete!';reason='Wagering cleared. You can withdraw your winnings now.';vv='✓ Done';vc='var(--gd)';}
+  else if(hpd<=1){tyn.className='yn yes';vi='✅';hd='On track — easy.';reason=hrs.toFixed(1)+'h left. Only '+Math.round(hpd*60)+' min/day needed. Very comfortable.';vv='✓ On track';vc='var(--gd)';}
+  else if(hpd<=3){tyn.className='yn yes';vi='✅';hd='On track.';reason=hpd.toFixed(1)+'h/day for '+days+' days. Manageable with regular sessions.';vv='✓ On track';vc='var(--gd)';}
+  else if(hpd<=6){tyn.className='yn maybe';vi='⚠️';hd='Tight — possible but demanding.';reason=hpd.toFixed(1)+'h/day for '+days+' days. Be honest with yourself about whether this is realistic.';vv='⚠ Tight';vc='var(--am)';}
+  else{tyn.className='yn no';vi='❌';hd='This will expire.';reason=hrs.toFixed(1)+'h needed in '+days+' days = '+hpd.toFixed(1)+'h/day. Not achievable for most players.';vv='✗ Will expire';vc='var(--red)';}
+  el('t-yi').textContent=vi;el('t-yh').textContent=hd;el('t-yr').textContent=reason;
+  el('t-o3').textContent=vv;el('t-o3').style.color=vc;
+}
+
+/* TABS */
+function showTab(name,btn){
+  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('on');});
+  document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('on');});
+  btn.classList.add('on');el('tab-'+name).classList.add('on');
+  if(name==='cmp')cmpGo();if(name==='track')trkGo();
+}
+
+/* COPY + SHARE */
+function doCopy(){
+  var dep=num('f-dep'),bon=num('f-bon'),wag=num('f-wag');
+  var base=el('f-on').value==='both'?dep+bon:bon,raw=base*wag;
+  var contrib=parseFloat(el('f-game').value)||100;
+  var tot=contrib<100?raw/(contrib/100):raw;
+  var ev=bon-tot*((100-num('f-rtp'))/100);
+  var txt='CasinoScout Wagering Calculator\nDeposit: C$'+dep+' | Bonus: C$'+bon+' | Wagering: '+wag+'x\nTotal to wager: '+c$(tot)+' | Expected value: '+s$(ev)+'\ncasinoscout.co/tools/wagering-calculator/';
+  navigator.clipboard.writeText(txt).then(function(){
+    el('bcopy').textContent='✓ Copied!';el('bcopy').classList.add('cp');
+    setTimeout(function(){el('bcopy').textContent='📋 Copy';el('bcopy').classList.remove('cp');},2000);
+  }).catch(function(){alert(txt);});
+}
+function doShare(){
+  var u=location.href.split('#')[0]+'#d='+num('f-dep')+'&b='+num('f-bon')+'&w='+num('f-wag')+'&on='+el('f-on').value+'&g='+el('f-game').value+'&r='+num('f-rtp')+'&c='+num('f-cap');
+  navigator.clipboard.writeText(u).then(function(){
+    el('bshare').textContent='✓ Copied!';el('bshare').classList.add('cp');
+    setTimeout(function(){el('bshare').textContent='🔗 Share';el('bshare').classList.remove('cp');},2500);
+  }).catch(function(){prompt('Share:',u);});
+}
+
+/* RESTORE FROM HASH */
+(function(){
+  if(!location.hash)return;
+  try{
+    var p={};location.hash.slice(1).split('&').forEach(function(s){var kv=s.split('=');if(kv.length===2)p[kv[0]]=kv[1];});
+    if(p.d)el('f-dep').value=p.d;if(p.b)el('f-bon').value=p.b;
+    if(p.w)el('f-wag').value=p.w;if(p.on)el('f-on').value=p.on;
+    if(p.g)el('f-game').value=p.g;if(p.r)el('f-rtp').value=p.r;
+    if(p.c)el('f-cap').value=p.c;
+  }catch(e){}
+})();
+
+go();cmpGo();trkGo();
+
+</script>
 <script>
 function filterCasinos(tag,btn){
   document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active');});
