@@ -95,8 +95,8 @@ body{font-family:var(--ff);background:var(--bg);color:var(--t);font-size:15px;li
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);width:20px}
 
 /* MOBILE DRAWER */
-.mobile-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;z-index:190;background:rgba(0,0,0,0.4);opacity:0;transition:opacity 0.25s}
-.mobile-menu.open{opacity:1}
+.mobile-menu{position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;z-index:190;background:rgba(0,0,0,0.4);opacity:0;transition:opacity 0.25s}
+.mobile-menu.open{display:block;opacity:1}
 .mobile-drawer{position:absolute;top:0;right:0;width:min(320px,88vw);height:100%;background:var(--w);box-shadow:-4px 0 20px rgba(0,0,0,0.12);transform:translateX(100%);transition:transform 0.28s cubic-bezier(0.4,0,0.2,1);display:flex;flex-direction:column;overflow-y:auto}
 .mobile-menu.open .mobile-drawer{transform:translateX(0)}
 .drawer-header{padding:1.25rem 1.5rem;border-bottom:1px solid var(--b);display:flex;align-items:center;justify-content:space-between}
@@ -219,7 +219,7 @@ body{font-family:var(--ff);background:var(--bg);color:var(--t);font-size:15px;li
 /* FAQ */
 .faq-list{margin-bottom:2rem}
 .faq-item{border:1px solid var(--b);border-radius:8px;margin-bottom:0.5rem;overflow:hidden;background:var(--w)}
-.faq-q{padding:0.85rem 1rem;font-weight:700;font-size:0.86rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--t);line-height:1.4}
+.faq-q{padding:0.85rem 1rem;font-weight:700;font-size:0.86rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--t);line-height:1.4min-height:48px;}
 .faq-q:hover{background:var(--bg)}
 .faq-icon{flex-shrink:0;margin-left:0.75rem;font-size:1rem;color:var(--t3)}
 .faq-a{padding:0 1rem 0.85rem;font-size:0.83rem;color:var(--t2);line-height:1.75;display:none}
@@ -295,7 +295,7 @@ button,a{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
   .filters{flex-wrap:nowrap;overflow-x:auto;gap:0.4rem;padding:0.65rem 1rem;-webkit-overflow-scrolling:touch;scrollbar-width:none}
   .filters::-webkit-scrollbar{display:none}
   .filter-label{flex-shrink:0;font-size:0.68rem}
-  .filter-btn{flex-shrink:0;white-space:nowrap;min-height:36px;padding:0 0.9rem;font-size:0.78rem}
+  .filter-btn{flex-shrink:0;white-space:nowrap;min-height:44px;padding:0 0.9rem;font-size:0.78rem}
 
   /* MAIN — single column */
   .main{grid-template-columns:1fr;padding:1rem 1rem 0.5rem;gap:1rem}
@@ -506,20 +506,17 @@ a.rev-link:hover{text-decoration:underline}
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Best Online Casinos Canada &amp; Ontario 2026 | CasinoScout">
 <meta name="twitter:description" content="Best online casinos Canada &amp; Ontario 2026. Bonuses compared, Interac withdrawals tested, iGO licences verified. Real deposits, real data.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"CasinoScout","url":"https://casinoscout.co","logo":"https://casinoscout.co/favicon.svg","description":"Independent Canadian online casino review site. Real tested withdrawals, honest bonus analysis, Ontario iGO licence verification.","sameAs":[],"contactPoint":{"@type":"ContactPoint","contactType":"editorial","email":"hello@casinoscout.co"}}</script>
 <script>
 window.dataLayer=window.dataLayer||[];
 function gtag(){dataLayer.push(arguments);}
 gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',wait_for_update:500});
 </script>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN71708XXE"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-ZN71708XXE', {anonymize_ip: true});
+gtag('js',new Date());
+gtag('config','G-ZN71708XXE',{anonymize_ip:true});
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"CasinoScout","url":"https://casinoscout.co","logo":"https://casinoscout.co/favicon.svg","description":"Independent Canadian online casino review site. Real tested withdrawals, honest bonus analysis, Ontario iGO licence verification.","sameAs":[],"contactPoint":{"@type":"ContactPoint","contactType":"editorial","email":"hello@casinoscout.co"}}</script>
 </head>
 <body>
 <div class="cookie-banner" id="cookie-banner">
@@ -1042,7 +1039,7 @@ window.filterCasinos=filterCasinos;window.toggleFaq=toggleFaq;window.openMenu=op
 <script>(window.requestIdleCallback||function(f,o){setTimeout(f,o&&o.timeout||50)})(function(){
 (function(){
   var PREF='cs_lang';
-  var REAL_FR=['https://casinoscout.co/fr/','https://casinoscout.co/fr/meilleurs-casinos-en-ligne-canada/','https://casinoscout.co/fr/bonus-sans-depot-canada/'];
+  var REAL_FR=['https://casinoscout.co/fr/','https://casinoscout.co/fr/meilleurs-casinos-en-ligne-canada/','https://casinoscout.co/fr/bonus-sans-depot-canada/','https://casinoscout.co/fr/avis/bitstarz-canada/','https://casinoscout.co/fr/avis/jackpot-city-canada/','https://casinoscout.co/fr/avis/leovegas-canada/','https://casinoscout.co/fr/avis/jackbit-canada/','https://casinoscout.co/fr/avis/bcgame-canada/','https://casinoscout.co/fr/avis/spin-casino-canada/','https://casinoscout.co/fr/avis/playojo-canada/','https://casinoscout.co/fr/avis/7bit-canada/','https://casinoscout.co/fr/avis/betway-canada/','https://casinoscout.co/fr/avis/bet365-canada/','https://casinoscout.co/fr/avis/casumo-canada/','https://casinoscout.co/fr/avis/888casino-canada/','https://casinoscout.co/fr/casinos-en-ligne-ontario/','https://casinoscout.co/fr/casinos-interac-canada/','https://casinoscout.co/fr/casinos-paiement-rapide-canada/','https://casinoscout.co/fr/tours-gratuits-canada/','https://casinoscout.co/fr/casino-en-direct-canada/','https://casinoscout.co/fr/a-propos/','https://casinoscout.co/fr/divulgation-affiliation/','https://casinoscout.co/fr/jeu-responsable/','https://casinoscout.co/fr/politique-de-confidentialite/','https://casinoscout.co/fr/conditions-utilisation/'];
   var META={'en-CA':{flag:'🇨🇦',label:'English (Canada)',short:'EN'},'fr-CA':{flag:'🇫🇷',label:'Français (Canada)',short:'FR'}};
   var curLang=document.documentElement.getAttribute('lang')||'en-CA';
   var stored=null;try{stored=localStorage.getItem(PREF);}catch(e){}
@@ -1094,6 +1091,23 @@ window.filterCasinos=filterCasinos;window.toggleFaq=toggleFaq;window.openMenu=op
 document.querySelectorAll('.rr-fill[data-w]').forEach(function(el){
   el.style.width=el.getAttribute('data-w')+'%';
 });
+</script>
+<script>
+(function(){
+  var K='cs_cookie_consent',s=null;
+  try{s=localStorage.getItem(K);}catch(e){}
+  if(s==='granted'){
+    if(typeof gtag==='function')gtag('consent','update',{analytics_storage:'granted'});
+    return;
+  }
+  if(!s){var b=document.getElementById('cookie-banner');if(b)b.classList.add('show');}
+})();
+function setCookieConsent(c){
+  try{localStorage.setItem('cs_cookie_consent',c);}catch(e){}
+  if(typeof gtag==='function')gtag('consent','update',{analytics_storage:c});
+  var b=document.getElementById('cookie-banner');if(b)b.classList.remove('show');
+}
+window.setCookieConsent=setCookieConsent;
 </script>
 </body>
 </html>
