@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN71708XXE"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-ZN71708XXE');</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Review","name":"bet365 Casino Canada Review 2026","url":"https://casinoscout.co/en/reviews/bet365-canada/","datePublished":"2026-03-27","dateModified":"2026-03-27","author":{"@type":"Person","name":"Alex M.","jobTitle":"Lead Casino Reviewer","worksFor":{"@type":"Organization","name":"CasinoScout"}},"publisher":{"@type":"Organization","name":"CasinoScout","url":"https://casinoscout.co"},"itemReviewed":{"@type":"Casino","name":"bet365 Casino","description":"The world's largest online gambling operator, Ontario iGO licensed","currenciesAccepted":"CAD","paymentAccepted":"Interac, Visa, Mastercard, MuchBetter"},"reviewRating":{"@type":"Rating","ratingValue":"8.8","bestRating":"10","worstRating":"1"},"reviewBody":"bet365 is the world's biggest gambling brand, fully regulated in Ontario by iGaming Ontario. Up to 500 free spins with 0x wagering over 10 days. Interac withdrawals in 1-4 hours. 2,000+ games with strong live casino and exclusive bet365 originals."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Review","name":"bet365 Casino Canada Review 2026","url":"https://casinoscout.co/en/reviews/bet365-canada/","datePublished":"2026-03-27","dateModified":"2026-03-27","author":{"@type":"Person","name":"Alex M.","jobTitle":"Lead Casino Reviewer","worksFor":{"@type":"Organization","name":"CasinoScout"}},"publisher":{"@type":"Organization","name":"CasinoScout","url":"https://casinoscout.co"},"itemReviewed":{"@type":"LocalBusiness","name":"bet365 Casino","description":"The world's largest online gambling operator, Ontario iGO licensed","currenciesAccepted":"CAD","paymentAccepted":"Interac, Visa, Mastercard, MuchBetter","address":{"@type":"PostalAddress","addressCountry":"GI"}},"reviewRating":{"@type":"Rating","ratingValue":"8.8","bestRating":"10","worstRating":"1"},"reviewBody":"bet365 is the world's biggest gambling brand, fully regulated in Ontario by iGaming Ontario. Up to 500 free spins with 0x wagering over 10 days. Interac withdrawals in 1-4 hours. 2,000+ games with strong live casino and exclusive bet365 originals."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"CasinoScout","item":"https://casinoscout.co/"},{"@type":"ListItem","position":2,"name":"Canada Casinos","item":"https://casinoscout.co/en/best-online-casinos-canada/"},{"@type":"ListItem","position":3,"name":"bet365 Review","item":"https://casinoscout.co/en/reviews/bet365-canada/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"bet365 Casino Canada Review 2026","url":"https://casinoscout.co/en/reviews/bet365-canada/","dateModified":"2026-03-27","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".verdict-box",".for-box"]}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is bet365 Casino available in Ontario Canada?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. bet365 holds an iGaming Ontario licence and operates a dedicated Ontario platform. Ontario players access a separate site from non-Ontario Canadians."}}, {"@type": "Question", "name": "How fast are bet365 withdrawals in Canada?", "acceptedAnswer": {"@type": "Answer", "text": "bet365 is one of the fastest Ontario casinos for Interac withdrawals \u2014 typically 1-4 hours once approved. Wire transfers take longer at up to 12 hours. This is significantly faster than Jackpot City (26 hours) or LeoVegas (1-3 business days)."}}, {"@type": "Question", "name": "What is the bet365 Canada casino bonus?", "acceptedAnswer": {"@type": "Answer", "text": "Up to 500 free spins spread over up to 10 days (50 spins per day) after a C$20 minimum deposit. Winnings from free spins carry 0x wagering \u2014 they are paid as real withdrawable cash. Note: Ontario AGCO rules prevent public advertising of specific bonus amounts; log in to see the current offer."}}, {"@type": "Question", "name": "Is bet365 available outside Ontario in Canada?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Players in all other Canadian provinces can access bet365 via its internationally licensed platform (Gibraltar). The Ontario-specific platform is separate and only accessible to players physically located in Ontario."}}, {"@type": "Question", "name": "Does bet365 Casino have sports betting?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. bet365 started as a sportsbook and the casino is part of the same account. Ontario players can bet on NHL, NBA, NFL, MLB, soccer and hundreds of other markets through the same login."}}]}</script>
@@ -535,28 +535,33 @@ document.querySelectorAll('.faq-item .faq-q').forEach(q=>{q.addEventListener('cl
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(function(l){
     var h=l.getAttribute('hreflang');if(h&&h!=='x-default')alts[h]=l.href;
   });
-  // Auto-redirect if stored pref has a real page
+  // Fallback: always ensure en-CA option exists
+  if(!alts['en-CA']){
+    var xd=document.querySelector('link[rel="alternate"][hreflang="x-default"]');
+    alts['en-CA']=xd?xd.href:'https://casinoscout.co/';
+  }
   if(stored&&stored!==curLang&&alts[stored]&&REAL_FR.indexOf(alts[stored])>-1){
     window.location.replace(alts[stored]);return;
   }
-  // Show "not in French" banner
   if(stored==='fr-CA'&&curLang!=='fr-CA'){
     var b=document.createElement('div');
     b.className='lang-banner show';
-    b.innerHTML='🇫🇷 Cette page n’est pas encore disponible en français. <a href="https://casinoscout.co/fr/">Accueil français →</a><button class="lang-banner-close" aria-label="Fermer">×</button>';
+    b.innerHTML='🇫🇷 Cette page n’est pas encore disponible en français. <a href="https://casinoscout.co/fr/">Accueil français →</a><button class="lang-banner-close" aria-label="Fermer">×</button>';
     b.querySelector('.lang-banner-close').onclick=function(){b.classList.remove('show');};
     var nav=document.querySelector('.site-nav');
     if(nav&&nav.parentNode)nav.parentNode.insertBefore(b,nav.nextSibling);
   }
-  // Build switcher dropdown
   var sw=document.getElementById('lang-sw'),btn=document.getElementById('lang-btn'),dd=document.getElementById('lang-dd');
   if(!sw||!btn||!dd)return;
   var cur=META[curLang]||{flag:'🌐',short:curLang};
   btn.querySelector('.lang-flag').textContent=cur.flag;
   btn.querySelector('.lang-code').textContent=cur.short;
+  var curURL=window.location.href.replace(/\/$/,'');
   Object.keys(META).forEach(function(lang){
-    if(lang===curLang||!alts[lang])return;
+    if(lang===curLang)return;
     var m=META[lang],url=alts[lang];
+    if(!url)return;
+    if(url.replace(/\/$/,'')===curURL)return;
     var real=lang!=='fr-CA'||(REAL_FR.indexOf(url)>-1);
     var el=document.createElement('a');
     el.href=url;el.className='lang-option';el.setAttribute('hreflang',lang);
