@@ -35,7 +35,19 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a wagering requirement?","acceptedAnswer":{"@type":"Answer","text":"A wagering requirement (also called a playthrough requirement) is the number of times you must bet your bonus before withdrawing winnings. A C$100 bonus with 35x wagering requires C$3,500 in total bets placed before withdrawal is allowed."}},{"@type":"Question","name":"What is a good wagering requirement for a Canadian casino?","acceptedAnswer":{"@type":"Answer","text":"The Canadian average is 30–40x. Under 30x is player-friendly. Above 50x is high and generally not worth claiming. Jackpot City and Spin Casino offer 35x on bonus only — below average. Jackbit offers 0x wagering on free spins — the only genuinely wager-free offer in our Canada top 6."}},{"@type":"Question","name":"What is a win cap on a casino bonus?","acceptedAnswer":{"@type":"Answer","text":"A win cap (maximum cashout) limits how much you can withdraw from bonus winnings. A C$200 win cap means even if you win C$500 while clearing a bonus, you can only withdraw C$200. Always check for a win cap before claiming — it can make a large bonus nearly worthless."}},{"@type":"Question","name":"How do free spins wagering requirements work?","acceptedAnswer":{"@type":"Answer","text":"Free spins apply wagering to your winnings, not a cash amount. If 100 free spins produce C$20 in winnings and the requirement is 40x, you must wager C$800 before withdrawing. The value per spin (usually C$0.10–C$0.20) determines how much bonus you actually receive to play through."}},{"@type":"Question","name":"What is the best no wagering casino in Canada?","acceptedAnswer":{"@type":"Answer","text":"Jackbit offers 100 free spins with 0x wagering — winnings up to C$100 are immediately withdrawable with no playthrough requirement. This is the only verified 0x wagering welcome offer in our Canada top 6 as of March 2026."}},{"@type":"Question","name":"What does game contribution mean for casino bonuses?","acceptedAnswer":{"@type":"Answer","text":"Game contribution is the percentage of each bet that counts toward your wagering requirement. Slots contribute 100% — every C$1 bet counts fully. Blackjack and roulette typically contribute only 5–10%, meaning you need C$10 in bets for every C$1 of requirement met. Playing low-contribution games on a bonus makes it dramatically harder and more expensive to clear."}},{"@type":"Question","name":"How long does it take to clear a wagering requirement?","acceptedAnswer":{"@type":"Answer","text":"At C$2 per spin on slots (600 spins per hour, C$1,200 throughput per hour), a C$14,000 wagering requirement takes roughly 12 hours of play. Use the Progress Tracker tab on this calculator to get an estimate based on your specific stake and session length."}},{"@type":"Question","name":"Is a casino bonus worth claiming?","acceptedAnswer":{"@type":"Answer","text":"Most casino bonuses have negative expected value — the house edge applied across the required wagering exceeds the bonus amount. A C$400 bonus at 35x needs C$14,000 in bets. At 96% RTP slots (4% house edge), expected losses to clear = C$560, making net value approximately −C$160. Bonuses are worth claiming if you plan to play those hours anyway — not as a standalone profit strategy."}},{"@type":"Question","name":"What happens if I exceed the max bet while on a bonus?","acceptedAnswer":{"@type":"Answer","text":"Exceeding the maximum bet per spin while a bonus is active (C$5 at BitStarz, C$10 at 7Bit, C$8 at Jackpot City and Spin Casino) immediately forfeits the bonus and all associated winnings with no warning. The casino detects it automatically through their system."}},{"@type":"Question","name":"Can I withdraw my deposit before completing wagering?","acceptedAnswer":{"@type":"Answer","text":"Usually yes, but you forfeit the bonus balance and all winnings generated from it. At most casinos your original deposit remains withdrawable at any time. Some casinos lock your deposit while a bonus is active — always check before depositing if you might want to exit the bonus early."}}]}</script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN71708XXE"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-ZN71708XXE');</script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',wait_for_update:500});
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN71708XXE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZN71708XXE', {anonymize_ip: true});
+</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -310,9 +322,27 @@ footer{background:var(--w);border-top:1px solid var(--b);padding:1.25rem 1rem;ma
 
 .drawer-section-label{font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--t4);padding:.75rem 1rem .25rem;margin-top:.25rem}
 
+
+.cookie-banner{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--t,#111827);color:#fff;z-index:10000;padding:1rem 1.5rem;box-shadow:0 -4px 20px rgba(0,0,0,.2)}
+.cookie-banner.show{display:block}
+.cookie-inner{max-width:1040px;margin:0 auto;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.cookie-text{flex:1;font-size:.82rem;line-height:1.5;min-width:200px}
+.cookie-text a{color:#86EFAC;text-decoration:underline}
+.cookie-btns{display:flex;gap:.5rem;flex-shrink:0}
+.cookie-accept{background:#22C55E;color:#fff;border:none;padding:.5rem 1.25rem;border-radius:6px;cursor:pointer;font-weight:700;font-size:.82rem}
+.cookie-reject{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);padding:.5rem 1.25rem;border-radius:6px;cursor:pointer;font-weight:600;font-size:.82rem}
 </style>
 </head>
 <body>
+<div class="cookie-banner" id="cookie-banner">
+  <div class="cookie-inner">
+    <p class="cookie-text">We use cookies to analyse site traffic. By clicking &ldquo;Accept&rdquo;, you consent to analytics cookies. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
+    <div class="cookie-btns">
+      <button class="cookie-reject" onclick="setCookieConsent('denied')">Reject</button>
+      <button class="cookie-accept" onclick="setCookieConsent('granted')">Accept</button>
+    </div>
+  </div>
+</div>
 
 <nav class="site-nav" role="navigation" aria-label="Main navigation">
   <a href="/" class="logo" aria-label="CasinoScout Home">
