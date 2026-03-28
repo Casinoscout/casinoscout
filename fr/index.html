@@ -471,7 +471,7 @@ function setCookieConsent(c){
     <li><a href="/fr/">Meilleurs Casinos</a></li>
     <li><a href="/fr/meilleurs-casinos-en-ligne-canada/">Guide Canada</a></li>
     <li><a href="/fr/bonus-sans-depot-canada/">Bonus sans dépôt</a></li>
-    <li><a href="/responsible-gambling/">Jeu responsable</a></li>
+    <li><a href="/fr/jeu-responsable/">Jeu responsable</a></li>
   </ul>
   <div class="nav-right">
   <div class="lang-sw" id="lang-sw">
@@ -500,7 +500,7 @@ function setCookieConsent(c){
       <a href="/fr/meilleurs-casinos-en-ligne-canada/" onclick="closeMenu()"><span class="nav-icon">🇨🇦</span>Guide Canada</a>
       <a href="/fr/bonus-sans-depot-canada/" onclick="closeMenu()"><span class="nav-icon">🎁</span>Bonus sans dépôt</a>
       <a href="/tools/wagering-calculator/" onclick="closeMenu()"><span class="nav-icon">🔢</span>Calculateur de mises</a>
-      <a href="/responsible-gambling/" onclick="closeMenu()"><span class="nav-icon">🛡️</span>Jeu responsable</a>
+      <a href="/fr/jeu-responsable/" onclick="closeMenu()"><span class="nav-icon">🛡️</span>Jeu responsable</a>
       <a href="/about/" onclick="closeMenu()"><span class="nav-icon">ℹ️</span>À propos</a>
     </nav>
     <div class="drawer-cta">
@@ -628,12 +628,12 @@ function setCookieConsent(c){
 <div class="wrap">
 <div class="section">
   <h2 class="sec-h2">Questions fréquentes</h2>
-  <div class="faq-item"><div class="faq-q">Quel est le meilleur casino en ligne au Canada en 2026?<span class="faq-icon">+</span></div><div class="faq-a">BitStarz est notre meilleur choix global pour les joueurs hors Ontario — retraits crypto en 8,2 min en moyenne dans nos tests. Pour les joueurs en Ontario, LeoVegas est le meilleur choix avec une licence iGO et la plus basse exigence de mise (20x) de tout casino majeur au Canada.</div></div>
-<div class="faq-item"><div class="faq-q">Les casinos en ligne sont-ils légaux au Canada?<span class="faq-icon">+</span></div><div class="faq-a">Oui, c'est légal. L'Ontario régule son marché directement via iGaming Ontario. Dans les autres provinces, les casinos offshore licenciés sont accessibles — aucune loi ne criminalise les joueurs. Au Québec, Espacejeux (Loto-Québec) est l'alternative provinciale officielle.</div></div>
-<div class="faq-item"><div class="faq-q">Quel casino accepte Interac au Canada?<span class="faq-icon">+</span></div><div class="faq-a">Tous les casinos de notre liste acceptent Interac pour les dépôts. Pour les retraits : BitStarz (moins de 2h), Jackpot City (~26h), Spin Casino (~24h). Jackbit et BC.Game acceptent Interac pour les dépôts mais paient via crypto.</div></div>
-<div class="faq-item"><div class="faq-q">Quelle est l'exigence de mise minimale au Canada?<span class="faq-icon">+</span></div><div class="faq-a">PlayOJO et Jackbit offrent 0x — aucune exigence de mise. LeoVegas est à 20x, le plus bas des casinos licenciés majeurs. Jackpot City et Spin Casino sont à 35x. Betway est à 50-60x — le moins avantageux du marché.</div></div>
-<div class="faq-item"><div class="faq-q">Dois-je payer des impôts sur mes gains de casino au Canada?<span class="faq-icon">+</span></div><div class="faq-a">Non. Les gains de jeu sont non imposables au Canada pour les joueurs récréatifs. La CRA (Agence du revenu du Canada) les considère comme des aubaines non imposables, pas un revenu. Exception : si le jeu est ta principale source de revenus, les règles peuvent différer.</div></div>
-<div class="faq-item"><div class="faq-q">L'âge minimum pour jouer dans un casino en ligne au Canada?<span class="faq-icon">+</span></div><div class="faq-a">18 ans au Québec, en Alberta et au Manitoba. 19 ans dans toutes les autres provinces, dont l'Ontario. Assure-toi de respecter l'âge légal de ta province.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Quel est le meilleur casino en ligne au Canada en 2026?<span class="faq-icon">+</span></div><div class="faq-a">BitStarz est notre meilleur choix global pour les joueurs hors Ontario — retraits crypto en 8,2 min en moyenne dans nos tests. Pour les joueurs en Ontario, LeoVegas est le meilleur choix avec une licence iGO et la plus basse exigence de mise (20x) de tout casino majeur au Canada.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Les casinos en ligne sont-ils légaux au Canada?<span class="faq-icon">+</span></div><div class="faq-a">Oui, c'est légal. L'Ontario régule son marché directement via iGaming Ontario. Dans les autres provinces, les casinos offshore licenciés sont accessibles — aucune loi ne criminalise les joueurs. Au Québec, Espacejeux (Loto-Québec) est l'alternative provinciale officielle.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Quel casino accepte Interac au Canada?<span class="faq-icon">+</span></div><div class="faq-a">Tous les casinos de notre liste acceptent Interac pour les dépôts. Pour les retraits : BitStarz (moins de 2h), Jackpot City (~26h), Spin Casino (~24h). Jackbit et BC.Game acceptent Interac pour les dépôts mais paient via crypto.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Quelle est l'exigence de mise minimale au Canada?<span class="faq-icon">+</span></div><div class="faq-a">PlayOJO et Jackbit offrent 0x — aucune exigence de mise. LeoVegas est à 20x, le plus bas des casinos licenciés majeurs. Jackpot City et Spin Casino sont à 35x. Betway est à 50-60x — le moins avantageux du marché.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Dois-je payer des impôts sur mes gains de casino au Canada?<span class="faq-icon">+</span></div><div class="faq-a">Non. Les gains de jeu sont non imposables au Canada pour les joueurs récréatifs. La CRA (Agence du revenu du Canada) les considère comme des aubaines non imposables, pas un revenu. Exception : si le jeu est ta principale source de revenus, les règles peuvent différer.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">L'âge minimum pour jouer dans un casino en ligne au Canada?<span class="faq-icon">+</span></div><div class="faq-a">18 ans au Québec, en Alberta et au Manitoba. 19 ans dans toutes les autres provinces, dont l'Ontario. Assure-toi de respecter l'âge légal de ta province.</div></div>
 </div>
 </div>
 <footer class="site-footer">
