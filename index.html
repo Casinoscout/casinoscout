@@ -972,6 +972,7 @@ gtag('config','G-ZN71708XXE',{anonymize_ip:true});
 </footer>
 
 <script>(window.requestIdleCallback||function(f,o){setTimeout(f,o&&o.timeout||100)})(function(){
+
 // ── STICKY CTA ──
 (function(){
   const bar = document.getElementById('sticky-cta');
@@ -987,54 +988,6 @@ gtag('config','G-ZN71708XXE',{anonymize_ip:true});
   },{threshold:0.1});
   if(footer) observer.observe(footer);
 })();
-
-// ── HAMBURGER MENU ──
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobile-menu');
-const drawerClose = document.getElementById('drawer-close');
-
-function openMenu(){
-  hamburger.classList.add('open');
-  mobileMenu.classList.add('open');
-  mobileMenu.setAttribute('aria-hidden','false');
-  hamburger.setAttribute('aria-expanded','true');
-  document.body.style.overflow='hidden';
-}
-function closeMenu(){
-  hamburger.classList.remove('open');
-  mobileMenu.classList.remove('open');
-  mobileMenu.setAttribute('aria-hidden','true');
-  hamburger.setAttribute('aria-expanded','false');
-  document.body.style.overflow='';
-}
-hamburger.addEventListener('click', ()=> mobileMenu.classList.contains('open') ? closeMenu() : openMenu());
-drawerClose.addEventListener('click', closeMenu);
-mobileMenu.addEventListener('click', e=>{ if(e.target===mobileMenu) closeMenu(); });
-document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeMenu(); });
-
-// ── CASINO FILTER ──
-function filterCasinos(tag,btn){
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  let v=0;
-  document.querySelectorAll('.casino-card').forEach(card=>{
-    const tags=card.getAttribute('data-tags')||'';
-    const show=tag==='all'||tags.includes(tag);
-    card.classList.toggle('hidden',!show);
-    if(show)v++;
-  });
-  document.getElementById('casino-count').textContent='Showing '+v+' casino'+(v!==1?'s':'');
-}
-
-// ── FAQ TOGGLE ──
-function toggleFaq(el){
-  const a=el.nextElementSibling;
-  const open=a.style.display==='block';
-  document.querySelectorAll('.faq-a').forEach(x=>{x.style.display='none';const ic=x.previousElementSibling.querySelector('.faq-icon');if(ic)ic.textContent='+'});
-  document.querySelectorAll('.faq-q').forEach(x=>x.setAttribute('aria-expanded','false'));
-  if(!open){a.style.display='block';el.querySelector('.faq-icon').textContent='−';el.setAttribute('aria-expanded','true')}
-}
-window.filterCasinos=filterCasinos;window.toggleFaq=toggleFaq;window.openMenu=openMenu;window.closeMenu=closeMenu;
 });</script>
 <script>(window.requestIdleCallback||function(f,o){setTimeout(f,o&&o.timeout||50)})(function(){
 (function(){
@@ -1108,6 +1061,55 @@ function setCookieConsent(c){
   var b=document.getElementById('cookie-banner');if(b)b.classList.remove('show');
 }
 window.setCookieConsent=setCookieConsent;
+</script>
+<script>
+// ── HAMBURGER MENU ──
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+const drawerClose = document.getElementById('drawer-close');
+
+function openMenu(){
+  hamburger.classList.add('open');
+  mobileMenu.classList.add('open');
+  mobileMenu.setAttribute('aria-hidden','false');
+  hamburger.setAttribute('aria-expanded','true');
+  document.body.style.overflow='hidden';
+}
+function closeMenu(){
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+  mobileMenu.setAttribute('aria-hidden','true');
+  hamburger.setAttribute('aria-expanded','false');
+  document.body.style.overflow='';
+}
+hamburger.addEventListener('click', ()=> mobileMenu.classList.contains('open') ? closeMenu() : openMenu());
+drawerClose.addEventListener('click', closeMenu);
+mobileMenu.addEventListener('click', e=>{ if(e.target===mobileMenu) closeMenu(); });
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeMenu(); });
+
+// ── CASINO FILTER ──
+function filterCasinos(tag,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  let v=0;
+  document.querySelectorAll('.casino-card').forEach(card=>{
+    const tags=card.getAttribute('data-tags')||'';
+    const show=tag==='all'||tags.includes(tag);
+    card.classList.toggle('hidden',!show);
+    if(show)v++;
+  });
+  document.getElementById('casino-count').textContent='Showing '+v+' casino'+(v!==1?'s':'');
+}
+
+// ── FAQ TOGGLE ──
+function toggleFaq(el){
+  const a=el.nextElementSibling;
+  const open=a.style.display==='block';
+  document.querySelectorAll('.faq-a').forEach(x=>{x.style.display='none';const ic=x.previousElementSibling.querySelector('.faq-icon');if(ic)ic.textContent='+'});
+  document.querySelectorAll('.faq-q').forEach(x=>x.setAttribute('aria-expanded','false'));
+  if(!open){a.style.display='block';el.querySelector('.faq-icon').textContent='−';el.setAttribute('aria-expanded','true')}
+}
+window.filterCasinos=filterCasinos;window.toggleFaq=toggleFaq;window.openMenu=openMenu;window.closeMenu=closeMenu;
 </script>
 </body>
 </html>
