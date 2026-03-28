@@ -488,6 +488,15 @@ a.rev-link:hover{text-decoration:underline}
 .ei-body{padding:1.1rem 1.25rem;margin-bottom:1rem;font-size:.85rem;color:var(--t2);line-height:1.75}
 .hero-sub{font-size:1rem;font-weight:400;color:var(--t3);margin-top:.5rem;letter-spacing:0;margin-bottom:0}
 
+
+.cookie-banner{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--t,#111827);color:#fff;z-index:10000;padding:1rem 1.5rem;box-shadow:0 -4px 20px rgba(0,0,0,.2)}
+.cookie-banner.show{display:block}
+.cookie-inner{max-width:1040px;margin:0 auto;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.cookie-text{flex:1;font-size:.82rem;line-height:1.5;min-width:200px}
+.cookie-text a{color:#86EFAC;text-decoration:underline}
+.cookie-btns{display:flex;gap:.5rem;flex-shrink:0}
+.cookie-accept{background:#22C55E;color:#fff;border:none;padding:.5rem 1.25rem;border-radius:6px;cursor:pointer;font-weight:700;font-size:.82rem}
+.cookie-reject{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);padding:.5rem 1.25rem;border-radius:6px;cursor:pointer;font-weight:600;font-size:.82rem}
 </style>
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://casinoscout.co/">
@@ -497,17 +506,31 @@ a.rev-link:hover{text-decoration:underline}
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Best Online Casinos Canada &amp; Ontario 2026 | CasinoScout">
 <meta name="twitter:description" content="Best online casinos Canada &amp; Ontario 2026. Bonuses compared, Interac withdrawals tested, iGO licences verified. Real deposits, real data.">
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',wait_for_update:500});
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN71708XXE"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-ZN71708XXE');
+  gtag('config', 'G-ZN71708XXE', {anonymize_ip: true});
 </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"CasinoScout","url":"https://casinoscout.co","logo":"https://casinoscout.co/favicon.svg","description":"Independent Canadian online casino review site. Real tested withdrawals, honest bonus analysis, Ontario iGO licence verification.","sameAs":[],"contactPoint":{"@type":"ContactPoint","contactType":"editorial","email":"hello@casinoscout.co"}}</script>
 </head>
 <body>
+<div class="cookie-banner" id="cookie-banner">
+  <div class="cookie-inner">
+    <p class="cookie-text">We use cookies to analyse site traffic. By clicking &ldquo;Accept&rdquo;, you consent to analytics cookies. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
+    <div class="cookie-btns">
+      <button class="cookie-reject" onclick="setCookieConsent('denied')">Reject</button>
+      <button class="cookie-accept" onclick="setCookieConsent('granted')">Accept</button>
+    </div>
+  </div>
+</div>
 
 <nav class="site-nav" role="navigation" aria-label="Main navigation">
   <a href="/" class="logo" aria-label="CasinoScout Home">
@@ -946,7 +969,7 @@ a.rev-link:hover{text-decoration:underline}
     </div>
   </div>
   <div class="ft-bottom">
-    <p>© 2026 CasinoScout.co · Independent reviews · <a href="/affiliate-disclosure/">Affiliate disclosure</a> · Must be 19+ to gamble (18+ in AB, MB, QC) · Gambling can be addictive — <a href="https://www.connexontario.ca">ConnexOntario 1-866-531-2600</a> · <a href="/responsible-gambling/">Responsible Gambling</a></p>
+    <p>© 2026 CasinoScout.co · Independent reviews · <a href="/affiliate-disclosure/">Affiliate disclosure</a> · <a href="/privacy-policy/">Privacy Policy</a> · <a href="/terms-of-use/">Terms of Use</a> · Must be 19+ to gamble (18+ in AB, MB, QC) · Gambling can be addictive — <a href="https://www.connexontario.ca">ConnexOntario 1-866-531-2600</a> · <a href="/responsible-gambling/">Responsible Gambling</a></p>
     <div class="rg-badges"><span class="rg-badge">19+</span><span class="rg-badge">RGC</span><span class="rg-badge">ConnexOntario</span></div>
   </div>
 </footer>
