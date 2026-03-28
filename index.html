@@ -457,7 +457,7 @@ button,a{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 .lang-btn[aria-expanded="true"] .lang-caret{transform:rotate(180deg)}
 .lang-dd{display:none;position:absolute;top:calc(100% + 8px);right:0;background:var(--w);border:1.5px solid var(--b);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.12);min-width:180px;z-index:9999;overflow:hidden}
 .lang-dd.open{display:block}
-.lang-option{display:flex;align-items:center;gap:10px;padding:11px 14px;font-size:.82rem;font-weight:600;color:var(--t2);text-decoration:none;transition:background .1s;border-bottom:1px solid var(--b)}
+.lang-option{display:flex;align-items:center;gap:10px;padding:14px 18px;font-size:.82rem;font-weight:600;color:var(--t2);text-decoration:none;transition:background .1s;border-bottom:1px solid var(--b)}
 .lang-option:last-child{border-bottom:none}
 .lang-option:hover{background:var(--gl);color:var(--gd)}
 .lo-flag{font-size:17px;line-height:1;flex-shrink:0}
@@ -1055,13 +1055,17 @@ function setCookieConsent(c){
       var sf=document.createElement('span');sf.className='lo-flag';sf.textContent=m.flag;
       var sl=document.createElement('span');sl.className='lo-label';sl.textContent=m.label;
       el.appendChild(sf);el.appendChild(sl);
-      el.addEventListener('click',function(){try{localStorage.setItem(PREF,lang);}catch(e){}});
+      el.addEventListener('mousedown',function(e){
+        e.preventDefault();
+        try{localStorage.setItem(PREF,lang);}catch(e2){}
+        window.location.href=alts[lang];
+      });
       dd.appendChild(el);
     });
     if(!dd.children.length){sw.style.display='none';}
     else{
       lbtn.addEventListener('click',function(e){e.stopPropagation();var o=dd.classList.toggle('open');lbtn.setAttribute('aria-expanded',o?'true':'false');});
-      document.addEventListener('click',function(){dd.classList.remove('open');lbtn.setAttribute('aria-expanded','false');});
+      document.addEventListener('click',function(e){if(!e.target.closest('#lang-sw')){dd.classList.remove('open');lbtn.setAttribute('aria-expanded','false');}});
     }
   }
   var cs=null;try{cs=localStorage.getItem('cs_cookie_consent');}catch(e){}
