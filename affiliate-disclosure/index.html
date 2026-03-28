@@ -243,7 +243,7 @@ function setCookieConsent(c){
     <div class="lang-dd" id="lang-dd" role="listbox" aria-label="Available languages"></div>
   </div>
   
-    <a href="/" class="nav-cta">Top 6 Picks →</a>
+    <a href="/" class="nav-cta">Top Casinos →</a>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -348,10 +348,68 @@ function setCookieConsent(c){
     <p>Related pages: <a href="/about/" style="color:var(--gd)">About CasinoScout</a> · <a href="/about/#methodology" style="color:var(--gd)">Review Methodology</a> · <a href="/responsible-gambling/" style="color:var(--gd)">Responsible Gambling</a></p>
   </div>
 </div>
-
-
 <footer>
   <div class="ft-bottom">
-    <p>© 2026 CasinoScout.co · <a href="/">Home</a> · <a href="/about/">About</a> · <a href="/affiliate-disclosure/">Affiliate Disclosure</a> · <a href="/privacy-policy/">Privacy Policy</a> · <a href="/terms-of-use/">Terms of Use</a> · <a href="/responsible-gambling/">Responsible Gambling</a> · Must be 19+ (18+ in AB, MB, QC) · Gambling can be addictive — <a href="https://www.connexontario.ca">ConnexOntario 1-866-531-2600</a></p>
+    <p>© 2026 CasinoScout.co · <a href="/">Home</a> · <a href="/en/best-online-casinos-canada/">Canada Guide</a> · <a href="/about/">About</a> · <a href="/affiliate-disclosure/">Affiliate Disclosure</a> · <a href="/privacy-policy/">Privacy Policy</a> · <a href="/terms-of-use/">Terms of Use</a> · <a href="/responsible-gambling/">Responsible Gambling</a> · Must be 19+ (18+ in AB, MB, QC) · Gambling can be addictive — <a href="https://www.connexontario.ca">ConnexOntario 1-866-531-2600</a></p>
   </div>
 </footer>
+<script>
+(function(){
+  var PREF='cs_lang',stored=null;
+  try{stored=localStorage.getItem(PREF);}catch(e){}
+  var REAL_FR=['https://casinoscout.co/fr/','https://casinoscout.co/fr/meilleurs-casinos-en-ligne-canada/','https://casinoscout.co/fr/bonus-sans-depot-canada/','https://casinoscout.co/fr/avis/bitstarz-canada/','https://casinoscout.co/fr/avis/jackpot-city-canada/','https://casinoscout.co/fr/avis/leovegas-canada/','https://casinoscout.co/fr/avis/jackbit-canada/','https://casinoscout.co/fr/avis/bcgame-canada/','https://casinoscout.co/fr/avis/spin-casino-canada/','https://casinoscout.co/fr/avis/playojo-canada/','https://casinoscout.co/fr/avis/7bit-canada/','https://casinoscout.co/fr/avis/betway-canada/','https://casinoscout.co/fr/avis/bet365-canada/','https://casinoscout.co/fr/avis/casumo-canada/','https://casinoscout.co/fr/avis/888casino-canada/','https://casinoscout.co/fr/casinos-en-ligne-ontario/','https://casinoscout.co/fr/casinos-interac-canada/','https://casinoscout.co/fr/casinos-paiement-rapide-canada/','https://casinoscout.co/fr/tours-gratuits-canada/','https://casinoscout.co/fr/casino-en-direct-canada/','https://casinoscout.co/fr/a-propos/','https://casinoscout.co/fr/divulgation-affiliation/','https://casinoscout.co/fr/jeu-responsable/','https://casinoscout.co/fr/politique-de-confidentialite/','https://casinoscout.co/fr/conditions-utilisation/'];
+  var curLang=document.documentElement.getAttribute('lang')||'en-CA';
+  var alts={};
+  document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(function(l){
+    var h=l.getAttribute('hreflang');if(h&&h!=='x-default')alts[h]=l.href;
+  });
+  if(!alts['en-CA']){var xd=document.querySelector('link[rel="alternate"][hreflang="x-default"]');alts['en-CA']=xd?xd.href:'https://casinoscout.co/';}
+  if(stored&&stored!==curLang&&alts[stored]&&REAL_FR.indexOf(alts[stored])>-1){window.location.replace(alts[stored]);return;}
+  if(stored==='fr-CA'&&curLang!=='fr-CA'){
+    var b=document.createElement('div');
+    b.className='lang-banner show';
+    var txt=document.createTextNode('Cette page n\u2019est pas encore disponible en fran\u00e7ais.\u2003');
+    var lnk=document.createElement('a');lnk.href='https://casinoscout.co/fr/';lnk.textContent='Accueil fran\u00e7ais \u2192';
+    var cl=document.createElement('button');cl.className='lang-banner-close';cl.textContent='\u00d7';cl.onclick=function(){b.classList.remove('show');};
+    b.appendChild(txt);b.appendChild(lnk);b.appendChild(cl);
+    var nav=document.querySelector('.site-nav');
+    if(nav&&nav.parentNode)nav.parentNode.insertBefore(b,nav.nextSibling);
+  }
+  var sw=document.getElementById('lang-sw'),lbtn=document.getElementById('lang-btn'),dd=document.getElementById('lang-dd');
+  if(sw&&lbtn&&dd){
+    var META={'en-CA':{flag:'\ud83c\udde8\ud83c\udde6',label:'English (Canada)',short:'EN'},'fr-CA':{flag:'\ud83c\uddeb\ud83c\uddf7',label:'Fran\u00e7ais (Canada)',short:'FR'}};
+    var cur=META[curLang]||{flag:'\ud83c\udf10',short:curLang};
+    var lf=lbtn.querySelector('.lang-flag'),lc=lbtn.querySelector('.lang-code');
+    if(lf)lf.textContent=cur.flag;if(lc)lc.textContent=cur.short;
+    Object.keys(META).forEach(function(lang){
+      if(lang===curLang||!alts[lang])return;
+      var m=META[lang];
+      var el=document.createElement('a');el.href=alts[lang];el.className='lang-option';el.setAttribute('hreflang',lang);
+      var sf=document.createElement('span');sf.className='lo-flag';sf.textContent=m.flag;
+      var sl=document.createElement('span');sl.className='lo-label';sl.textContent=m.label;
+      el.appendChild(sf);el.appendChild(sl);
+      el.addEventListener('mousedown',function(e){
+        e.preventDefault();
+        try{localStorage.setItem(PREF,lang);}catch(e2){}
+        window.location.href=alts[lang];
+      });
+      dd.appendChild(el);
+    });
+    if(!dd.children.length){sw.style.display='none';}
+    else{
+      lbtn.addEventListener('click',function(e){e.stopPropagation();var o=dd.classList.toggle('open');lbtn.setAttribute('aria-expanded',o?'true':'false');});
+      document.addEventListener('click',function(e){if(!e.target.closest('#lang-sw')){dd.classList.remove('open');lbtn.setAttribute('aria-expanded','false');}});
+    }
+  }
+  var cs=null;try{cs=localStorage.getItem('cs_cookie_consent');}catch(e){}
+  if(cs==='granted'){if(typeof gtag==='function')gtag('consent','update',{analytics_storage:'granted'});}
+  else if(!cs){var cb=document.getElementById('cookie-banner');if(cb)cb.classList.add('show');}
+  document.querySelectorAll('.rr-fill[data-w]').forEach(function(el){el.style.width=el.getAttribute('data-w')+'%';});
+  var hbtn=document.getElementById('hamburger');
+  if(hbtn){hbtn.addEventListener('click',function(){var mm=document.getElementById('mobile-menu');if(mm&&mm.classList.contains('open'))closeMenu();else openMenu();});}
+  var dc=document.getElementById('drawer-close');
+  if(dc)dc.addEventListener('click',closeMenu);
+})();
+</script>
+</body>
+</html>
