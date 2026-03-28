@@ -332,7 +332,7 @@ footer{background:var(--w);border-top:1px solid var(--b);padding:1.5rem;margin-t
   <div class="section">
     <h2 id="corrections">Corrections policy</h2>
     <p>We take factual accuracy seriously. If you believe any information on CasinoScout is incorrect, please contact us. We review all correction requests within 48 hours and publish corrections promptly when errors are confirmed. Casino bonus terms change frequently — we update affected pages when we are notified of changes.</p>
-    <p>Contact us: <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="29414c454546694a485a4047465a4a465c5d074a46">[email&#160;protected]</a></strong></p>
+    <p>Contact us: <strong><a href="mailto:hello@casinoscout.co">hello@casinoscout.co</a></strong></p>
   </div>
 
   <div class="section">
@@ -360,15 +360,46 @@ footer{background:var(--w);border-top:1px solid var(--b);padding:1.5rem;margin-t
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(function(l){
     var h=l.getAttribute('hreflang');if(h&&h!=='x-default')alts[h]=l.href;
   });
-  if(stored&&stored!==curLang&&alts[stored]&&REAL_FR.indexOf(alts[stored])>-1){window.location.replace(alts[stored]);return;}
-  if(stored==='fr-CA'&&curLang!=='fr-CA'){var b=document.createElement('div');b.className='lang-banner show';b.innerHTML='🇫🇷 Cette page n’est pas encore disponible en français. <a href="https://casinoscout.co/fr/">Accueil français →</a><button class="lang-banner-close" aria-label="Fermer">×</button>';b.querySelector('.lang-banner-close').onclick=function(){b.classList.remove('show');};var nav=document.querySelector('.site-nav');if(nav&&nav.parentNode)nav.parentNode.insertBefore(b,nav.nextSibling);}
+  // Fallback: always ensure en-CA option exists
+  if(!alts['en-CA']){
+    var xd=document.querySelector('link[rel="alternate"][hreflang="x-default"]');
+    alts['en-CA']=xd?xd.href:'https://casinoscout.co/';
+  }
+  if(stored&&stored!==curLang&&alts[stored]&&REAL_FR.indexOf(alts[stored])>-1){
+    window.location.replace(alts[stored]);return;
+  }
+  if(stored==='fr-CA'&&curLang!=='fr-CA'){
+    var b=document.createElement('div');
+    b.className='lang-banner show';
+    b.innerHTML='🇫🇷 Cette page n’est pas encore disponible en français. <a href="https://casinoscout.co/fr/">Accueil français →</a><button class="lang-banner-close" aria-label="Fermer">×</button>';
+    b.querySelector('.lang-banner-close').onclick=function(){b.classList.remove('show');};
+    var nav=document.querySelector('.site-nav');
+    if(nav&&nav.parentNode)nav.parentNode.insertBefore(b,nav.nextSibling);
+  }
   var sw=document.getElementById('lang-sw'),btn=document.getElementById('lang-btn'),dd=document.getElementById('lang-dd');
   if(!sw||!btn||!dd)return;
   var cur=META[curLang]||{flag:'🌐',short:curLang};
-  btn.querySelector('.lang-flag').textContent=cur.flag;btn.querySelector('.lang-code').textContent=cur.short;
-  Object.keys(META).forEach(function(lang){if(lang===curLang||!alts[lang])return;var m=META[lang],url=alts[lang];var real=lang!=='fr-CA'||(REAL_FR.indexOf(url)>-1);var el=document.createElement('a');el.href=url;el.className='lang-option';el.setAttribute('hreflang',lang);el.innerHTML='<span class="lo-flag">'+m.flag+'</span><span class="lo-label">'+m.label+'</span>'+((!real&&lang==='fr-CA')?'<span class="lo-badge">Partiel</span>':'');el.addEventListener('click',function(){try{localStorage.setItem(PREF,lang);}catch(e){}});dd.appendChild(el);});
+  btn.querySelector('.lang-flag').textContent=cur.flag;
+  btn.querySelector('.lang-code').textContent=cur.short;
+  var curURL=window.location.href.replace(/\/$/,'');
+  Object.keys(META).forEach(function(lang){
+    if(lang===curLang)return;
+    var m=META[lang],url=alts[lang];
+    if(!url)return;
+    if(url.replace(/\/$/,'')===curURL)return;
+    var real=lang!=='fr-CA'||(REAL_FR.indexOf(url)>-1);
+    var el=document.createElement('a');
+    el.href=url;el.className='lang-option';el.setAttribute('hreflang',lang);
+    el.innerHTML='<span class="lo-flag">'+m.flag+'</span><span class="lo-label">'+m.label+'</span>'+((!real&&lang==='fr-CA')?'<span class="lo-badge">Partiel</span>':'');
+    el.addEventListener('click',function(){try{localStorage.setItem(PREF,lang);}catch(e){}});
+    dd.appendChild(el);
+  });
   if(!dd.children.length){sw.style.display='none';return;}
-  btn.addEventListener('click',function(e){e.stopPropagation();var o=dd.classList.toggle('open');btn.setAttribute('aria-expanded',o?'true':'false');});
+  btn.addEventListener('click',function(e){
+    e.stopPropagation();
+    var o=dd.classList.toggle('open');
+    btn.setAttribute('aria-expanded',o?'true':'false');
+  });
   document.addEventListener('click',function(){dd.classList.remove('open');btn.setAttribute('aria-expanded','false');});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){dd.classList.remove('open');btn.setAttribute('aria-expanded','false');}});
 })();
