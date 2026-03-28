@@ -1,3 +1,42 @@
+<script>
+function filterCasinos(tag,btn){
+  document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  var v=0;
+  document.querySelectorAll('.casino-card').forEach(function(card){
+    var tags=card.getAttribute('data-tags')||'';
+    var show=(tag==='all')||(tags.indexOf(tag)!==-1);
+    card.classList.toggle('hidden',!show);
+    if(show)v++;
+  });
+  var cnt=document.getElementById('casino-count');
+  if(cnt)cnt.textContent='Showing '+v+' casino'+(v!==1?'s':'');
+}
+function toggleFaq(el){
+  var a=el.nextElementSibling;if(!a)return;
+  var isOpen=(a.style.display==='block');
+  document.querySelectorAll('.faq-a').forEach(function(x){x.style.display='none';});
+  document.querySelectorAll('.faq-q .faq-icon').forEach(function(x){x.textContent='+';});
+  document.querySelectorAll('.faq-q').forEach(function(x){x.setAttribute('aria-expanded','false');});
+  if(!isOpen){a.style.display='block';var ic=el.querySelector('.faq-icon');if(ic)ic.textContent='−';el.setAttribute('aria-expanded','true');}
+}
+function openMenu(){
+  var h=document.getElementById('hamburger'),m=document.getElementById('mobile-menu');
+  if(!h||!m)return;
+  h.classList.add('open');m.classList.add('open');m.setAttribute('aria-hidden','false');h.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';
+}
+function closeMenu(){
+  var h=document.getElementById('hamburger'),m=document.getElementById('mobile-menu');
+  if(!m)return;
+  if(h){h.classList.remove('open');h.setAttribute('aria-expanded','false');}
+  m.classList.remove('open');m.setAttribute('aria-hidden','true');document.body.style.overflow='';
+}
+function setCookieConsent(c){
+  try{localStorage.setItem('cs_cookie_consent',c);}catch(e){}
+  if(typeof gtag==='function')gtag('consent','update',{analytics_storage:c});
+  var b=document.getElementById('cookie-banner');if(b)b.classList.remove('show');
+}
+</script>
 <!DOCTYPE html>
 <html lang="en-CA">
 <head>
@@ -15,7 +54,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Review","name":"7Bit Casino Canada Review 2026","url":"https://casinoscout.co/en/reviews/7bit-canada/","datePublished":"2026-03-27","dateModified":"2026-03-27","author":{"@type":"Person","name":"Alex M.","jobTitle":"Lead Casino Reviewer","worksFor":{"@type":"Organization","name":"CasinoScout"}},"publisher":{"@type":"Organization","name":"CasinoScout","url":"https://casinoscout.co"},"itemReviewed":{"@type":"LocalBusiness","name":"7Bit Casino","address":{"@type":"PostalAddress","addressCountry":"CW"}},"reviewRating":{"@type":"Rating","ratingValue":"8.7","bestRating":"10","worstRating":"1"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Review","name":"7Bit Casino Canada Review 2026","url":"https://casinoscout.co/en/reviews/7bit-canada/","datePublished":"2026-03-27","dateModified":"2026-03-27","author":{"@type":"Person","name":"Alex M.","jobTitle":"Lead Casino Reviewer","worksFor":{"@type":"Organization","name":"CasinoScout"}},"publisher":{"@type":"Organization","name":"CasinoScout","url":"https://casinoscout.co"},"itemReviewed":{"@type":"LocalBusiness","name":"7Bit Casino","address":{"@type":"PostalAddress","addressCountry":"CW"},"sameAs":"https://7bitcasino.com","url":"https://7bitcasino.com"},"reviewRating":{"@type":"Rating","ratingValue":"8.7","bestRating":"10","worstRating":"1"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does 7Bit Casino give free spins with no deposit?","acceptedAnswer":{"@type":"Answer","text":"Yes. 7Bit Casino gives 75 free spins just for creating an account — no deposit required. We tested this during account creation and the spins were credited within 2 minutes of registration. The spins have a 45x wagering requirement and winnings are capped at C$100."}},{"@type":"Question","name":"How fast are 7Bit Casino withdrawals?","acceptedAnswer":{"@type":"Answer","text":"In our test, Bitcoin was confirmed on-chain in 11 minutes from the withdrawal request. 7Bit operates 24/7 automated withdrawal processing with no business-hour restrictions."}},{"@type":"Question","name":"Is 7Bit Casino available in Ontario?","acceptedAnswer":{"@type":"Answer","text":"No. 7Bit does not hold an iGaming Ontario licence. Ontario players should use Jackpot City or Spin Casino, both of which are AGCO-regulated."}},{"@type":"Question","name":"What is the 7Bit Casino VIP programme like?","acceptedAnswer":{"@type":"Answer","text":"7Bit has a 12-tier VIP programme — the most comprehensive in our top 6 ranking. Players earn comp points on every wager and progress through tiers automatically. Benefits escalate significantly from level 7 upward, including a dedicated account manager, weekly cashback of up to 20%, level-up bonuses and exclusive promotions."}},{"@type":"Question","name":"Does 7Bit have an app?","acceptedAnswer":{"@type":"Answer","text":"Yes. 7Bit Casino has a dedicated iOS and Android app. We downloaded both during our review. The iOS app is smooth and well-organised with full access to slots, live tables and the promotions section."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"7Bit Casino Canada Review 2026 — 75 No-Deposit Spins, Tested","url":"https://casinoscout.co/en/reviews/7bit-canada/","dateModified":"2026-03-27","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".verdict-text","p"]}}</script>
 <style>/* CasinoScout Review Pages - Shared CSS */
@@ -559,154 +598,65 @@ gtag('config','G-ZN71708XXE',{anonymize_ip:true});
     </div></aside>
   </div>
 </div>
-<footer><div class="ft-inner"><p>© 2026 CasinoScout.co · <a href="/">Home</a> · <a href="/en/best-online-casinos-canada/">Canada Guide</a> · <a href="/about/">About</a> · <a href="/affiliate-disclosure/">Affiliate Disclosure</a> · <a href="/responsible-gambling/">Responsible Gaming</a> · 19+ · Gambling can be addictive — <a href="https://www.connexontario.ca">ConnexOntario 1-866-531-2600</a></p></div></footer>
-<script>function toggleFaq(el){const a=el.nextElementSibling;const open=a.style.display==='block';document.querySelectorAll('.faq-a').forEach(x=>{x.style.display='none';const ic=x.previousElementSibling.querySelector('.faq-icon');if(ic)ic.textContent='+'});if(!open){a.style.display='block';const ic=el.querySelector('.faq-icon');if(ic)ic.textContent='−'}}</script>
+<footer><div class="ft-inner"><p>© 2026 CasinoScout.co · <a href="/">Home</a> · <a href="/en/best-online-casinos-canada/">Canada Guide</a> · <a href="/about/">About</a> · <a href="/affiliate-disclosure/">Affiliate Disclosure</a> · <a href="/privacy-policy/">Privacy Policy</a> · <a href="/terms-of-use/">Terms of Use</a> · <a href="/responsible-gambling/">Responsible Gaming</a> · 19+ · Gambling can be addictive — <a href="https://www.connexontario.ca">ConnexOntario 1-866-531-2600</a></p></div></footer>
+
+
+</body></html>
 <script>
 (function(){
-  // Run immediately - document body is parsed, all elements exist
-
-  // ── FILTER BUTTONS ──
-  document.addEventListener('click', function(e){
-    // Filter buttons
-    var fb = e.target.closest('.filter-btn');
-    if(fb){
-      var tag = fb.getAttribute('onclick');
-      if(tag){
-        var m = tag.match(/filterCasinos\('([^']+)'/);
-        if(m) doFilter(m[1], fb);
-      }
-    }
-    // FAQ questions
-    var fq = e.target.closest('.faq-q');
-    if(fq) doFaq(fq);
-    // Hamburger
-    if(e.target.closest('#hamburger')) toggleMenu();
-    // Close button
-    if(e.target.closest('#drawer-close')) closeMenu();
-    // Click outside drawer
-    if(e.target.id === 'mobile-menu') closeMenu();
-    // Cookie
-    if(e.target.closest('.cookie-accept')) setCookieConsent('granted');
-    if(e.target.closest('.cookie-reject')) setCookieConsent('denied');
+  var PREF='cs_lang',stored=null;
+  try{stored=localStorage.getItem(PREF);}catch(e){}
+  var REAL_FR=['https://casinoscout.co/fr/','https://casinoscout.co/fr/meilleurs-casinos-en-ligne-canada/','https://casinoscout.co/fr/bonus-sans-depot-canada/','https://casinoscout.co/fr/avis/bitstarz-canada/','https://casinoscout.co/fr/avis/jackpot-city-canada/','https://casinoscout.co/fr/avis/leovegas-canada/','https://casinoscout.co/fr/avis/jackbit-canada/','https://casinoscout.co/fr/avis/bcgame-canada/','https://casinoscout.co/fr/avis/spin-casino-canada/','https://casinoscout.co/fr/avis/playojo-canada/','https://casinoscout.co/fr/avis/7bit-canada/','https://casinoscout.co/fr/avis/betway-canada/','https://casinoscout.co/fr/avis/bet365-canada/','https://casinoscout.co/fr/avis/casumo-canada/','https://casinoscout.co/fr/avis/888casino-canada/','https://casinoscout.co/fr/casinos-en-ligne-ontario/','https://casinoscout.co/fr/casinos-interac-canada/','https://casinoscout.co/fr/casinos-paiement-rapide-canada/','https://casinoscout.co/fr/tours-gratuits-canada/','https://casinoscout.co/fr/casino-en-direct-canada/','https://casinoscout.co/fr/a-propos/','https://casinoscout.co/fr/divulgation-affiliation/','https://casinoscout.co/fr/jeu-responsable/','https://casinoscout.co/fr/politique-de-confidentialite/','https://casinoscout.co/fr/conditions-utilisation/'];
+  var curLang=document.documentElement.getAttribute('lang')||'en-CA';
+  var alts={};
+  document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(function(l){
+    var h=l.getAttribute('hreflang');if(h&&h!=='x-default')alts[h]=l.href;
   });
-
-  // Keyboard: Escape closes menu
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape') closeMenu();
-  });
-
-  function doFilter(tag, btn){
-    document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
-    btn.classList.add('active');
-    var v = 0;
-    document.querySelectorAll('.casino-card').forEach(function(card){
-      var tags = card.getAttribute('data-tags') || '';
-      var show = tag === 'all' || tags.indexOf(tag) !== -1;
-      card.classList.toggle('hidden', !show);
-      if(show) v++;
-    });
-    var counter = document.getElementById('casino-count');
-    if(counter) counter.textContent = 'Showing ' + v + ' casino' + (v !== 1 ? 's' : '');
+  if(!alts['en-CA']){var xd=document.querySelector('link[rel="alternate"][hreflang="x-default"]');alts['en-CA']=xd?xd.href:'https://casinoscout.co/';}
+  if(stored&&stored!==curLang&&alts[stored]&&REAL_FR.indexOf(alts[stored])>-1){window.location.replace(alts[stored]);return;}
+  if(stored==='fr-CA'&&curLang!=='fr-CA'){
+    var b=document.createElement('div');
+    b.className='lang-banner show';
+    var txt=document.createTextNode('Cette page n\u2019est pas encore disponible en fran\u00e7ais.\u2003');
+    var lnk=document.createElement('a');lnk.href='https://casinoscout.co/fr/';lnk.textContent='Accueil fran\u00e7ais \u2192';
+    var cl=document.createElement('button');cl.className='lang-banner-close';cl.textContent='\u00d7';cl.onclick=function(){b.classList.remove('show');};
+    b.appendChild(txt);b.appendChild(lnk);b.appendChild(cl);
+    var nav=document.querySelector('.site-nav');
+    if(nav&&nav.parentNode)nav.parentNode.insertBefore(b,nav.nextSibling);
   }
-
-  function doFaq(el){
-    var a = el.nextElementSibling;
-    if(!a) return;
-    var open = a.style.display === 'block';
-    document.querySelectorAll('.faq-a').forEach(function(x){
-      x.style.display = 'none';
-      var ic = x.previousElementSibling ? x.previousElementSibling.querySelector('.faq-icon') : null;
-      if(ic) ic.textContent = '+';
+  var sw=document.getElementById('lang-sw'),lbtn=document.getElementById('lang-btn'),dd=document.getElementById('lang-dd');
+  if(sw&&lbtn&&dd){
+    var META={'en-CA':{flag:'\ud83c\udde8\ud83c\udde6',label:'English (Canada)',short:'EN'},'fr-CA':{flag:'\ud83c\uddeb\ud83c\uddf7',label:'Fran\u00e7ais (Canada)',short:'FR'}};
+    var cur=META[curLang]||{flag:'\ud83c\udf10',short:curLang};
+    var lf=lbtn.querySelector('.lang-flag'),lc=lbtn.querySelector('.lang-code');
+    if(lf)lf.textContent=cur.flag;if(lc)lc.textContent=cur.short;
+    Object.keys(META).forEach(function(lang){
+      if(lang===curLang||!alts[lang])return;
+      var m=META[lang];
+      var el=document.createElement('a');el.href=alts[lang];el.className='lang-option';el.setAttribute('hreflang',lang);
+      var sf=document.createElement('span');sf.className='lo-flag';sf.textContent=m.flag;
+      var sl=document.createElement('span');sl.className='lo-label';sl.textContent=m.label;
+      el.appendChild(sf);el.appendChild(sl);
+      el.addEventListener('mousedown',function(e){
+        e.preventDefault();
+        try{localStorage.setItem(PREF,lang);}catch(e2){}
+        window.location.href=alts[lang];
+      });
+      dd.appendChild(el);
     });
-    document.querySelectorAll('.faq-q').forEach(function(x){ x.setAttribute('aria-expanded','false'); });
-    if(!open){
-      a.style.display = 'block';
-      var icon = el.querySelector('.faq-icon');
-      if(icon) icon.textContent = '−';
-      el.setAttribute('aria-expanded','true');
+    if(!dd.children.length){sw.style.display='none';}
+    else{
+      lbtn.addEventListener('click',function(e){e.stopPropagation();var o=dd.classList.toggle('open');lbtn.setAttribute('aria-expanded',o?'true':'false');});
+      document.addEventListener('click',function(e){if(!e.target.closest('#lang-sw')){dd.classList.remove('open');lbtn.setAttribute('aria-expanded','false');}});
     }
   }
-
-  function toggleMenu(){
-    var m = document.getElementById('mobile-menu');
-    if(m && m.classList.contains('open')) closeMenu(); else openMenu();
-  }
-
-  function openMenu(){
-    var h = document.getElementById('hamburger');
-    var m = document.getElementById('mobile-menu');
-    if(!h || !m) return;
-    h.classList.add('open'); m.classList.add('open');
-    m.setAttribute('aria-hidden','false'); h.setAttribute('aria-expanded','true');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeMenu(){
-    var h = document.getElementById('hamburger');
-    var m = document.getElementById('mobile-menu');
-    if(!m) return;
-    if(h) h.classList.remove('open');
-    m.classList.remove('open');
-    m.setAttribute('aria-hidden','true');
-    if(h) h.setAttribute('aria-expanded','false');
-    document.body.style.overflow = '';
-  }
-
-  // Keep these on window for any legacy onclick= attributes in HTML
-  window.openMenu = openMenu;
-  window.closeMenu = closeMenu;
-  window.filterCasinos = function(tag, btn){ doFilter(tag, btn); };
-  window.toggleFaq = function(el){ doFaq(el); };
-
-  // ── COOKIE CONSENT ──
-  function setCookieConsent(c){
-    try{ localStorage.setItem('cs_cookie_consent', c); }catch(e){}
-    if(typeof gtag === 'function') gtag('consent','update',{analytics_storage: c});
-    var b = document.getElementById('cookie-banner');
-    if(b) b.classList.remove('show');
-  }
-  window.setCookieConsent = setCookieConsent;
-
-  // Check stored consent on load
-  var stored = null;
-  try{ stored = localStorage.getItem('cs_cookie_consent'); }catch(e){}
-  if(stored === 'granted'){
-    if(typeof gtag === 'function') gtag('consent','update',{analytics_storage:'granted'});
-  } else if(!stored){
-    var banner = document.getElementById('cookie-banner');
-    if(banner) banner.classList.add('show');
-  }
-
-  // ── LANG SWITCHER DROPDOWN ──
-  var langBtn = document.getElementById('lang-btn');
-  var langDd = document.getElementById('lang-dd');
-  if(langBtn && langDd){
-    langBtn.addEventListener('click', function(e){
-      e.stopPropagation();
-      var open = langDd.classList.toggle('open');
-      langBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    document.addEventListener('click', function(e) { if(!e.target.closest || !e.target.closest('#lang-sw')){ langDd.classList.remove('open'); langBtn.setAttribute('aria-expanded', 'false'); } });
-  }
-
-  // ── STICKY CTA (mobile only) ──
-  var bar = document.getElementById('sticky-cta');
-  if(bar && window.innerWidth <= 768){
-    document.body.classList.add('has-sticky-cta');
-    var footer = document.querySelector('footer');
-    if(footer && 'IntersectionObserver' in window){
-      new IntersectionObserver(function(entries){
-        bar.style.opacity = entries[0].isIntersecting ? '0' : '1';
-        bar.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'auto';
-      },{threshold:0.1}).observe(footer);
-    }
-  }
-
-  // ── RATING BARS ──
-  document.querySelectorAll('.rr-fill[data-w]').forEach(function(el){
-    el.style.width = el.getAttribute('data-w') + '%';
-  });
-
+  var cs=null;try{cs=localStorage.getItem('cs_cookie_consent');}catch(e){}
+  if(cs==='granted'){if(typeof gtag==='function')gtag('consent','update',{analytics_storage:'granted'});}
+  else if(!cs){var cb=document.getElementById('cookie-banner');if(cb)cb.classList.add('show');}
+  document.querySelectorAll('.rr-fill[data-w]').forEach(function(el){el.style.width=el.getAttribute('data-w')+'%';});
+  var hbtn=document.getElementById('hamburger');
+  if(hbtn){hbtn.addEventListener('click',function(){var mm=document.getElementById('mobile-menu');if(mm&&mm.classList.contains('open'))closeMenu();else openMenu();});}
+  var dc=document.getElementById('drawer-close');
+  if(dc)dc.addEventListener('click',closeMenu);
 })();
 </script>
-</body></html>
