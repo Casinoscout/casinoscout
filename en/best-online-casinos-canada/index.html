@@ -179,8 +179,8 @@ footer{background:var(--w);border-top:1px solid var(--b);padding:1.5rem;margin-t
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);width:20px}
 .nav-right{display:flex;align-items:center;gap:0.75rem}
 /* DRAWER */
-.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;z-index:190;background:rgba(0,0,0,0.4);opacity:0;transition:opacity 0.25s}
-.mobile-menu.open{opacity:1}
+.mobile-menu{position:fixed;top:60px;left:0;right:0;bottom:0;z-index:190;background:rgba(0,0,0,0.4);opacity:0;pointer-events:none}
+.mobile-menu.open{display:block;opacity:1;pointer-events:auto}
 .mobile-drawer{position:absolute;top:0;right:0;width:min(320px,88vw);height:100%;background:#fff;box-shadow:-4px 0 20px rgba(0,0,0,0.12);transform:translateX(100%);transition:transform 0.28s cubic-bezier(0.4,0,0.2,1);display:flex;flex-direction:column;overflow-y:auto}
 .mobile-menu.open .mobile-drawer{transform:translateX(0)}
 .drawer-header{padding:1.25rem 1.5rem;border-bottom:1px solid #E5E7EB;display:flex;align-items:center;justify-content:space-between}
@@ -248,7 +248,7 @@ footer{background:var(--w);border-top:1px solid var(--b);padding:1.5rem;margin-t
 .lang-btn[aria-expanded="true"] .lang-caret{transform:rotate(180deg)}
 .lang-dd{display:none;position:absolute;top:calc(100% + 8px);right:0;background:var(--w);border:1.5px solid var(--b);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.12);min-width:180px;z-index:9999;overflow:hidden}
 .lang-dd.open{display:block}
-.lang-option{display:flex;align-items:center;gap:10px;padding:11px 14px;font-size:.82rem;font-weight:600;color:var(--t2);text-decoration:none;transition:background .1s;border-bottom:1px solid var(--b)}
+.lang-option{display:flex;align-items:center;gap:10px;padding:14px 18px;font-size:.82rem;font-weight:600;color:var(--t2);text-decoration:none;transition:background .1s;border-bottom:1px solid var(--b)}
 .lang-option:last-child{border-bottom:none}
 .lang-option:hover{background:var(--gl);color:var(--gd)}
 .lo-flag{font-size:17px;line-height:1;flex-shrink:0}
@@ -263,15 +263,7 @@ footer{background:var(--w);border-top:1px solid var(--b);padding:1.5rem;margin-t
 
 .drawer-section-label{font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--t4);padding:.75rem 1rem .25rem;margin-top:.25rem}
 
-
-.cookie-banner{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--t,#111827);color:#fff;z-index:10000;padding:1rem 1.5rem;box-shadow:0 -4px 20px rgba(0,0,0,.2)}
-.cookie-banner.show{display:block}
-.cookie-inner{max-width:1040px;margin:0 auto;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
-.cookie-text{flex:1;font-size:.82rem;line-height:1.5;min-width:200px}
-.cookie-text a{color:#86EFAC;text-decoration:underline}
-.cookie-btns{display:flex;gap:.5rem;flex-shrink:0}
-.cookie-accept{background:#22C55E;color:#fff;border:none;padding:.5rem 1.25rem;border-radius:6px;cursor:pointer;font-weight:700;font-size:.82rem}
-.cookie-reject{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);padding:.5rem 1.25rem;border-radius:6px;cursor:pointer;font-weight:600;font-size:.82rem}
+.cookie-banner{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--t,#111827);color:#fff;z-index:10000;padding:1rem 1.5rem;box-shadow:0 -4px 20px rgba(0,0,0,.2)}.cookie-banner.show{display:block}.cookie-inner{max-width:1040px;margin:0 auto;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}.cookie-text{flex:1;font-size:.82rem;line-height:1.5;min-width:200px}.cookie-text a{color:#86EFAC;text-decoration:underline}.cookie-btns{display:flex;gap:.5rem;flex-shrink:0}.cookie-accept{background:#22C55E;color:#fff;border:none;padding:.5rem 1.25rem;border-radius:6px;cursor:pointer;font-weight:700;font-size:.82rem;font-family:var(--ff,sans-serif)}.cookie-reject{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);padding:.5rem 1.25rem;border-radius:6px;cursor:pointer;font-weight:600;font-size:.82rem;font-family:var(--ff,sans-serif)}
 </style>
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://casinoscout.co/en/best-online-casinos-canada/">
@@ -281,28 +273,78 @@ footer{background:var(--w);border-top:1px solid var(--b);padding:1.5rem;margin-t
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Best Online Casinos Canada 2026 — Expert Guide | CasinoScout">
 <meta name="twitter:description" content="Top 6 Canadian online casinos for 2026, ranked by real withdrawal tests. Interac banking, Ontario licence status and bonus value verified.">
+<!-- Google tag (gtag.js) -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"CasinoScout","url":"https://casinoscout.co","logo":"https://casinoscout.co/favicon.svg","description":"Independent Canadian online casino review site. Real tested withdrawals, honest bonus analysis, Ontario iGO licence verification."}</script>
+
+
+
 <script>
 window.dataLayer=window.dataLayer||[];
 function gtag(){dataLayer.push(arguments);}
 gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',wait_for_update:500});
 </script>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN71708XXE"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-ZN71708XXE', {anonymize_ip: true});
+gtag('js',new Date());
+gtag('config','G-ZN71708XXE',{anonymize_ip:true});
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"CasinoScout","url":"https://casinoscout.co","logo":"https://casinoscout.co/favicon.svg","description":"Independent Canadian online casino review site. Real tested withdrawals, honest bonus analysis, Ontario iGO licence verification."}</script>
 </head>
 <body>
+<script>
+function filterCasinos(tag,btn){
+  document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  var v=0;
+  document.querySelectorAll('.casino-card').forEach(function(card){
+    var tags=card.getAttribute('data-tags')||'';
+    var show=(tag==='all')||(tags.indexOf(tag)!==-1);
+    card.classList.toggle('hidden',!show);
+    if(show)v++;
+  });
+  var cnt=document.getElementById('casino-count');
+  if(cnt)cnt.textContent='Showing '+v+' casino'+(v!==1?'s':'');
+}
+function toggleFaq(el){
+  var a=el.nextElementSibling;
+  if(!a)return;
+  var isOpen=(a.style.display==='block');
+  document.querySelectorAll('.faq-a').forEach(function(x){x.style.display='none';});
+  document.querySelectorAll('.faq-q .faq-icon').forEach(function(x){x.textContent='+';});
+  document.querySelectorAll('.faq-q').forEach(function(x){x.setAttribute('aria-expanded','false');});
+  if(!isOpen){
+    a.style.display='block';
+    var icon=el.querySelector('.faq-icon');
+    if(icon)icon.textContent='−';
+    el.setAttribute('aria-expanded','true');
+  }
+}
+function openMenu(){
+  var h=document.getElementById('hamburger'),m=document.getElementById('mobile-menu');
+  if(!h||!m)return;
+  h.classList.add('open');m.classList.add('open');
+  m.setAttribute('aria-hidden','false');h.setAttribute('aria-expanded','true');
+  document.body.style.overflow='hidden';
+}
+function closeMenu(){
+  var h=document.getElementById('hamburger'),m=document.getElementById('mobile-menu');
+  if(!m)return;
+  if(h){h.classList.remove('open');h.setAttribute('aria-expanded','false');}
+  m.classList.remove('open');m.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
+}
+function setCookieConsent(c){
+  try{localStorage.setItem('cs_cookie_consent',c);}catch(e){}
+  if(typeof gtag==='function')gtag('consent','update',{analytics_storage:c});
+  var b=document.getElementById('cookie-banner');if(b)b.classList.remove('show');
+}
+</script>
+
 <div class="cookie-banner" id="cookie-banner">
   <div class="cookie-inner">
-    <p class="cookie-text">We use cookies to analyse site traffic. By clicking &ldquo;Accept&rdquo;, you consent to analytics cookies. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
+    <p class="cookie-text">We use cookies to analyse site traffic. By clicking "Accept", you consent to analytics cookies. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
     <div class="cookie-btns">
-      <button class="cookie-reject" onclick="setCookieConsent('denied')">Reject</button>
-      <button class="cookie-accept" onclick="setCookieConsent('granted')">Accept</button>
+      <button class="cookie-reject">Reject</button>
+      <button class="cookie-accept">Accept</button>
     </div>
   </div>
 </div>
@@ -422,7 +464,7 @@ gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',wait_fo
         </div>
         <div class="c-action">
           <div class="c-score">9.7</div><div class="c-stars">★★★★★</div>
-          <button class="btn-claim" onclick="alert('Add BitStarz affiliate link')">Claim Bonus</button>
+          <a href="https://bzstarz1.com/bbmwy1kys" target="_blank" rel="nofollow noopener" class="btn-claim">Claim Bonus</a>
           <a href="/en/reviews/bitstarz-canada/" class="btn-review">Full Review</a>
           <div class="c-tcs">T&amp;Cs · 19+ · Not Ontario</div>
         </div>
@@ -624,78 +666,66 @@ gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',wait_fo
   </div>
 </footer>
 
+
+
+
+
 <script>
-function toggleFaq(el){
-  const a=el.nextElementSibling;
-  const open=a.style.display==='block';
-  document.querySelectorAll('.faq-a').forEach(x=>{x.style.display='none';const ic=x.previousElementSibling.querySelector('.faq-icon');if(ic)ic.textContent='+'});
-  document.querySelectorAll('.faq-q').forEach(x=>x.setAttribute('aria-expanded','false'));
-  if(!open){a.style.display='block';el.querySelector('.faq-icon').textContent='−';el.setAttribute('aria-expanded','true')}
-}
-</script>
-<script>(window.requestIdleCallback||function(f,o){setTimeout(f,o&&o.timeout||50)})(function(){
 (function(){
-  var PREF='cs_lang';
-  var REAL_FR=['https://casinoscout.co/fr/','https://casinoscout.co/fr/meilleurs-casinos-en-ligne-canada/','https://casinoscout.co/fr/bonus-sans-depot-canada/'];
-  var META={'en-CA':{flag:'🇨🇦',label:'English (Canada)',short:'EN'},'fr-CA':{flag:'🇫🇷',label:'Français (Canada)',short:'FR'}};
+  var PREF='cs_lang',stored=null;
+  try{stored=localStorage.getItem(PREF);}catch(e){}
+  var REAL_FR=['https://casinoscout.co/fr/','https://casinoscout.co/fr/meilleurs-casinos-en-ligne-canada/','https://casinoscout.co/fr/bonus-sans-depot-canada/','https://casinoscout.co/fr/avis/bitstarz-canada/','https://casinoscout.co/fr/avis/jackpot-city-canada/','https://casinoscout.co/fr/avis/leovegas-canada/','https://casinoscout.co/fr/avis/jackbit-canada/','https://casinoscout.co/fr/avis/bcgame-canada/','https://casinoscout.co/fr/avis/spin-casino-canada/','https://casinoscout.co/fr/avis/playojo-canada/','https://casinoscout.co/fr/avis/7bit-canada/','https://casinoscout.co/fr/avis/betway-canada/','https://casinoscout.co/fr/avis/bet365-canada/','https://casinoscout.co/fr/avis/casumo-canada/','https://casinoscout.co/fr/avis/888casino-canada/','https://casinoscout.co/fr/casinos-en-ligne-ontario/','https://casinoscout.co/fr/casinos-interac-canada/','https://casinoscout.co/fr/casinos-paiement-rapide-canada/','https://casinoscout.co/fr/tours-gratuits-canada/','https://casinoscout.co/fr/casino-en-direct-canada/','https://casinoscout.co/fr/a-propos/','https://casinoscout.co/fr/divulgation-affiliation/','https://casinoscout.co/fr/jeu-responsable/','https://casinoscout.co/fr/politique-de-confidentialite/','https://casinoscout.co/fr/conditions-utilisation/'];
   var curLang=document.documentElement.getAttribute('lang')||'en-CA';
-  var stored=null;try{stored=localStorage.getItem(PREF);}catch(e){}
   var alts={};
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(function(l){
     var h=l.getAttribute('hreflang');if(h&&h!=='x-default')alts[h]=l.href;
   });
   if(!alts['en-CA']){var xd=document.querySelector('link[rel="alternate"][hreflang="x-default"]');alts['en-CA']=xd?xd.href:'https://casinoscout.co/';}
-  // Auto-redirect if stored pref has a real page
-  if(stored&&stored!==curLang&&alts[stored]&&REAL_FR.indexOf(alts[stored])>-1){
-    window.location.replace(alts[stored]);return;
-  }
-  // Show "not in French" banner
+  if(stored&&stored!==curLang&&alts[stored]&&REAL_FR.indexOf(alts[stored])>-1){window.location.replace(alts[stored]);return;}
   if(stored==='fr-CA'&&curLang!=='fr-CA'){
     var b=document.createElement('div');
     b.className='lang-banner show';
-    b.innerHTML='🇫🇷 Cette page n’est pas encore disponible en français. <a href="https://casinoscout.co/fr/">Accueil français →</a><button class="lang-banner-close" aria-label="Fermer">×</button>';
-    b.querySelector('.lang-banner-close').onclick=function(){b.classList.remove('show');};
+    var txt=document.createTextNode('Cette page n\u2019est pas encore disponible en fran\u00e7ais.\u2003');
+    var lnk=document.createElement('a');lnk.href='https://casinoscout.co/fr/';lnk.textContent='Accueil fran\u00e7ais \u2192';
+    var cl=document.createElement('button');cl.className='lang-banner-close';cl.textContent='\u00d7';cl.onclick=function(){b.classList.remove('show');};
+    b.appendChild(txt);b.appendChild(lnk);b.appendChild(cl);
     var nav=document.querySelector('.site-nav');
     if(nav&&nav.parentNode)nav.parentNode.insertBefore(b,nav.nextSibling);
   }
-  // Build switcher dropdown
-  var sw=document.getElementById('lang-sw'),btn=document.getElementById('lang-btn'),dd=document.getElementById('lang-dd');
-  if(!sw||!btn||!dd)return;
-  var cur=META[curLang]||{flag:'🌐',short:curLang};
-  btn.querySelector('.lang-flag').textContent=cur.flag;
-  btn.querySelector('.lang-code').textContent=cur.short;
-  Object.keys(META).forEach(function(lang){
-    if(lang===curLang||!alts[lang])return;
-    var m=META[lang],url=alts[lang];
-    var real=lang!=='fr-CA'||(REAL_FR.indexOf(url)>-1);
-    var el=document.createElement('a');
-    el.href=url;el.className='lang-option';el.setAttribute('hreflang',lang);
-    el.innerHTML='<span class="lo-flag">'+m.flag+'</span><span class="lo-label">'+m.label+'</span>'+((!real&&lang==='fr-CA')?'<span class="lo-badge">Partiel</span>':'');
-    el.addEventListener('click',function(){try{localStorage.setItem(PREF,lang);}catch(e){}});
-    dd.appendChild(el);
-  });
-  if(!dd.children.length){sw.style.display='none';return;}
-  btn.addEventListener('click',function(e){
-    e.stopPropagation();
-    var o=dd.classList.toggle('open');
-    btn.setAttribute('aria-expanded',o?'true':'false');
-  });
-  document.addEventListener('click',function(){dd.classList.remove('open');btn.setAttribute('aria-expanded','false');});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'){dd.classList.remove('open');btn.setAttribute('aria-expanded','false');}});
-window.toggleFaq=toggleFaq;
-})();
-});</script>
-<script>
-(function(){
-  var h=document.getElementById('hamburger'),m=document.getElementById('mobile-menu'),d=document.getElementById('drawer-close');
-  if(!h||!m)return;
-  function o(){h.classList.add('open');m.classList.add('open');m.setAttribute('aria-hidden','false');h.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
-  function c(){h.classList.remove('open');m.classList.remove('open');m.setAttribute('aria-hidden','true');h.setAttribute('aria-expanded','false');document.body.style.overflow='';}
-  window.openMenu=o;window.closeMenu=c;
-  h.addEventListener('click',function(){m.classList.contains('open')?c():o();});
-  if(d)d.addEventListener('click',c);
-  m.addEventListener('click',function(e){if(e.target===m)c();});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')c();});
+  var sw=document.getElementById('lang-sw'),lbtn=document.getElementById('lang-btn'),dd=document.getElementById('lang-dd');
+  if(sw&&lbtn&&dd){
+    var META={'en-CA':{flag:'\ud83c\udde8\ud83c\udde6',label:'English (Canada)',short:'EN'},'fr-CA':{flag:'\ud83c\uddeb\ud83c\uddf7',label:'Fran\u00e7ais (Canada)',short:'FR'}};
+    var cur=META[curLang]||{flag:'\ud83c\udf10',short:curLang};
+    var lf=lbtn.querySelector('.lang-flag'),lc=lbtn.querySelector('.lang-code');
+    if(lf)lf.textContent=cur.flag;if(lc)lc.textContent=cur.short;
+    Object.keys(META).forEach(function(lang){
+      if(lang===curLang||!alts[lang])return;
+      var m=META[lang];
+      var el=document.createElement('a');el.href=alts[lang];el.className='lang-option';el.setAttribute('hreflang',lang);
+      var sf=document.createElement('span');sf.className='lo-flag';sf.textContent=m.flag;
+      var sl=document.createElement('span');sl.className='lo-label';sl.textContent=m.label;
+      el.appendChild(sf);el.appendChild(sl);
+      el.addEventListener('mousedown',function(e){
+        e.preventDefault();
+        try{localStorage.setItem(PREF,lang);}catch(e2){}
+        window.location.href=alts[lang];
+      });
+      dd.appendChild(el);
+    });
+    if(!dd.children.length){sw.style.display='none';}
+    else{
+      lbtn.addEventListener('click',function(e){e.stopPropagation();var o=dd.classList.toggle('open');lbtn.setAttribute('aria-expanded',o?'true':'false');});
+      document.addEventListener('click',function(e){if(!e.target.closest('#lang-sw')){dd.classList.remove('open');lbtn.setAttribute('aria-expanded','false');}});
+    }
+  }
+  var cs=null;try{cs=localStorage.getItem('cs_cookie_consent');}catch(e){}
+  if(cs==='granted'){if(typeof gtag==='function')gtag('consent','update',{analytics_storage:'granted'});}
+  else if(!cs){var cb=document.getElementById('cookie-banner');if(cb)cb.classList.add('show');}
+  document.querySelectorAll('.rr-fill[data-w]').forEach(function(el){el.style.width=el.getAttribute('data-w')+'%';});
+  var hbtn=document.getElementById('hamburger');
+  if(hbtn){hbtn.addEventListener('click',function(){var mm=document.getElementById('mobile-menu');if(mm&&mm.classList.contains('open'))closeMenu();else openMenu();});}
+  var dc=document.getElementById('drawer-close');
+  if(dc)dc.addEventListener('click',closeMenu);
 })();
 </script>
 </body>
