@@ -145,11 +145,7 @@ nav.site-nav{background:var(--w);border-bottom:1px solid var(--b);position:stick
 .compare-link{display:block;padding:0.45rem 0.6rem;border:1px solid var(--b);border-radius:6px;font-size:0.76rem;font-weight:600;color:var(--t3);text-decoration:none;transition:all 0.15s;margin-bottom:0.4rem;text-align:center}
 .compare-link:hover{border-color:var(--gm);color:var(--gd)}
 .compare-link:last-child{margin-bottom:0}
-/* FOOTER */
-footer{background:var(--w);border-top:1px solid var(--b);padding:1.5rem;margin-top:2rem}
-.ft-inner{max-width:960px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem}
-.ft-inner p{font-size:0.67rem;color:var(--t4)}
-.ft-inner a{color:var(--t3);text-decoration:none}
+
 /* RESPONSIVE */
 @media(max-width:768px){
   .rev-layout{grid-template-columns:1fr}
@@ -158,6 +154,7 @@ footer{background:var(--w);border-top:1px solid var(--b);padding:1.5rem;margin-t
   .score-box{display:none}
   .pros-cons{grid-template-columns:1fr}
   .nav-links{display:none}
+  .casino-logo{width:60px;height:46px;font-size:0.75rem}
 }
 
 /* HAMBURGER */
@@ -369,6 +366,7 @@ tr:hover td{background:var(--bg)}
 .faq-q::-webkit-details-marker{display:none}
 .faq-icon{font-size:.85rem;color:var(--t4);flex-shrink:0;margin-left:.75rem;transition:transform .2s}
 details[open] .faq-icon{transform:rotate(45deg)}
+details[open] .faq-a{display:block}
 .faq-a{padding:.1rem 1rem .85rem;font-size:.85rem;color:var(--t2);line-height:1.78}
 @media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.mobile-menu{display:block}}
 @media(max-width:640px){.c-card{flex-direction:column;gap:.85rem}.c-logo{width:56px;height:44px}}
@@ -408,6 +406,202 @@ details[open] .faq-icon{transform:rotate(45deg)}
 .drawer-section-label{font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--t4);padding:.75rem 1rem .25rem;margin-top:.25rem}
 
 .cookie-banner{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--t,#111827);color:#fff;z-index:10000;padding:1rem 1.5rem;box-shadow:0 -4px 20px rgba(0,0,0,.2)}.cookie-banner.show{display:block}.cookie-inner{max-width:1040px;margin:0 auto;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}.cookie-text{flex:1;font-size:.82rem;line-height:1.5;min-width:200px}.cookie-text a{color:#86EFAC;text-decoration:underline}.cookie-btns{display:flex;gap:.5rem;flex-shrink:0}.cookie-accept{background:#22C55E;color:#fff;border:none;padding:.5rem 1.25rem;border-radius:6px;cursor:pointer;font-weight:700;font-size:.82rem;font-family:var(--ff,sans-serif)}.cookie-reject{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);padding:.5rem 1.25rem;border-radius:6px;cursor:pointer;font-weight:600;font-size:.82rem;font-family:var(--ff,sans-serif)}
+
+/* DATA TABLE */
+.data-table{width:100%;border-collapse:collapse;margin:.85rem 0;font-size:.82rem;overflow:auto;display:block}
+.data-table th{background:var(--bg);color:var(--t3);font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;padding:.55rem .85rem;border-bottom:2px solid var(--b);text-align:left;white-space:nowrap}
+.data-table td{padding:.55rem .85rem;border-bottom:1px solid var(--b);background:var(--w);color:var(--t2);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table td.td-g{color:var(--gd);font-weight:600}
+.data-table td.td-r{color:#DC2626;font-weight:600}
+/* FAQ BLOCK (details/summary style) */
+.faq-block{margin:.5rem 0}
+.faq-block .faq-item{border:1px solid var(--b);border-radius:8px;margin-bottom:.5rem;overflow:hidden;background:var(--w)}
+.faq-block .faq-q{padding:.85rem 1rem;font-weight:700;font-size:.86rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--t);line-height:1.4;list-style:none}
+.faq-block .faq-q::-webkit-details-marker{display:none}
+.faq-block .faq-q:hover{background:var(--bg)}
+.faq-block .faq-a{padding:.15rem 1rem .85rem;font-size:.83rem;color:var(--t2);line-height:1.75}
+/* VERDICT CARD (stake/roobet style) */
+.verdict-card{background:var(--w);border:1.5px solid var(--b);border-radius:12px;padding:1.1rem 1.25rem;margin:.85rem 0;box-shadow:var(--sh)}
+/* WARN BOX */
+.warn-box{background:#FEF3C7;border:1px solid #FDE68A;border-radius:8px;padding:.8rem 1rem;font-size:.81rem;color:#92400E;margin:.75rem 0;line-height:1.65}
+/* SECTION HEADING (legacy alias) */
+.section-h{font-size:1.05rem;font-weight:800;color:var(--t);margin:1.75rem 0 .65rem;padding-top:1.75rem;border-top:1px solid var(--b)}
+
+/* PROS / CONS LISTS (stake, roobet style) */
+.pro-list,.con-list{background:var(--w);border:1px solid var(--b);border-radius:10px;padding:1rem 1.1rem;flex:1;min-width:220px}
+.pro-list{border-top:3px solid var(--green)}
+.con-list{border-top:3px solid #DC2626}
+.pro-list h3{color:var(--gd);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;margin-bottom:.55rem}
+.con-list h3{color:#DC2626;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;margin-bottom:.55rem}
+.pro-list ul,.con-list ul{padding-left:1.1rem;margin:0}
+.pro-list li,.con-list li{font-size:.82rem;color:var(--t2);line-height:1.65;margin-bottom:.3rem}
+
+
+/* ── ELEGANT FOOTER ── */
+footer{background:#111827;color:#9CA3AF;margin-top:3rem}
+.ft-inner{max-width:1040px;margin:0 auto;padding:2.5rem 1.5rem 2rem;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem}
+.ft-brand p{font-size:.78rem;color:#6B7280;line-height:1.6;margin-top:.65rem;max-width:280px}
+.logo-wh{display:flex;align-items:center;gap:9px;text-decoration:none}
+.logo-wh .logo-text{font-size:1.1rem;font-weight:800;color:#F9FAFB;letter-spacing:-.02em}
+.logo-wh .logo-text span{color:#16A34A}
+.ft-col-title{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#9CA3AF;margin-bottom:.65rem}
+.ft-col ul{list-style:none;padding:0;margin:0}
+.ft-col li{margin-bottom:.4rem}
+.ft-col a{font-size:.8rem;color:#6B7280;text-decoration:none;transition:color .15s}
+.ft-col a:hover{color:#16A34A}
+.ft-disc{border-top:1px solid #1F2937;padding:1rem 1.5rem;max-width:1040px;margin:0 auto}
+.ft-disc p{font-size:.7rem;color:#6B7280;line-height:1.65}
+.ft-disc a{color:#6B7280;text-decoration:none}
+.ft-disc a:hover{color:#9CA3AF}
+.rg-badges{display:flex;gap:.35rem;flex-wrap:wrap;margin-top:.5rem}
+.rg-badge{background:#1F2937;border:1px solid #374151;border-radius:4px;padding:.18rem .5rem;font-size:.62rem;font-weight:700;color:#6B7280;letter-spacing:.04em}
+@media(max-width:768px){
+  .ft-inner{grid-template-columns:1fr 1fr;gap:1.5rem 1.25rem;padding:2rem 1rem 1.5rem}
+  .ft-brand{grid-column:1/-1}
+  .ft-disc{padding:.85rem 1rem}
+}
+@media(max-width:480px){
+  .ft-inner{grid-template-columns:1fr}
+  .ft-disc p{font-size:.68rem}
+}
+
+/* INFO TABLE (review bonus breakdown) */
+.info-table{width:100%;border-collapse:collapse;margin:.75rem 0;font-size:.81rem}
+.info-table th{background:var(--bg);color:var(--t3);font-weight:700;font-size:.71rem;text-transform:uppercase;letter-spacing:.05em;padding:.5rem .75rem;border-bottom:2px solid var(--b);text-align:left}
+.info-table td{padding:.5rem .75rem;border-bottom:1px solid var(--b);background:var(--w);color:var(--t2)}
+.info-table tr:last-child td{border-bottom:none}
+
+
+/* ═══════════════════════════════════════════════════════
+   MOBILE FIXES — all breakpoints
+   ═══════════════════════════════════════════════════════ */
+
+/* Fix 1: Hide nav CTA on mobile — it pushes hamburger off screen */
+@media(max-width:768px){
+  .nav-cta{display:none}
+}
+
+/* Fix 2+3: Tables scroll horizontally instead of overflowing page */
+@media(max-width:768px){
+  .stats-table,.info-table,.data-table{
+    display:block;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    white-space:normal;
+  }
+  .stats-table td,.info-table td,.data-table td,
+  .stats-table th,.info-table th,.data-table th{
+    white-space:nowrap;
+    font-size:0.75rem;
+    padding:0.45rem 0.6rem;
+  }
+}
+
+/* Fix 4: H1 in review header — smaller on narrow screens */
+@media(max-width:768px){
+  .rh-info h1{font-size:1.05rem;letter-spacing:-0.01em}
+  .rh-grid{gap:0.75rem}
+  .rev-header{padding:1rem}
+}
+@media(max-width:380px){
+  .rh-info h1{font-size:0.95rem}
+}
+
+/* Fix 5: Claim button — full width on small screens so it doesn't overflow */
+@media(max-width:480px){
+  .bonus-strip{flex-direction:column;align-items:stretch}
+  .btn-claim{width:100%;text-align:center;white-space:normal}
+  .tcs{text-align:center}
+}
+
+/* Fix 6: Related guides bar — wrap links */
+@media(max-width:768px){
+  .related-guides{
+    display:flex !important;
+    flex-wrap:wrap;
+    gap:0.4rem 0.75rem;
+    font-size:0.72rem !important;
+  }
+  .related-guides a{white-space:nowrap}
+}
+
+/* Fix 7: page-wrap — correct padding (was setting grid-template-columns wrongly) */
+@media(max-width:768px){
+  .page-wrap{padding:1.25rem 1rem 2rem}
+}
+@media(max-width:400px){
+  .page-wrap{padding:1rem 0.85rem 1.5rem}
+}
+
+/* Fix 8: pros-cons items — slightly larger font on mobile for readability */
+@media(max-width:768px){
+  .pc-item{font-size:0.82rem;line-height:1.6}
+  .pc{padding:0.75rem 0.85rem}
+}
+
+/* Fix 10: .wrap (category pages) — reduce padding on mobile */
+@media(max-width:768px){
+  .wrap{padding:1.25rem 1rem}
+}
+
+/* Fix 11 supplement: c-card CTA button full width on stacked mobile */
+@media(max-width:640px){
+  .c-cta{width:100%;justify-content:center}
+  .c-meta{gap:0.4rem}
+}
+
+/* Bonus fix: tbl-wrap tables (interac etc.) — ensure scrollable */
+@media(max-width:768px){
+  .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .tbl-wrap table{min-width:500px}
+}
+
+/* Bonus fix: for-box and verdict-box — tighter padding on small screens */
+@media(max-width:480px){
+  .for-box,.verdict-box,.test-box,.warning-box,.ontario-ok{
+    padding:0.85rem 0.9rem;
+    font-size:0.82rem;
+  }
+  .for-box{border-radius:8px}
+}
+
+/* Bonus fix: faq min touch target height on all screens */
+@media(max-width:768px){
+  .faq-q{min-height:48px;font-size:0.84rem;padding:0.85rem 0.9rem}
+  .faq-a{padding:0 0.9rem 0.85rem;font-size:0.82rem}
+}
+
+/* Bonus fix: score-row labels don't truncate on mobile sidebar (if shown) */
+@media(max-width:768px){
+  .sr-label{font-size:0.72rem}
+  .sr-val{font-size:0.72rem}
+}
+
+/* Bonus fix: page-hero padding on mobile */
+@media(max-width:768px){
+  .page-hero{padding:1.5rem 1rem}
+  h1.page-h1{font-size:clamp(1.4rem,5vw,2.4rem)}
+  .page-intro{font-size:0.88rem}
+}
+
+/* Bonus fix: eeat-bar links don't wrap awkwardly */
+@media(max-width:480px){
+  .eeat-inner{flex-direction:column;gap:0.15rem}
+  .eeat-inner span:last-child{display:none}
+}
+
+/* Bonus fix: cookie banner stacks on small screens */
+@media(max-width:480px){
+  .cookie-inner{flex-direction:column}
+  .cookie-btns{width:100%;justify-content:flex-end}
+}
+
+/* Bonus fix: language dropdown - ensure it doesn't go off screen */
+@media(max-width:400px){
+  .lang-dd{right:-10px;min-width:160px}
+}
+
 </style>
 
 
@@ -504,7 +698,7 @@ function setCookieConsent(c){
     <div class="lang-dd" id="lang-dd" role="listbox" aria-label="Available languages"></div>
   </div>
   
-    <a href="#casinos" class="nav-cta">Top Picks →</a>
+    <a href="/" class="nav-cta">Top Casinos →</a>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
       <span></span><span></span><span></span>
     </button>
@@ -527,6 +721,13 @@ function setCookieConsent(c){
       <a href="/en/fast-payout-casinos-canada/" onclick="closeMenu()"><span class="nav-icon">⚡</span>Fast Payout Casinos</a>
       <a href="/en/free-spins-canada/" onclick="closeMenu()"><span class="nav-icon">🎰</span>Free Spins Canada</a>
       <a href="/en/live-casino-canada/" onclick="closeMenu()"><span class="nav-icon">🎲</span>Live Casino Canada</a>
+      <a href="/en/bitcoin-casinos-canada/" onclick="closeMenu()"><span class="nav-icon">₿</span>Bitcoin Casinos</a>
+      <a href="/en/welcome-bonus-casinos-canada/" onclick="closeMenu()"><span class="nav-icon">🎁</span>Welcome Bonuses</a>
+      <a href="/en/cashback-casinos-canada/" onclick="closeMenu()"><span class="nav-icon">💰</span>Cashback Casinos</a>
+      <div class="drawer-section-label">By Province</div>
+      <a href="/en/quebec-casinos-canada/" onclick="closeMenu()"><span class="nav-icon">🍁</span>Quebec Casinos (18+)</a>
+      <a href="/en/bc-casinos-canada/" onclick="closeMenu()"><span class="nav-icon">🏔️</span>BC Casinos</a>
+      <a href="/en/alberta-casinos-canada/" onclick="closeMenu()"><span class="nav-icon">⛽</span>Alberta Casinos (18+)</a>
       <a href="/tools/wagering-calculator/" onclick="closeMenu()"><span class="nav-icon">🔢</span>Wagering Calculator</a>
       <div class="drawer-section-label">Casino Reviews</div>
       <a href="/en/reviews/bitstarz-canada/" onclick="closeMenu()"><span class="nav-icon">⚡</span>BitStarz — 9.7/10</a>
@@ -541,6 +742,8 @@ function setCookieConsent(c){
       <a href="/en/reviews/888casino-canada/" onclick="closeMenu()"><span class="nav-icon">✅</span>888 Casino — 8.5/10</a>
       <a href="/en/reviews/betway-canada/" onclick="closeMenu()"><span class="nav-icon">✅</span>Betway — 7.8/10</a>
       <a href="/en/reviews/7bit-canada/" onclick="closeMenu()"><span class="nav-icon">🎰</span>7Bit — 8.7/10</a>
+      <a href="/en/reviews/stake-canada/" onclick="closeMenu()"><span class="nav-icon">₿</span>Stake — 8.9/10</a>
+      <a href="/en/reviews/roobet-canada/" onclick="closeMenu()"><span class="nav-icon">🚀</span>Roobet — 8.4/10</a>
       <a href="/responsible-gambling/" onclick="closeMenu()"><span class="nav-icon">🛡️</span>Responsible Gambling</a>
       <a href="/about/" onclick="closeMenu()"><span class="nav-icon">ℹ️</span>About CasinoScout</a>
       <a href="/affiliate-disclosure/" onclick="closeMenu()"><span class="nav-icon">📋</span>Affiliate Disclosure</a>
@@ -554,6 +757,7 @@ function setCookieConsent(c){
     </div>
   </div>
 </div>
+
 <div class="page-hero">
   <div class="page-hero-inner">
     <div class="bc"><a href="/">CasinoScout</a> › No Deposit Bonus Canada</div>
@@ -697,17 +901,56 @@ function setCookieConsent(c){
 </div>
 </div>
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-links">
-      <a href="/">Home</a><a href="/en/best-online-casinos-canada/">Canada Guide</a>
-      <a href="/tools/wagering-calculator/">Wagering Calculator</a>
-      <a href="/about/">About</a><a href="/affiliate-disclosure/">Disclosure</a> · <a href="/privacy-policy/">Privacy Policy</a> · <a href="/terms-of-use/">Terms of Use</a>
-      <a href="/responsible-gambling/">Responsible Gambling</a>
+<footer>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <a href="/" class="logo-wh" aria-label="CasinoScout">
+        <svg class="logo-icon" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#DCFCE7"/><circle cx="16" cy="16" r="4" fill="#16A34A"/><path d="M16 6L16 10" stroke="#16A34A" stroke-width="2.2" stroke-linecap="round"/><path d="M16 22L16 26" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/><path d="M6 16L10 16" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/><path d="M22 16L26 16" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/></svg>
+        <span class="logo-text">Casino<span>Scout</span></span>
+      </a>
+      <p>Independent casino reviews for Canadian players. We earn commission from operators we review — this never affects our editorial rankings.</p>
     </div>
-    <p class="footer-disc">CasinoScout.co is an independent affiliate site. We earn commissions when you sign up through our links — this never influences our editorial ratings. All bonus data verified March 2026 and subject to change — always read casino T&Cs before depositing. Must be 19+ to gamble (18+ in AB, MB, QC). Gambling can be addictive. ConnexOntario: <a href="https://www.connexontario.ca">1-866-531-2600</a> · Tel-Jeu (Québec): <a href="https://www.jeu-aidereference.qc.ca">1-800-461-0140</a> · <a href="https://www.camh.ca">CAMH</a></p>
+    <div class="ft-col">
+      <h4 class="ft-col-title">Reviews</h4>
+      <ul>
+        <li><a href="/en/reviews/bitstarz-canada/">BitStarz Review</a></li>
+        <li><a href="/en/reviews/jackpotcity-canada/">Jackpot City Review</a></li>
+        <li><a href="/en/reviews/leovegas-canada/">LeoVegas Review</a></li>
+        <li><a href="/en/reviews/playojo-canada/">PlayOJO Review</a></li>
+        <li><a href="/en/reviews/jackbit-canada/">Jackbit Review</a></li>
+        <li><a href="/en/reviews/spin-casino-canada/">Spin Casino Review</a></li>
+        <li><a href="/en/reviews/stake-canada/">Stake Review</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4 class="ft-col-title">Guides</h4>
+      <ul>
+        <li><a href="/en/best-online-casinos-canada/">Best Casinos Canada</a></li>
+        <li><a href="/en/online-casinos-ontario/">Ontario iGO</a></li>
+        <li><a href="/en/interac-casinos-canada/">Interac Casinos</a></li>
+        <li><a href="/en/welcome-bonus-casinos-canada/">Welcome Bonuses</a></li>
+        <li><a href="/en/bitcoin-casinos-canada/">Bitcoin Casinos</a></li>
+        <li><a href="/en/fast-payout-casinos-canada/">Fast Payouts</a></li>
+        <li><a href="/tools/wagering-calculator/">Wagering Calculator</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4 class="ft-col-title">Legal</h4>
+      <ul>
+        <li><a href="/about/">About CasinoScout</a></li>
+        <li><a href="/affiliate-disclosure/">Affiliate Disclosure</a></li>
+        <li><a href="/responsible-gambling/">Responsible Gambling</a></li>
+        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+        <li><a href="/terms-of-use/">Terms of Use</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-disc">
+    <p>© 2026 CasinoScout.co · Independent affiliate site · <a href="/affiliate-disclosure/">Affiliate Disclosure</a> · <a href="/privacy-policy/">Privacy Policy</a> · <a href="/terms-of-use/">Terms of Use</a> · Must be 19+ to gamble (18+ in AB, MB, QC) · Gambling can be addictive — <a href="https://www.connexontario.ca">ConnexOntario 1-866-531-2600</a> · <a href="https://www.jeu-aidereference.qc.ca">Tel-Jeu QC 1-800-461-0140</a></p>
+    <div class="rg-badges"><span class="rg-badge">19+</span><span class="rg-badge">RGC</span><span class="rg-badge">ConnexOntario</span><span class="rg-badge">Tel-Jeu</span></div>
   </div>
 </footer>
+
 
 
 
