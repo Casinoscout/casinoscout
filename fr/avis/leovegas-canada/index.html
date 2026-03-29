@@ -22,7 +22,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Review","name":"Avis LeoVegas Canada 2026 — Ontario iGO, 20x mise, Testé","url":"https://casinoscout.co/fr/avis/leovegas-canada/","inLanguage":"fr-CA","datePublished":"2026-03-27","dateModified":"2026-03-28","author":{"@type":"Person","name":"Alex M.","jobTitle":"Réviseur principal de casinos","worksFor":{"@type":"Organization","name":"CasinoScout"}},"publisher":{"@type":"Organization","name":"CasinoScout","url":"https://casinoscout.co"},"itemReviewed":{"@type":"LocalBusiness","name":"Leovegas","address":{"@type":"PostalAddress","addressCountry":"MT"},"sameAs":"https://www.leovegas.com","url":"https://www.leovegas.com"},"reviewRating":{"@type":"Rating","ratingValue":"9.1","bestRating":"10","worstRating":"1"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"CasinoScout","item":"https://casinoscout.co/fr/"},{"@type":"ListItem","position":2,"name":"Avis casinos","item":"https://casinoscout.co/fr/"},{"@type":"ListItem","position":3,"name":"Avis LeoVegas Canada 2026 — Ontario iGO, 20x mise, Testé","item":"https://casinoscout.co/fr/avis/leovegas-canada/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"LeoVegas est-il légal en Ontario?","acceptedAnswer":{"@type":"Answer","text":"Oui. LeoVegas a une licence iGaming Ontario délivrée par l'AGCO depuis 2022."}},{"@type":"Question","name":"LeoVegas a-t-il vraiment 20x de mise?","acceptedAnswer":{"@type":"Answer","text":"Oui. L'exigence de mise est de 20x sur le montant du bonus — la plus basse de tous les grands casinos licenciés en Ontario. PlayOJO est à 0x mais n'offre pas le même bonus en dollars."}},{"@type":"Question","name":"Combien de temps prennent les retraits chez LeoVegas?","acceptedAnswer":{"@type":"Answer","text":"1 à 2 jours ouvrables pour Interac d'après nos tests. La première demande peut nécessiter une vérification d'identité."}},{"@type":"Question","name":"LeoVegas a-t-il une appli pour Ontario?","acceptedAnswer":{"@type":"Answer","text":"Oui. LeoVegas a une appli iOS dédiée pour les joueurs ontariens, conçue selon les règles de l'AGCO."}}]}</script>
-<style>
+<style>/* CasinoScout Review Pages - Shared CSS */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --green:#16A34A;--gl:#DCFCE7;--gm:#86EFAC;--gd:#15803D;--gb:#22C55E;--gbh:#16A34A;
@@ -33,6 +33,7 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:var(--ff);background:var(--bg);color:var(--t);font-size:15px;line-height:1.7}
+/* NAV */
 nav.site-nav{background:var(--w);border-bottom:1px solid var(--b);position:sticky;top:0;z-index:100;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;box-shadow:var(--sh)}
 .logo{display:flex;align-items:center;gap:9px;text-decoration:none}
 .logo-icon{width:32px;height:32px}
@@ -41,27 +42,348 @@ nav.site-nav{background:var(--w);border-bottom:1px solid var(--b);position:stick
 .nav-links{display:flex;gap:1.5rem;list-style:none}
 .nav-links a{color:var(--t3);text-decoration:none;font-size:0.83rem;font-weight:500;transition:color 0.15s}
 .nav-links a:hover{color:var(--t)}
-.nav-right{display:flex;align-items:center;gap:0.75rem}
 .nav-cta{background:var(--gb);color:#fff;padding:0.45rem 1.1rem;border-radius:6px;font-size:0.82rem;font-weight:700;text-decoration:none;transition:background 0.15s}
 .nav-cta:hover{background:var(--gbh)}
+/* EEAT BAR */
+.eeat-bar{background:var(--w);border-bottom:1px solid var(--b);padding:0.6rem 1.5rem}
+.eeat-inner{max-width:960px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;font-size:0.74rem;color:var(--t3)}
+.eeat-inner strong{color:var(--t)}
+.eeat-inner a{color:var(--gd);text-decoration:none}
+/* PAGE */
+.page-wrap{max-width:960px;margin:0 auto;padding:1.75rem 1.5rem 3rem}
+/* BREADCRUMB */
+.bc{font-size:0.73rem;color:var(--t4);margin-bottom:1.25rem;display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.bc a{color:var(--t3);text-decoration:none}
+.bc a:hover{color:var(--green)}
+/* REVIEW HEADER */
+.rev-header{background:var(--w);border:2px solid var(--gm);border-radius:14px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:var(--sh)}
+.rh-grid{display:grid;grid-template-columns:80px 1fr auto;gap:1.25rem;align-items:center;margin-bottom:1rem}
+.casino-logo{width:80px;height:58px;background:var(--bg);border:1px solid var(--b);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:800;color:var(--gd);text-align:center;line-height:1.3;flex-shrink:0}
+.rh-info h1{font-size:1.25rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:5px;color:var(--t)}
+.tags{display:flex;gap:4px;flex-wrap:wrap}
+.tag{font-size:0.6rem;font-weight:700;padding:0.18rem 0.5rem;border-radius:3px;text-transform:uppercase;letter-spacing:0.04em}
+.tc{background:#D1FAE5;color:#065F46}.ti{background:#FFF7ED;color:#C2410C}
+.tca{background:#F0FDF4;color:#166534}.tf{background:#DBEAFE;color:#1E40AF}
+.ton{background:#EDE9FE;color:#5B21B6}.tn{background:#FEE2E2;color:#991B1B}
+.score-box{text-align:center;background:var(--gl);border-radius:10px;padding:0.75rem 1.1rem;flex-shrink:0;min-width:90px}
+.score-num{font-size:2.1rem;font-weight:800;color:var(--gd);line-height:1;letter-spacing:-0.03em}
+.score-stars{color:#F59E0B;font-size:0.82rem;margin-top:2px}
+.score-label{font-size:0.62rem;color:var(--gd);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-top:2px}
+.bonus-strip{background:var(--bg);border-radius:8px;padding:0.85rem 1rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem}
+.bonus-val{font-size:1.05rem;font-weight:800;color:var(--gd)}
+.bonus-sub{font-size:0.73rem;color:var(--t3);margin-top:2px}
+.btn-claim{background:var(--gb);color:#fff;padding:0.55rem 1.4rem;border-radius:7px;font-weight:700;font-size:0.83rem;border:none;cursor:pointer;font-family:var(--ff);transition:background 0.15s;text-decoration:none;display:inline-block;white-space:nowrap}
+.btn-claim:hover{background:var(--gbh)}
+.tcs{font-size:0.62rem;color:var(--t4);text-align:right;margin-top:3px}
+/* BODY LAYOUT */
+.rev-layout{display:grid;grid-template-columns:1fr 270px;gap:1.5rem;align-items:start}
+/* CONTENT */
+.rev-content h2{font-size:1.05rem;font-weight:800;color:var(--t);margin:2rem 0 0.65rem;padding-top:2rem;border-top:1px solid var(--b)}
+.rev-content h2:first-child,.rev-content h2.no-border{margin-top:0;padding-top:0;border-top:none}
+.rev-content h3{font-size:0.93rem;font-weight:700;color:var(--t);margin:1.25rem 0 0.4rem}
+.rev-content p{font-size:0.87rem;color:var(--t2);line-height:1.78;margin-bottom:0.8rem}
+.rev-content a{color:var(--gd)}
+.rev-content ul,
+.rev-content ol{padding-left:1.25rem;margin-bottom:0.8rem}
+.rev-content li{font-size:0.85rem;color:var(--t2);line-height:1.7;margin-bottom:0.25rem}
+/* VERDICT BOX */
+.verdict-box{background:var(--w);border-left:4px solid var(--green);border-radius:0 10px 10px 0;padding:1rem 1.25rem;margin-bottom:1.25rem;font-size:0.86rem;color:var(--t2);line-height:1.75}
+.verdict-box strong{color:var(--t)}
+/* WHO IS IT FOR */
+.for-box{background:var(--gl);border:1px solid var(--gm);border-radius:10px;padding:1rem 1.25rem;margin-bottom:1.25rem;font-size:0.84rem;color:var(--gd);line-height:1.7}
+.for-box strong{font-weight:700;display:block;margin-bottom:4px;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.07em}
+/* PROS CONS */
+.pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin:1rem 0}
+.pc{border-radius:9px;padding:0.9rem 1rem}
+.pc-pros{background:#F0FDF4;border:1px solid #BBF7D0}
+.pc-cons{background:#FEF2F2;border:1px solid #FECACA}
+.pc-title{font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.09em;margin-bottom:0.55rem}
+.pc-pros .pc-title{color:var(--gd)}
+.pc-cons .pc-title{color:#DC2626}
+.pc-item{font-size:0.78rem;display:flex;align-items:flex-start;gap:5px;padding:0.22rem 0;color:var(--t2);line-height:1.5}
+.pc-ok{color:var(--green);flex-shrink:0;font-size:0.72rem;margin-top:2px}
+.pc-x{color:#DC2626;flex-shrink:0;font-size:0.72rem;margin-top:2px}
+/* STATS TABLE */
+.stats-table{width:100%;border-collapse:collapse;margin:0.85rem 0;font-size:0.82rem}
+.stats-table td{padding:0.55rem 0.85rem;border-bottom:1px solid var(--b);background:var(--w);color:var(--t2)}
+.stats-table td:first-child{color:var(--t3);font-weight:600;width:45%;background:var(--bg)}
+.stats-table tr:last-child td{border-bottom:none}
+/* TEST BOX */
+.test-box{background:var(--w);border:1px solid var(--b);border-radius:10px;padding:1rem 1.25rem;margin:1rem 0;font-size:0.84rem;color:var(--t2);line-height:1.7}
+.test-box-title{font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.09em;color:var(--t3);margin-bottom:0.6rem;display:flex;align-items:center;gap:5px}
+.test-box-title::before{content:'';display:inline-block;width:8px;height:8px;background:var(--gb);border-radius:50%}
+/* WARNING BOX */
+.warning-box{background:#FEF3C7;border:1px solid #FDE68A;border-radius:8px;padding:0.8rem 1rem;font-size:0.8rem;color:#92400E;margin-bottom:1rem;line-height:1.65}
+.ontario-ok{background:#EDE9FE;border:1px solid #C4B5FD;border-radius:8px;padding:0.8rem 1rem;font-size:0.8rem;color:#5B21B6;margin-bottom:1rem;line-height:1.65}
+/* FAQ */
+.faq-wrap{margin-top:0.5rem}
+.faq-item{border:1px solid var(--b);border-radius:8px;margin-bottom:0.5rem;overflow:hidden;background:var(--w)}
+.faq-q{padding:0.85rem 1rem;font-weight:700;font-size:0.86rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--t);line-height:1.4}
+.faq-q:hover{background:var(--bg)}
+.faq-icon{flex-shrink:0;margin-left:0.75rem;font-size:1rem;color:var(--t3);transition:transform 0.2s}
+.faq-a{padding:0 1rem 0.85rem;font-size:0.83rem;color:var(--t2);line-height:1.75;display:none}
+/* SIDEBAR */
+.sidebar{position:sticky;top:72px;display:flex;flex-direction:column;gap:0.9rem}
+.sb-card{background:var(--w);border:1.5px solid var(--b);border-radius:12px;padding:1rem 1.1rem;box-shadow:var(--sh)}
+.sb-title{font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.09em;color:var(--t);margin-bottom:0.75rem;display:flex;align-items:center;gap:5px}
+.sb-title::before{content:'';display:block;width:3px;height:12px;background:var(--gb);border-radius:2px}
+.verdict-score{text-align:center;padding:0.4rem 0 0.75rem}
+.vs-num{font-size:2.4rem;font-weight:800;color:var(--gd);line-height:1;letter-spacing:-0.03em}
+.vs-sub{font-size:0.66rem;color:var(--t3);text-transform:uppercase;letter-spacing:0.08em}
+.score-row{display:flex;justify-content:space-between;align-items:center;padding:0.32rem 0;border-bottom:1px solid var(--b);font-size:0.77rem;gap:6px}
+.score-row:last-child{border-bottom:none}
+.sr-label{color:var(--t3);flex-shrink:0}
+.sr-bar{flex:1;height:5px;background:var(--bg);border-radius:3px;overflow:hidden}
+.sr-fill{height:100%;background:var(--gb);border-radius:3px}
+.sr-val{font-weight:700;color:var(--t);flex-shrink:0;font-size:0.77rem}
+.qf-row{display:flex;justify-content:space-between;padding:0.32rem 0;border-bottom:1px solid var(--b);font-size:0.77rem}
+.qf-row:last-child{border-bottom:none}
+.qf-label{color:var(--t3)}
+.qf-val{font-weight:600;color:var(--t);text-align:right;max-width:55%}
+.qf-val.good{color:var(--gd)}
+.qf-val.bad{color:#DC2626}
+.compare-link{display:block;padding:0.45rem 0.6rem;border:1px solid var(--b);border-radius:6px;font-size:0.76rem;font-weight:600;color:var(--t3);text-decoration:none;transition:all 0.15s;margin-bottom:0.4rem;text-align:center}
+.compare-link:hover{border-color:var(--gm);color:var(--gd)}
+.compare-link:last-child{margin-bottom:0}
+/* FOOTER */
+footer{background:var(--w);border-top:1px solid var(--b);padding:1.5rem;margin-top:2rem}
+.ft-inner{max-width:960px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem}
+.ft-inner p{font-size:0.67rem;color:var(--t4)}
+.ft-inner a{color:var(--t3);text-decoration:none}
+/* RESPONSIVE */
+@media(max-width:768px){
+  .rev-layout{grid-template-columns:1fr}
+  .sidebar{position:static}
+  .rh-grid{grid-template-columns:60px 1fr}
+  .score-box{display:none}
+  .pros-cons{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+
+/* HAMBURGER */
 .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:8px;border-radius:8px;flex-shrink:0}
-.hamburger span{display:block;height:2px;background:var(--t);border-radius:2px;transition:transform 0.25s,opacity 0.25s,width 0.25s}
-.hamburger span:nth-child(1){width:20px}.hamburger span:nth-child(2){width:16px}.hamburger span:nth-child(3){width:20px}
+.hamburger span{display:block;height:2px;background:var(--t,#111827);border-radius:2px;transition:transform 0.25s,opacity 0.25s,width 0.25s}
+.hamburger span:nth-child(1){width:20px}
+.hamburger span:nth-child(2){width:16px}
+.hamburger span:nth-child(3){width:20px}
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);width:20px}
 .hamburger.open span:nth-child(2){opacity:0;width:0}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);width:20px}
+.nav-right{display:flex;align-items:center;gap:0.75rem}
+/* DRAWER */
 .mobile-menu{position:fixed;top:60px;left:0;right:0;bottom:0;z-index:190;background:rgba(0,0,0,0.4);opacity:0;pointer-events:none}
 .mobile-menu.open{display:block;opacity:1;pointer-events:auto}
-.mobile-drawer{position:absolute;top:0;right:0;width:min(320px,88vw);height:100%;background:var(--w);box-shadow:-4px 0 20px rgba(0,0,0,0.12);transform:translateX(100%);transition:transform 0.28s cubic-bezier(0.4,0,0.2,1);display:flex;flex-direction:column;overflow-y:auto}
+.mobile-drawer{position:absolute;top:0;right:0;width:min(320px,88vw);height:100%;background:#fff;box-shadow:-4px 0 20px rgba(0,0,0,0.12);transform:translateX(100%);transition:transform 0.28s cubic-bezier(0.4,0,0.2,1);display:flex;flex-direction:column;overflow-y:auto}
 .mobile-menu.open .mobile-drawer{transform:translateX(0)}
-.drawer-header{padding:1.25rem 1.5rem;border-bottom:1px solid var(--b);display:flex;align-items:center;justify-content:space-between}
-.drawer-title{font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--t4)}
-.drawer-close{width:32px;height:32px;background:var(--bg);border:none;border-radius:6px;cursor:pointer;font-size:1.1rem;color:var(--t3);display:flex;align-items:center;justify-content:center}
-.drawer-nav a{display:flex;align-items:center;gap:0.85rem;padding:0.9rem 1.5rem;font-size:0.93rem;font-weight:600;color:var(--t2);text-decoration:none;border-bottom:1px solid var(--b);transition:background 0.15s}
-.drawer-nav a:hover{background:var(--bg)}
+.drawer-header{padding:1.25rem 1.5rem;border-bottom:1px solid #E5E7EB;display:flex;align-items:center;justify-content:space-between}
+.drawer-title{font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#9CA3AF}
+.drawer-close{width:32px;height:32px;background:#F8F9FA;border:none;border-radius:6px;cursor:pointer;font-size:1.1rem;color:#6B7280;display:flex;align-items:center;justify-content:center}
+.drawer-nav a{display:flex;align-items:center;gap:0.85rem;padding:0.9rem 1.5rem;font-size:0.93rem;font-weight:600;color:#374151;text-decoration:none;border-bottom:1px solid #E5E7EB}
+.drawer-nav a:last-child{border-bottom:none}
 .nav-icon{font-size:1rem;width:24px;text-align:center;flex-shrink:0}
-.drawer-footer{margin-top:auto;padding:1rem 1.5rem;border-top:1px solid var(--b);font-size:0.72rem;color:var(--t4);line-height:1.6}
-.drawer-footer a{color:var(--t3);text-decoration:none}
+.drawer-cta{margin:1rem 1.5rem}
+.drawer-cta a{display:block;background:#22C55E;color:#fff;text-align:center;padding:0.85rem;border-radius:8px;font-weight:700;font-size:0.9rem;text-decoration:none}
+.drawer-footer{margin-top:auto;padding:1rem 1.5rem;border-top:1px solid #E5E7EB;font-size:0.72rem;color:#9CA3AF;line-height:1.6}
+.drawer-footer a{color:#6B7280;text-decoration:none}
+@media(max-width:768px){
+  .nav-links{display:none!important}
+  .hamburger{display:flex}
+  .mobile-menu{display:block}
+}
+
+/* ── REVIEW PAGE MOBILE ── */
+@media(max-width:768px){
+  /* Eeat bar */
+  .eeat-bar{padding:0.5rem 1rem}
+  .eeat-inner{font-size:0.7rem;flex-direction:column;gap:0.2rem}
+
+  /* Page wrap: single column */
+  .page-wrap{grid-template-columns:1fr;padding:1.5rem 1rem 2rem;gap:0}
+  .sidebar{display:none}
+
+  /* Breadcrumb */
+  .bc{font-size:0.7rem}
+
+  /* REVIEW HEADER — redesign for mobile */
+  .review-header{padding:1.1rem 1rem;border-radius:10px;margin-bottom:1.25rem}
+  .review-header-top{
+    grid-template-columns:62px 1fr;
+    grid-template-rows:auto auto;
+    gap:0.65rem 0.85rem;
+  }
+  .casino-logo-lg{width:62px;height:48px;font-size:0.85rem}
+  .review-title{font-size:1.1rem}
+  .review-subtitle{font-size:0.74rem}
+  /* Score block: move into header row */
+  .score-block{
+    grid-column:1/-1;
+    display:flex;align-items:center;gap:1rem;
+    padding-top:0.65rem;border-top:1px solid var(--b);
+    justify-content:space-between;
+  }
+  .score-big{font-size:2.2rem}
+  .score-stars{font-size:0.85rem}
+  .score-label{font-size:0.68rem}
+  /* Quick stats: 2×2 grid */
+  .review-quick{grid-template-columns:1fr 1fr;gap:0.5rem;padding-top:0.75rem}
+  .rq-val{font-size:0.9rem}
+  .rq-label{font-size:0.62rem}
+  /* Visit button */
+  .btn-visit{min-height:52px;font-size:0.95rem;border-radius:10px}
+  .tcs-note{font-size:0.65rem;line-height:1.5}
+
+  /* "Who this is for" box */
+  .best-for-box{font-size:0.82rem;padding:0.85rem 1rem}
+  .best-for-box ul{padding-left:1.1rem}
+
+  /* Verdict box */
+  .verdict-box{padding:1.25rem 1rem;border-radius:10px;margin:1.5rem 0}
+  .verdict-box h3{font-size:1rem}
+  .verdict-box p{font-size:0.84rem}
+  .verdict-score{font-size:2rem}
+
+  /* PROS/CONS grid: stack on mobile */
+  .pros-cons{grid-template-columns:1fr;gap:0.6rem;margin:1.25rem 0}
+  .pros h4,.cons h4{font-size:0.78rem}
+  .pros li,.cons li{font-size:0.81rem}
+
+  /* CONTENT text */
+  .content h2{font-size:1.05rem;margin:1.75rem 0 0.65rem}
+  .content h3{font-size:0.92rem}
+  .content p{font-size:0.86rem}
+  .content li{font-size:0.85rem}
+
+  /* TABLES — horizontal scroll */
+  .ratings-table,.comp-table{
+    display:block;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    font-size:0.78rem;
+    border-radius:8px;
+  }
+  .ratings-table th,.comp-table th{font-size:0.72rem;padding:0.5rem 0.75rem;white-space:nowrap}
+  .ratings-table td,.comp-table td{padding:0.5rem 0.75rem;white-space:nowrap}
+  .rating-bar-wrap{width:70px}
+
+  /* BONUS BOX */
+  .bonus-box{padding:1rem;border-radius:8px}
+  .deposit-row{font-size:0.8rem;flex-wrap:wrap;gap:0.25rem}
+  .deposit-num{width:auto;font-size:0.75rem}
+
+  /* INFO/WARNING BOXES */
+  .info-box,.warning-box{font-size:0.82rem;padding:0.75rem 0.9rem;line-height:1.65}
+
+  /* FAQ */
+  .faq-q{font-size:0.84rem;padding:0.85rem 0.9rem;min-height:52px}
+  .faq-a{font-size:0.83rem;padding:0 0.9rem 0.85rem}
+
+  /* Category rating table inline bars */
+  .rating-bar-wrap{width:60px}
+
+  /* Footer */
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:0.4rem}
+  .footer-bottom p{font-size:0.68rem;line-height:1.65}
+}
+
+@media(max-width:400px){
+  .page-wrap{padding:1.25rem 0.85rem}
+  .review-header{padding:1rem 0.85rem}
+  .review-header-top{grid-template-columns:54px 1fr}
+  .casino-logo-lg{width:54px;height:42px}
+  .score-big{font-size:1.9rem}
+}
+
+/* REVIEW PAGE STICKY CLAIM BAR */
+.review-sticky{
+  display:none;
+  position:fixed;bottom:0;left:0;right:0;
+  z-index:150;
+  background:var(--w);
+  border-top:2px solid var(--green);
+  box-shadow:0 -4px 16px rgba(0,0,0,0.12);
+  padding:0.65rem 1rem;
+  padding-bottom:max(0.65rem, env(safe-area-inset-bottom));
+  gap:0.75rem;
+  align-items:center;
+}
+@media(max-width:768px){
+  .review-sticky{display:flex}
+  body.has-review-sticky{padding-bottom:72px}
+}
+.review-sticky-info{flex:1;min-width:0}
+.review-sticky-score{font-size:1.3rem;font-weight:800;color:var(--green);line-height:1}
+.review-sticky-name{font-size:0.75rem;font-weight:700;color:var(--t);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.review-sticky-btn{background:var(--gb);color:#fff;border:none;border-radius:10px;font-weight:700;font-size:0.88rem;font-family:inherit;padding:0.7rem 1.1rem;cursor:pointer;white-space:nowrap;min-height:48px;display:flex;align-items:center;touch-action:manipulation}
+.review-sticky-btn:active{background:var(--gbh)}
+
+
+.wrap{max-width:1040px;margin:0 auto;padding:2rem 1.5rem}
+.bc{font-size:.72rem;color:var(--t4);margin-bottom:1rem}
+.bc a{color:var(--t3);text-decoration:none}
+.page-hero{background:linear-gradient(135deg,#f0fdf4 0%,#fff 60%);border-bottom:1px solid var(--b);padding:2.5rem 1.5rem}
+.page-hero-inner{max-width:1040px;margin:0 auto}
+.page-badge{display:inline-flex;align-items:center;gap:6px;background:var(--gl);color:var(--gd);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .8rem;border-radius:100px;margin-bottom:1rem}
+h1.page-h1{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;letter-spacing:-.03em;line-height:1.15;color:var(--t);margin-bottom:.75rem}
+h1.page-h1 em{font-style:normal;color:var(--green)}
+.page-intro{font-size:.97rem;color:var(--t3);line-height:1.75;max-width:640px;margin-bottom:1rem}
+.byline{font-size:.72rem;color:var(--t4)}
+.byline strong{color:var(--t3)}
+.section{margin-bottom:2.5rem}
+h2.sec-h2{font-size:1.15rem;font-weight:800;color:var(--t);letter-spacing:-.02em;margin-bottom:1rem;padding-bottom:.65rem;border-bottom:2px solid var(--b)}
+h2.sec-h2 em{font-style:normal;color:var(--green)}
+p.body{font-size:.9rem;color:var(--t2);line-height:1.8;margin-bottom:.85rem}
+.callout{background:var(--gl);border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:1rem 1.25rem;margin:1rem 0;font-size:.87rem;color:var(--gd);line-height:1.7}
+.callout strong{color:var(--gd)}
+.warn{background:#fffbeb;border-left:4px solid #f59e0b;border-radius:0 8px 8px 0;padding:1rem 1.25rem;margin:1rem 0;font-size:.87rem;color:#92400e;line-height:1.7}
+/* CASINO CARDS */
+.casino-list{display:flex;flex-direction:column;gap:1rem}
+.c-card{background:var(--w);border:1px solid var(--b);border-radius:12px;padding:1.25rem;display:flex;gap:1.25rem;align-items:flex-start;box-shadow:var(--sh)}
+.c-card.top{border-color:var(--gm);border-width:2px}
+.c-logo{width:72px;height:56px;background:var(--bg);border:1px solid var(--b);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;color:var(--gd);text-align:center;line-height:1.3;flex-shrink:0}
+.c-body{flex:1;min-width:0}
+.c-top{display:flex;align-items:flex-start;justify-content:space-between;gap:.75rem;flex-wrap:wrap;margin-bottom:.35rem}
+.c-name{font-size:1rem;font-weight:800;color:var(--t)}
+.c-score{background:var(--gl);color:var(--gd);font-size:.8rem;font-weight:800;padding:.25rem .6rem;border-radius:6px;white-space:nowrap}
+.c-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:.5rem}
+.tag{font-size:.6rem;font-weight:700;padding:.18rem .5rem;border-radius:3px;text-transform:uppercase;letter-spacing:.04em}
+.ton{background:#ede9fe;color:#5b21b6}.tg{background:#dcfce7;color:#15803d}.tr{background:#fee2e2;color:#991b1b}.tb{background:#dbeafe;color:#1e40af}
+.c-bonus{font-size:.84rem;color:var(--t2);margin-bottom:.45rem;line-height:1.6}
+.c-bonus strong{color:var(--gd);font-weight:700}
+.c-meta{display:flex;flex-wrap:wrap;gap:.65rem;margin-bottom:.75rem}
+.c-mi{font-size:.72rem;color:var(--t4)}.c-mi b{color:var(--t3);font-weight:600}
+.c-cta{display:inline-flex;align-items:center;gap:.4rem;background:var(--gb);color:#fff;border:none;border-radius:8px;padding:.55rem 1.1rem;font-size:.84rem;font-weight:700;cursor:pointer;text-decoration:none;transition:background .15s}
+.c-cta:hover{background:var(--gbh)}
+.c-tcs{font-size:.65rem;color:var(--t4);margin-top:.35rem}
+/* TABLE */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--b);border-radius:10px;margin:1rem 0}
+table{width:100%;border-collapse:collapse;font-size:.83rem}
+th{background:var(--t);color:#fff;padding:.55rem .85rem;text-align:left;font-size:.72rem;white-space:nowrap;font-weight:700}
+td{padding:.5rem .85rem;border-bottom:1px solid var(--b);background:var(--w);color:var(--t2)}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:var(--bg)}
+.td-g{color:var(--gd);font-weight:700}.td-r{color:#dc2626;font-weight:700}
+/* FAQ */
+.faq-list{margin-top:1rem}
+.faq-item{border:1px solid var(--b);border-radius:8px;margin-bottom:.45rem;background:var(--w);overflow:hidden}
+.faq-q{padding:.85rem 1rem;font-weight:700;font-size:.87rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--t);line-height:1.4;list-style:none}
+.faq-q::-webkit-details-marker{display:none}
+.faq-icon{font-size:.85rem;color:var(--t4);flex-shrink:0;margin-left:.75rem;transition:transform .2s}
+details[open] .faq-icon{transform:rotate(45deg)}
+details[open] .faq-a{display:block}
+.faq-a{padding:.1rem 1rem .85rem;font-size:.85rem;color:var(--t2);line-height:1.78}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.mobile-menu{display:block}}
+@media(max-width:640px){.c-card{flex-direction:column;gap:.85rem}.c-logo{width:56px;height:44px}}
+
+.site-footer{background:var(--w);border-top:1px solid var(--b);padding:2rem 1.5rem;margin-top:3rem}
+.footer-inner{max-width:1040px;margin:0 auto}
+.footer-links{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin-bottom:1rem}
+.footer-links a{font-size:.8rem;color:var(--t3);text-decoration:none}
+.footer-links a:hover{color:var(--t)}
+.footer-disc{font-size:.72rem;color:var(--t4);line-height:1.7}
+.footer-disc a{color:var(--t4)}
+
+
+/* -- Language Switcher -- */
 .lang-sw{position:relative;display:flex;align-items:center}
 .lang-btn{display:flex;align-items:center;gap:5px;background:none;border:1.5px solid var(--b);border-radius:6px;padding:5px 9px;cursor:pointer;font-family:var(--ff);font-size:.75rem;font-weight:700;color:var(--t2);transition:border-color .15s,background .15s;white-space:nowrap;line-height:1}
 .lang-btn:hover,.lang-btn[aria-expanded="true"]{border-color:var(--gm);background:var(--gl);color:var(--gd)}
@@ -76,111 +398,71 @@ nav.site-nav{background:var(--w);border-bottom:1px solid var(--b);position:stick
 .lang-option:hover{background:var(--gl);color:var(--gd)}
 .lo-flag{font-size:17px;line-height:1;flex-shrink:0}
 .lo-label{flex:1;font-size:.8rem}
-/* Cookie */
-.cookie-banner{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--t);color:#fff;z-index:10000;padding:1rem 1.5rem;box-shadow:0 -4px 20px rgba(0,0,0,.2)}
-.cookie-banner.show{display:block}
-.cookie-inner{max-width:1040px;margin:0 auto;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
-.cookie-text{flex:1;font-size:.82rem;line-height:1.5;min-width:200px}
-.cookie-text a{color:#86EFAC;text-decoration:underline}
-.cookie-btns{display:flex;gap:.5rem;flex-shrink:0}
-.cookie-accept{background:var(--gb);color:#fff;border:none;padding:.5rem 1.25rem;border-radius:6px;cursor:pointer;font-weight:700;font-size:.82rem;font-family:var(--ff)}
-.cookie-reject{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);padding:.5rem 1.25rem;border-radius:6px;cursor:pointer;font-weight:600;font-size:.82rem;font-family:var(--ff)}
-/* Page layout */
-.eeat-bar{background:var(--w);border-bottom:1px solid var(--b);padding:0.6rem 1.5rem}
-.eeat-inner{max-width:960px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;font-size:0.74rem;color:var(--t3)}
-.eeat-inner strong{color:var(--t)}
-.eeat-inner a{color:var(--gd);text-decoration:none}
-.page-wrap{max-width:960px;margin:0 auto;padding:1.75rem 1.5rem 3.5rem}
-.bc{font-size:0.78rem;color:var(--t4);margin-bottom:1.25rem}
-.bc a{color:var(--t3);text-decoration:none}
-.page-h1{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:800;letter-spacing:-0.03em;line-height:1.15;margin-bottom:0.5rem}
-.page-h1 em{font-style:normal;color:var(--green)}
-.page-intro{color:var(--t3);font-size:0.95rem;line-height:1.75;margin-bottom:1.5rem;max-width:700px}
-.callout{background:var(--w);border-left:4px solid var(--green);border-radius:0 10px 10px 0;padding:1rem 1.25rem;margin:1.25rem 0;font-size:0.88rem;color:var(--t2);line-height:1.75}
-.callout strong{color:var(--t)}
-.warn-box{background:#FEF9C3;border-left:4px solid #EAB308;border-radius:0 10px 10px 0;padding:.85rem 1rem;margin:1rem 0;font-size:.84rem;color:#713F12}
-.section-h{font-size:1.25rem;font-weight:700;margin:2rem 0 0.6rem;letter-spacing:-0.02em}
-.body{color:var(--t2);margin-bottom:0.9rem;line-height:1.8}
-.body a{color:var(--green);text-decoration:none}
-.body a:hover{text-decoration:underline}
-.data-table{width:100%;border-collapse:collapse;font-size:0.84rem;margin:1rem 0 1.5rem}
-.data-table th{background:var(--bg);font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--t4);padding:0.5rem 0.75rem;text-align:left;border-bottom:2px solid var(--b)}
-.data-table td{padding:0.6rem 0.75rem;border-bottom:1px solid var(--b);color:var(--t2)}
-.data-table tr:last-child td{border-bottom:none}
-.td-g{color:var(--green);font-weight:600}
-.td-r{color:#DC2626;font-weight:600}
-.pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0 1.5rem}
-.pro-list,.con-list{background:var(--w);border-radius:10px;padding:1rem 1.25rem}
-.pro-list h3{color:var(--green);font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem}
-.con-list h3{color:#DC2626;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem}
-.pro-list li,.con-list li{font-size:.83rem;color:var(--t2);margin-bottom:.4rem;padding-left:1.2rem;position:relative;list-style:none}
-.pro-list li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700}
-.con-list li::before{content:"✗";position:absolute;left:0;color:#DC2626;font-weight:700}
-.faq-item{border-bottom:1px solid var(--b);padding:0.1rem 0}
-.faq-q{padding:.85rem 1rem;font-weight:700;font-size:.86rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--t)min-height:48px;}
-.faq-q:hover{background:var(--bg)}
-.faq-icon{flex-shrink:0;margin-left:.75rem;font-size:1rem;color:var(--t3)}
-.faq-a{display:none;padding:.25rem 1rem 1rem;font-size:.84rem;color:var(--t2);line-height:1.75}
-.btn-claim{background:var(--gb);color:#fff;padding:.65rem 1.75rem;border-radius:7px;font-weight:700;font-size:.88rem;text-decoration:none;display:inline-block;transition:background .15s}
-.btn-claim:hover{background:var(--gbh)}
-.rev-header{background:var(--w);border-radius:12px;padding:1.25rem;margin-bottom:1.25rem;box-shadow:var(--sh)}
-.rh-grid{display:grid;grid-template-columns:70px 1fr auto;gap:1rem;align-items:start}
-.casino-logo{width:60px;height:60px;background:var(--t);color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.75rem;text-align:center;line-height:1.2}
-.rh-info h1{font-size:1.25rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:5px}
-.tags{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:.6rem}
-.tag{font-size:.6rem;font-weight:700;padding:.18rem .5rem;border-radius:3px;text-transform:uppercase;letter-spacing:.04em}
-.tc{background:#DBEAFE;color:#1E40AF}
-.ti{background:#DCFCE7;color:#15803D}
-.tca{background:#FEF3C7;color:#92400E}
-.ton{background:#F0FDF4;color:#15803D;border:1px solid #86EFAC}
-.tn{background:#FEE2E2;color:#991B1B}
-.tf{background:#F0F9FF;color:#0369A1}
-.score-box{text-align:center;background:var(--gl);border-radius:10px;padding:.75rem 1.1rem;flex-shrink:0;min-width:90px}
-.score-num{font-size:2.1rem;font-weight:800;color:var(--gd);line-height:1;letter-spacing:-0.03em}
-.score-stars{color:#F59E0B;font-size:.82rem;margin-top:2px}
-.score-label{font-size:.62rem;color:var(--gd);font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
-.bonus-strip{background:var(--bg);border-radius:8px;padding:.85rem 1rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;margin-top:.85rem}
-.bonus-val{font-size:1.05rem;font-weight:800;color:var(--gd)}
-.bonus-sub{font-size:.73rem;color:var(--t3);margin-top:2px}
-.verdict-card{background:var(--w);border-radius:12px;padding:1.25rem;margin-bottom:1.25rem;box-shadow:var(--sh)}
-.verdict-score{text-align:center;padding:.4rem 0 .75rem}
-.vs-num{font-size:2.4rem;font-weight:800;color:var(--gd);line-height:1;letter-spacing:-0.03em}
-.vs-sub{font-size:.66rem;color:var(--t3);text-transform:uppercase;letter-spacing:.08em}
-.score-row{display:flex;justify-content:space-between;align-items:center;padding:.32rem 0;border-bottom:1px solid var(--b);font-size:.77rem;gap:6px}
-.score-row:last-child{border-bottom:none}
-.sr-label{color:var(--t3);flex-shrink:0}
-.sr-bar{flex:1;height:5px;background:var(--bg);border-radius:3px;overflow:hidden}
-.sr-fill{height:100%;background:var(--green);border-radius:3px}
-.sr-val{color:var(--t);font-weight:600;min-width:30px;text-align:right}
-/* Footer */
-footer{background:var(--t);color:rgba(255,255,255,.7);font-size:.82rem;margin-top:3rem}
-.ft-inner{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;padding:2.5rem 1.5rem 2rem}
-.ft-brand p{margin-top:.75rem;font-size:.79rem;line-height:1.6;color:rgba(255,255,255,.55)}
-.ft-col h4{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.4);margin-bottom:.6rem}
-.ft-col ul{list-style:none}
-.ft-col li{margin-bottom:.3rem}
-.ft-col a,.ft-brand a{color:rgba(255,255,255,.6);text-decoration:none}
-.ft-col a:hover,.ft-brand a:hover{color:#fff}
-.logo-wh{display:flex;align-items:center;gap:9px;text-decoration:none}
-.logo-wh .logo-text{color:#fff}
-.logo-wh .logo-text span{color:var(--gm)}
-.ft-disc{border-top:1px solid rgba(255,255,255,.1);padding:1rem 1.5rem;max-width:1040px;margin:0 auto}
-.ft-disc p{font-size:.73rem;color:rgba(255,255,255,.4);line-height:1.6}
-.ft-disc a{color:rgba(255,255,255,.5);text-decoration:none}
-.rg-badges{display:flex;gap:.4rem;margin-top:.5rem}
-.rg-badge{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.5);font-size:.65rem;font-weight:700;padding:.2rem .5rem;border-radius:4px}
+.lo-badge{font-size:.58rem;background:var(--gl);color:var(--gd);padding:1px 5px;border-radius:3px;font-weight:700;letter-spacing:.04em}
+.lang-banner{display:none;background:#f0fdf4;border-bottom:2px solid #16a34a;padding:.65rem 1.5rem;font-size:.82rem;color:#15803d;align-items:center;gap:.6rem;justify-content:center;flex-wrap:wrap}
+.lang-banner.show{display:flex}
+.lang-banner a{color:#15803d;font-weight:700;text-decoration:underline}
+.lang-banner-close{background:none;border:none;cursor:pointer;color:#15803d;font-size:1.1rem;padding:0;margin-left:.25rem;opacity:.55;line-height:1;vertical-align:middle}
+.lang-banner-close:hover{opacity:1}
+@media(max-width:480px){.lang-code{display:none}}
 
-@media(max-width:768px){
-  .nav-links,.nav-cta{display:none}
-  .hamburger{display:flex}
-  .mobile-menu{display:block}
-  .pros-cons{grid-template-columns:1fr}
-  .rh-grid{grid-template-columns:60px 1fr;}
-  .score-box{display:none}
-  .ft-inner{grid-template-columns:1fr 1fr;gap:1.5rem}
-  .ft-brand{grid-column:1/-1}
-}
+.drawer-section-label{font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--t4);padding:.75rem 1rem .25rem;margin-top:.25rem}
+
+.cookie-banner{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--t,#111827);color:#fff;z-index:10000;padding:1rem 1.5rem;box-shadow:0 -4px 20px rgba(0,0,0,.2)}.cookie-banner.show{display:block}.cookie-inner{max-width:1040px;margin:0 auto;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}.cookie-text{flex:1;font-size:.82rem;line-height:1.5;min-width:200px}.cookie-text a{color:#86EFAC;text-decoration:underline}.cookie-btns{display:flex;gap:.5rem;flex-shrink:0}.cookie-accept{background:#22C55E;color:#fff;border:none;padding:.5rem 1.25rem;border-radius:6px;cursor:pointer;font-weight:700;font-size:.82rem;font-family:var(--ff,sans-serif)}.cookie-reject{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);padding:.5rem 1.25rem;border-radius:6px;cursor:pointer;font-weight:600;font-size:.82rem;font-family:var(--ff,sans-serif)}
+
+/* DATA TABLE */
+.data-table{width:100%;border-collapse:collapse;margin:.85rem 0;font-size:.82rem;overflow:auto;display:block}
+.data-table th{background:var(--bg);color:var(--t3);font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;padding:.55rem .85rem;border-bottom:2px solid var(--b);text-align:left;white-space:nowrap}
+.data-table td{padding:.55rem .85rem;border-bottom:1px solid var(--b);background:var(--w);color:var(--t2);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table td.td-g{color:var(--gd);font-weight:600}
+.data-table td.td-r{color:#DC2626;font-weight:600}
+/* FAQ BLOCK (details/summary style) */
+.faq-block{margin:.5rem 0}
+.faq-block .faq-item{border:1px solid var(--b);border-radius:8px;margin-bottom:.5rem;overflow:hidden;background:var(--w)}
+.faq-block .faq-q{padding:.85rem 1rem;font-weight:700;font-size:.86rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--t);line-height:1.4;list-style:none}
+.faq-block .faq-q::-webkit-details-marker{display:none}
+.faq-block .faq-q:hover{background:var(--bg)}
+.faq-block .faq-a{padding:.15rem 1rem .85rem;font-size:.83rem;color:var(--t2);line-height:1.75}
+/* VERDICT CARD (stake/roobet style) */
+.verdict-card{background:var(--w);border:1.5px solid var(--b);border-radius:12px;padding:1.1rem 1.25rem;margin:.85rem 0;box-shadow:var(--sh)}
+/* WARN BOX */
+.warn-box{background:#FEF3C7;border:1px solid #FDE68A;border-radius:8px;padding:.8rem 1rem;font-size:.81rem;color:#92400E;margin:.75rem 0;line-height:1.65}
+/* SECTION HEADING (legacy alias) */
+.section-h{font-size:1.05rem;font-weight:800;color:var(--t);margin:1.75rem 0 .65rem;padding-top:1.75rem;border-top:1px solid var(--b)}
+
+/* PROS / CONS LISTS (stake, roobet style) */
+.pro-list,.con-list{background:var(--w);border:1px solid var(--b);border-radius:10px;padding:1rem 1.1rem;flex:1;min-width:220px}
+.pro-list{border-top:3px solid var(--green)}
+.con-list{border-top:3px solid #DC2626}
+.pro-list h3{color:var(--gd);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;margin-bottom:.55rem}
+.con-list h3{color:#DC2626;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;margin-bottom:.55rem}
+.pro-list ul,.con-list ul{padding-left:1.1rem;margin:0}
+.pro-list li,.con-list li{font-size:.82rem;color:var(--t2);line-height:1.65;margin-bottom:.3rem}
+
+/* FR FOOTER (ft-brand, ft-col, ft-disc grid layout) */
+.ft-inner{max-width:960px;margin:0 auto;padding:2rem 1.5rem 1rem;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:1.75rem}
+.ft-brand p{font-size:.78rem;color:#6B7280;line-height:1.6;margin-top:.6rem}
+.logo-wh{display:flex;align-items:center;gap:8px;text-decoration:none}
+.logo-wh .logo-text{font-size:1.1rem;font-weight:800;color:#111827;letter-spacing:-.02em}
+.ft-col h4{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:#374151;margin-bottom:.6rem}
+.ft-col ul{list-style:none;padding:0;margin:0}
+.ft-col li{margin-bottom:.35rem}
+.ft-col a{font-size:.8rem;color:#6B7280;text-decoration:none}
+.ft-col a:hover{color:var(--green)}
+.ft-disc{border-top:1px solid #E5E7EB;padding:.85rem 1.5rem;max-width:960px;margin:0 auto}
+.ft-disc p{font-size:.72rem;color:#9CA3AF;line-height:1.6}
+.ft-disc a{color:#9CA3AF;text-decoration:none}
+.ft-disc a:hover{color:var(--green)}
+.rg-badges{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.5rem}
+.rg-badge{background:#F3F4F6;border:1px solid #E5E7EB;border-radius:4px;padding:.18rem .5rem;font-size:.65rem;font-weight:700;color:#374151;letter-spacing:.03em}
+@media(max-width:768px){.ft-inner{grid-template-columns:1fr 1fr;gap:1.25rem}}
 @media(max-width:480px){.ft-inner{grid-template-columns:1fr}}
+/* INFO TABLE (review bonus breakdown) */
+.info-table{width:100%;border-collapse:collapse;margin:.75rem 0;font-size:.81rem}
+.info-table th{background:var(--bg);color:var(--t3);font-weight:700;font-size:.71rem;text-transform:uppercase;letter-spacing:.05em;padding:.5rem .75rem;border-bottom:2px solid var(--b);text-align:left}
+.info-table td{padding:.5rem .75rem;border-bottom:1px solid var(--b);background:var(--w);color:var(--t2)}
+.info-table tr:last-child td{border-bottom:none}
 </style>
 
 
@@ -281,37 +563,58 @@ function setCookieConsent(c){
     </button>
   </div>
 </nav>
-<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Menu de navigation" aria-hidden="true">
-  <div class="mobile-drawer">
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu" aria-hidden="true">
+  <div class="mobile-drawer" id="mobile-drawer">
     <div class="drawer-header">
       <span class="drawer-title">Menu</span>
-      <button class="drawer-close" id="drawer-close" aria-label="Fermer le menu">✕</button>
+      <button class="drawer-close" id="drawer-close" aria-label="Close menu">✕</button>
     </div>
     <nav class="drawer-nav">
-      <a href="/fr/" onclick="closeMenu()"><span class="nav-icon">🏆</span>Meilleurs casinos</a>
-      <a href="/fr/meilleurs-casinos-en-ligne-canada/" onclick="closeMenu()"><span class="nav-icon">🇨🇦</span>Guide Canada</a>
-      <a href="/fr/bonus-sans-depot-canada/" onclick="closeMenu()"><span class="nav-icon">🎁</span>Bonus sans dépôt</a>
-      <a href="/fr/casinos-en-ligne-ontario/" onclick="closeMenu()"><span class="nav-icon">✅</span>Casinos Ontario</a>
-      <a href="/fr/casinos-interac-canada/" onclick="closeMenu()"><span class="nav-icon">💳</span>Casinos Interac</a>
-      <a href="/fr/casinos-paiement-rapide-canada/" onclick="closeMenu()"><span class="nav-icon">⚡</span>Retraits rapides</a>
-      <a href="/fr/tours-gratuits-canada/" onclick="closeMenu()"><span class="nav-icon">🎰</span>Tours gratuits</a>
-      <a href="/fr/casino-en-direct-canada/" onclick="closeMenu()"><span class="nav-icon">🎲</span>Casino en direct</a>
-      <div style="font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--t4);padding:.75rem 1rem .25rem">Avis casinos</div>
-      <a href="/fr/avis/bitstarz-canada/" onclick="closeMenu()"><span class="nav-icon">⚡</span>BitStarz — 9,7/10</a>
-      <a href="/fr/avis/jackpot-city-canada/" onclick="closeMenu()"><span class="nav-icon">✅</span>Jackpot City — 9,4/10</a>
-      <a href="/fr/avis/leovegas-canada/" onclick="closeMenu()"><span class="nav-icon">✅</span>LeoVegas — 9,1/10</a>
-      <a href="/fr/avis/jackbit-canada/" onclick="closeMenu()"><span class="nav-icon">🎰</span>Jackbit — 9,2/10</a>
-      <a href="/fr/avis/bcgame-canada/" onclick="closeMenu()"><span class="nav-icon">🎰</span>BC.Game — 9,1/10</a>
-      <a href="/fr/avis/spin-casino-canada/" onclick="closeMenu()"><span class="nav-icon">✅</span>Spin Casino — 8,9/10</a>
-      <a href="/fr/jeu-responsable/" onclick="closeMenu()"><span class="nav-icon">🛡️</span>Jeu responsable</a>
-      <a href="/fr/a-propos/" onclick="closeMenu()"><span class="nav-icon">ℹ️</span>À propos</a>
+      <a href="/" onclick="closeMenu()"><span class="nav-icon">🏆</span>Top Casinos</a>
+      <a href="/en/best-online-casinos-canada/" onclick="closeMenu()"><span class="nav-icon">🇨🇦</span>Canada Guide</a>
+      <a href="/en/online-casinos-ontario/" onclick="closeMenu()"><span class="nav-icon">✅</span>Ontario iGO Casinos</a>
+      <a href="/en/interac-casinos-canada/" onclick="closeMenu()"><span class="nav-icon">💳</span>Interac Casinos</a>
+      <a href="/en/no-deposit-bonus-canada/" onclick="closeMenu()"><span class="nav-icon">🎁</span>No Deposit Bonus</a>
+      <a href="/en/fast-payout-casinos-canada/" onclick="closeMenu()"><span class="nav-icon">⚡</span>Fast Payout Casinos</a>
+      <a href="/en/free-spins-canada/" onclick="closeMenu()"><span class="nav-icon">🎰</span>Free Spins Canada</a>
+      <a href="/en/live-casino-canada/" onclick="closeMenu()"><span class="nav-icon">🎲</span>Live Casino Canada</a>
+      <a href="/en/bitcoin-casinos-canada/" onclick="closeMenu()"><span class="nav-icon">₿</span>Bitcoin Casinos</a>
+      <a href="/en/welcome-bonus-casinos-canada/" onclick="closeMenu()"><span class="nav-icon">🎁</span>Welcome Bonuses</a>
+      <a href="/en/cashback-casinos-canada/" onclick="closeMenu()"><span class="nav-icon">💰</span>Cashback Casinos</a>
+      <div class="drawer-section-label">By Province</div>
+      <a href="/en/quebec-casinos-canada/" onclick="closeMenu()"><span class="nav-icon">🍁</span>Quebec Casinos (18+)</a>
+      <a href="/en/bc-casinos-canada/" onclick="closeMenu()"><span class="nav-icon">🏔️</span>BC Casinos</a>
+      <a href="/en/alberta-casinos-canada/" onclick="closeMenu()"><span class="nav-icon">⛽</span>Alberta Casinos (18+)</a>
+      <a href="/tools/wagering-calculator/" onclick="closeMenu()"><span class="nav-icon">🔢</span>Wagering Calculator</a>
+      <div class="drawer-section-label">Casino Reviews</div>
+      <a href="/en/reviews/bitstarz-canada/" onclick="closeMenu()"><span class="nav-icon">⚡</span>BitStarz — 9.7/10</a>
+      <a href="/en/reviews/jackpotcity-canada/" onclick="closeMenu()"><span class="nav-icon">✅</span>Jackpot City — 9.4/10</a>
+      <a href="/en/reviews/playojo-canada/" onclick="closeMenu()"><span class="nav-icon">✅</span>PlayOJO — 9.2/10</a>
+      <a href="/en/reviews/leovegas-canada/" onclick="closeMenu()"><span class="nav-icon">✅</span>LeoVegas — 9.1/10</a>
+      <a href="/en/reviews/jackbit-canada/" onclick="closeMenu()"><span class="nav-icon">🎰</span>Jackbit — 9.2/10</a>
+      <a href="/en/reviews/bcgame-canada/" onclick="closeMenu()"><span class="nav-icon">🎰</span>BC.Game — 9.1/10</a>
+      <a href="/en/reviews/spin-casino-canada/" onclick="closeMenu()"><span class="nav-icon">✅</span>Spin Casino — 8.9/10</a>
+      <a href="/en/reviews/bet365-canada/" onclick="closeMenu()"><span class="nav-icon">✅</span>bet365 — 8.8/10</a>
+      <a href="/en/reviews/casumo-canada/" onclick="closeMenu()"><span class="nav-icon">✅</span>Casumo — 8.8/10</a>
+      <a href="/en/reviews/888casino-canada/" onclick="closeMenu()"><span class="nav-icon">✅</span>888 Casino — 8.5/10</a>
+      <a href="/en/reviews/betway-canada/" onclick="closeMenu()"><span class="nav-icon">✅</span>Betway — 7.8/10</a>
+      <a href="/en/reviews/7bit-canada/" onclick="closeMenu()"><span class="nav-icon">🎰</span>7Bit — 8.7/10</a>
+      <a href="/en/reviews/stake-canada/" onclick="closeMenu()"><span class="nav-icon">₿</span>Stake — 8.9/10</a>
+      <a href="/en/reviews/roobet-canada/" onclick="closeMenu()"><span class="nav-icon">🚀</span>Roobet — 8.4/10</a>
+      <a href="/responsible-gambling/" onclick="closeMenu()"><span class="nav-icon">🛡️</span>Responsible Gambling</a>
+      <a href="/about/" onclick="closeMenu()"><span class="nav-icon">ℹ️</span>About CasinoScout</a>
+      <a href="/affiliate-disclosure/" onclick="closeMenu()"><span class="nav-icon">📋</span>Affiliate Disclosure</a>
     </nav>
+    <div class="drawer-cta">
+      <a href="#casinos" onclick="closeMenu()">View Top Picks →</a>
+    </div>
     <div class="drawer-footer">
-      18 ans+ au Québec · 19 ans+ ailleurs · Le jeu peut créer une dépendance ·
-      <a href="https://www.jeu-aidereference.qc.ca">Tel-Jeu 1-800-461-0140</a>
+      Must be 19+ to gamble (18+ in AB, MB, QC) · Gambling can be addictive ·
+      <a href="https://www.connexontario.ca">ConnexOntario 1-866-531-2600</a>
     </div>
   </div>
 </div>
+
 
 <div class="eeat-bar">
   <div class="eeat-inner">
